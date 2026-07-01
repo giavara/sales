@@ -150,6 +150,13 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .next-list{list-style:none;padding:0;margin:44px 0 0;display:flex;gap:44px;}
 .next-list li{display:flex;flex-direction:column;gap:14px;font-size:24px;color:rgba(255,255,255,.8);max-width:16ch;}
 .next-list .step-n{width:52px;height:52px;border-radius:999px;border:2px solid var(--orange);color:var(--orange);display:grid;place-items:center;font-size:24px;font-weight:600;}
+.cta-row{display:flex;gap:20px;margin-top:52px;flex-wrap:wrap;}
+.btn{font-family:var(--font);font-weight:600;font-size:26px;border-radius:999px;padding:24px 44px;border:2px solid transparent;line-height:1;text-decoration:none;display:inline-flex;align-items:center;gap:14px;transition:filter .18s,background .18s,color .18s,border-color .18s;cursor:pointer;}
+.btn svg{width:26px;height:26px;}
+.btn-primary{background:var(--orange);color:#fff;}
+.btn-primary:hover{filter:brightness(.92);}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+.btn-ghost:hover{border-color:#fff;}
 
 /* entrance — transform-only so print/PPTX never hides content */
 @media (prefers-reduced-motion:no-preference){
@@ -431,13 +438,12 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="pad">
       <div class="close-wrap">
         <div class="kicker anim o" style="margin-bottom:34px;">Next steps</div>
-        <h2 class="anim">Let's turn Amazon into a channel that works<span class="o">.</span></h2>
-        <ul class="next-list anim">
-          <li><span class="step-n">1</span><span>Confirm your Amazon UK account type — vendor 1P or seller 3P.</span></li>
-          <li><span class="step-n">2</span><span>30-minute call to lock scope &amp; timing.</span></li>
-          <li><span class="step-n">3</span><span>Kickoff: product in July, ads live in August.</span></li>
-        </ul>
-        <div class="anim" style="margin-top:56px;"><img src="assets/mentor-logo-white-dot.svg" style="height:48px;" alt="mentor" /></div>
+        <h2 class="anim">Ready when you are<span class="o">.</span></h2>
+        <p class="lead anim" style="margin-top:28px;max-width:34ch;">Confirm your account type, and let's lock scope on a quick call — product in July, ads live in August.</p>
+        <div class="cta-row anim">
+          <a class="btn btn-primary" href="https://calendar.app.google/pEsfW3DktwTKdA8d8" target="_blank" rel="noopener"><span data-lucide="calendar-check"></span>Book a 30-min call</a>
+          <a class="btn btn-ghost" href="mailto:andrea@growers.agency?subject=Conidia%20%C3%97%20mentor%20%E2%80%94%20let's%20start&amp;body=Hi%20Andrea%2C%20we're%20in.%20Let's%20get%20going%20on%20the%20Amazon%20setup%20%2B%20advertising%20for%20Conidia.">Reply: let's start</a>
+        </div>
       </div>
     </div>
     <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">10</span></div>
