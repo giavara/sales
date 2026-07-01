@@ -1,0 +1,485 @@
+<!doctype html>
+<!-- Conidia × mentor — Amazon growth proposal -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conidia × mentor — Amazon growth proposal</title>
+<link rel="icon" href="assets/mentor-mark-black.svg" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* ---- Poppins (self-hosted) ---- */
+@font-face{font-family:'Poppins';font-weight:300;font-style:normal;font-display:swap;src:url('fonts/Poppins-Light.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/Poppins-Regular.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/Poppins-Medium.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:600;font-style:normal;font-display:swap;src:url('fonts/Poppins-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/Poppins-Bold.ttf') format('truetype');}
+
+:root{
+  --ink:#000000; --white:#FFFFFF; --orange:#FF7237;
+  --g050:#FAFAF8; --g100:#F4F4F1; --g150:#ECECE8; --g200:#E4E4DF; --g300:#C7C7C2;
+  --g400:#9A9A96; --g500:#6E6E6B; --g600:#4A4A48;
+  --success:#1F9D63; --success100:#E4F3EA; --warning:#E5A019; --warning100:#FBF0D6;
+  --danger:#E0474D; --danger100:#FBE6E7;
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;}
+deck-stage:not(:defined){visibility:hidden;}
+deck-stage{background:#000;}
+
+section{
+  font-family:var(--font); color:var(--ink); background:var(--white);
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+.pad{position:absolute; inset:0; padding:96px 110px; display:flex; flex-direction:column;}
+.dark{background:var(--ink); color:var(--white);}
+.paper{background:var(--g050);}
+.o{color:var(--orange);}
+
+/* type helpers */
+.eyebrow{font-size:21px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--g500);}
+.dark .eyebrow{color:rgba(255,255,255,.55);}
+.kicker{font-size:21px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);}
+h1{font-size:104px;line-height:1.0;letter-spacing:-0.03em;font-weight:600;margin:0;}
+h2{font-size:68px;line-height:1.05;letter-spacing:-0.025em;font-weight:600;margin:0;}
+h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin:0;}
+.lead{font-size:30px;line-height:1.5;font-weight:400;color:var(--g600);max-width:32ch;}
+.dark .lead{color:rgba(255,255,255,.72);}
+.foot{position:absolute;left:110px;right:110px;bottom:54px;display:flex;align-items:center;justify-content:space-between;font-size:18px;color:var(--g400);}
+.dark .foot{color:rgba(255,255,255,.4);}
+.foot img{height:22px;display:block;}
+.num-badge{font-size:18px;font-weight:600;color:var(--g400);}
+
+/* cover */
+.cover-logo{height:88px;}
+.cover-mark{position:absolute;right:-120px;bottom:-140px;height:760px;opacity:.06;}
+
+/* generic grid header */
+.head{display:flex;flex-direction:column;gap:18px;margin-bottom:54px;}
+.head h2{max-width:26ch;}
+
+/* rules row */
+.rule-row{display:flex;gap:26px;margin-top:34px;}
+.rule{flex:1;display:flex;gap:14px;align-items:flex-start;font-size:21px;line-height:1.45;color:var(--g600);}
+.dark .rule{color:rgba(255,255,255,.72);}
+.rule .icon{color:var(--orange);flex:none;margin-top:2px;}
+.rule b{color:#000;font-weight:600;}
+.dark .rule b{color:#fff;}
+
+/* two-column split (problem/opportunity) */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;align-items:center;}
+.stat{font-size:120px;font-weight:600;letter-spacing:-0.03em;line-height:.95;}
+.stat small{display:block;font-size:26px;font-weight:500;color:var(--g500);letter-spacing:0;margin-top:18px;max-width:20ch;}
+.dark .stat small{color:rgba(255,255,255,.6);}
+.arrowline{display:flex;align-items:center;gap:22px;font-size:34px;font-weight:600;margin-top:10px;}
+.arrowline .from{color:var(--g400);text-decoration:line-through;}
+.arrowline .to{color:var(--orange);}
+
+/* workstream cards */
+.ws-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;flex:1;align-content:stretch;}
+.ws{border:2px solid var(--ink);border-radius:16px;padding:48px 44px;display:flex;flex-direction:column;}
+.ws .tag{font-size:19px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);}
+.ws h3{font-size:44px;margin:16px 0 6px;}
+.ws .price{font-size:30px;font-weight:600;color:var(--orange);margin-bottom:24px;}
+.ws ul{list-style:none;padding:0;margin:auto 0 0;display:flex;flex-direction:column;gap:16px;}
+.ws li{display:flex;gap:14px;align-items:flex-start;font-size:22px;line-height:1.35;color:var(--g600);}
+.ws li .icon{color:var(--orange);flex:none;margin-top:2px;}
+
+/* single workstream detail list */
+.detail{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;flex:1;align-items:center;}
+.detail-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:22px;}
+.detail-list li{display:flex;gap:18px;align-items:flex-start;font-size:26px;line-height:1.4;color:var(--g600);}
+.detail-list li .icon{color:var(--orange);flex:none;margin-top:3px;}
+.detail-list li b{color:#000;font-weight:600;}
+.note-card{background:var(--g050);border:1px solid var(--g200);border-radius:14px;padding:34px 36px;}
+.note-card .eyebrow{margin-bottom:14px;}
+.note-card p{font-size:22px;line-height:1.5;color:var(--g600);margin:0;}
+
+/* advertising interactive tabs */
+.adv{display:flex;flex-direction:column;flex:1;}
+.tabs{display:flex;gap:14px;margin-bottom:34px;}
+.tab{font-family:var(--font);font-size:22px;font-weight:600;padding:16px 30px;border-radius:999px;border:2px solid var(--g300);background:#fff;color:var(--g500);cursor:pointer;line-height:1;transition:all .18s;}
+.tab:hover{border-color:var(--ink);color:var(--ink);}
+.tab[aria-selected="true"]{background:var(--orange);border-color:var(--orange);color:#fff;}
+.tab .n{font-variant-numeric:tabular-nums;opacity:.6;margin-right:10px;}
+.panel{display:none;flex:1;}
+.panel[data-active]{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;animation:fade .3s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.panel h3{font-size:40px;margin-bottom:20px;}
+.panel p{font-size:25px;line-height:1.5;color:var(--g600);margin:0;max-width:30ch;}
+.kwchips{display:flex;flex-wrap:wrap;gap:14px;}
+.kw{font-size:22px;font-weight:500;padding:14px 24px;border-radius:999px;background:var(--g100);color:var(--g600);border:1px solid var(--g200);}
+.kw.neg{background:var(--danger100);color:#C13238;border-color:#F3C9CB;text-decoration:line-through;}
+.kw.hot{background:var(--orange);color:#fff;border-color:var(--orange);}
+
+/* timeline */
+.tl{display:flex;gap:0;flex:1;align-items:stretch;margin-top:20px;}
+.tl-step{flex:1;position:relative;padding:0 26px;display:flex;flex-direction:column;justify-content:center;}
+.tl-step:not(:last-child)::after{content:"";position:absolute;top:64px;right:-1px;width:2px;height:60%;background:var(--g200);}
+.tl-dot{width:26px;height:26px;border-radius:999px;background:var(--orange);margin-bottom:28px;}
+.tl-step.muted .tl-dot{background:var(--g300);}
+.tl-month{font-size:26px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
+.tl-step.muted .tl-month{color:var(--g400);}
+.tl-step h3{font-size:30px;margin-bottom:14px;}
+.tl-step p{font-size:21px;line-height:1.45;color:var(--g500);margin:0;max-width:22ch;}
+
+/* investment KPI cards */
+.inv{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;flex:1;align-content:center;}
+.card{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:44px 40px;display:flex;flex-direction:column;}
+.card.accent{background:var(--ink);color:#fff;border-color:var(--ink);}
+.card .clabel{font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--g500);}
+.card.accent .clabel{color:rgba(255,255,255,.6);}
+.card .cval{font-size:76px;font-weight:600;letter-spacing:-0.02em;margin:26px 0 10px;font-variant-numeric:tabular-nums;line-height:1;}
+.card .cval .o{color:var(--orange);}
+.card .csub{font-size:21px;color:var(--g500);line-height:1.4;margin-top:auto;}
+.card.accent .csub{color:rgba(255,255,255,.65);}
+
+/* proof / cases */
+.cases{display:flex;flex-direction:column;gap:22px;flex:1;justify-content:center;}
+.case{display:flex;align-items:center;gap:28px;border:1px solid var(--g200);border-radius:14px;padding:30px 36px;background:var(--g050);text-decoration:none;color:inherit;transition:border-color .18s,transform .18s;}
+.case:hover{border-color:var(--ink);transform:translateX(6px);}
+.case .cmark{width:56px;height:56px;border-radius:12px;background:var(--ink);display:grid;place-items:center;flex:none;}
+.case .cmark svg{color:var(--orange);}
+.case .cname{font-size:30px;font-weight:600;}
+.case .cdesc{font-size:20px;color:var(--g500);margin-top:4px;}
+.case .clink{margin-left:auto;font-size:19px;color:var(--g400);font-weight:500;display:flex;align-items:center;gap:8px;}
+
+/* close */
+.close-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.close-wrap h2{font-size:82px;max-width:18ch;}
+.next-list{list-style:none;padding:0;margin:44px 0 0;display:flex;gap:44px;}
+.next-list li{display:flex;flex-direction:column;gap:14px;font-size:24px;color:rgba(255,255,255,.8);max-width:16ch;}
+.next-list .step-n{width:52px;height:52px;border-radius:999px;border:2px solid var(--orange);color:var(--orange);display:grid;place-items:center;font-size:24px;font-weight:600;}
+
+/* entrance — transform-only so print/PPTX never hides content */
+@media (prefers-reduced-motion:no-preference){
+  [data-deck-active] .anim{animation:rise .55s cubic-bezier(.2,.7,.2,1) both;}
+  [data-deck-active] .anim:nth-child(2){animation-delay:.05s;}
+  [data-deck-active] .anim:nth-child(3){animation-delay:.1s;}
+  [data-deck-active] .anim:nth-child(4){animation-delay:.15s;}
+  [data-deck-active] .anim:nth-child(5){animation-delay:.2s;}
+}
+@keyframes rise{from{transform:translateY(16px);}to{transform:none;}}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 1 · COVER -->
+  <section class="dark" data-label="Cover">
+    <div class="pad">
+      <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
+      <img class="cover-logo anim" src="assets/mentor-logo-white-dot.svg" alt="mentor" style="align-self:flex-start;" />
+      <div style="flex:1;"></div>
+      <div class="eyebrow anim" style="margin-bottom:26px;">Proposal · Conidia</div>
+      <h1 class="anim">Amazon growth,<br>the fast lane<span class="o">.</span></h1>
+      <p class="lead anim" style="margin-top:34px;max-width:40ch;">Setup + advertising to turn Amazon into a real sales channel for Fuelstat &amp; AquaFighter — IT · DE · FR · ES.</p>
+    </div>
+    <div class="foot"><span>marketplace-mentor.com</span><span>Prepared for Mattia &amp; Glen · 2026</span></div>
+  </section>
+
+  <!-- 2 · WHERE YOU ARE NOW -->
+  <section data-label="Today">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Where you are now</span>
+        <h2 class="anim">A vendor (1P) setup that fights your own pricing.</h2>
+      </div>
+      <div class="split">
+        <div class="anim">
+          <div class="stat">€155<small>Amazon UK resells into Italy <b style="color:#000;font-weight:600">below your floor</b> and often wins the buy box.</small></div>
+        </div>
+        <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
+          <div class="rule"><span class="icon" data-lucide="lock"></span><div>As <b>vendor (1P)</b>, Amazon controls final price &amp; EU distribution — you lose the lever.</div></div>
+          <div class="rule"><span class="icon" data-lucide="truck"></span><div>Distributors stay your <b>primary route to market</b>; Amazon today creates friction, not growth.</div></div>
+          <div class="rule"><span class="icon" data-lucide="help-circle"></span><div>Open question: is the account really 1P, and is a move to <b>seller (3P)</b> on the table?</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">02</span></div>
+  </section>
+
+  <!-- 3 · THE OPPORTUNITY -->
+  <section class="dark" data-label="Opportunity">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">The opportunity</span>
+        <h2 class="anim">Your product is bought in a hurry. Speed beats price.</h2>
+      </div>
+      <div class="split">
+        <div class="anim">
+          <p class="lead" style="max-width:24ch;font-size:32px;">Diesel &amp; jet fuel testers, water-absorbing kits — nobody plans the purchase. They need it <span class="o" style="font-weight:600;">now</span>.</p>
+          <div class="arrowline" style="margin-top:44px;"><span class="from">1–2 weeks</span><span data-lucide="arrow-right"></span><span class="to">1–2 days</span></div>
+          <p style="font-size:20px;color:rgba(255,255,255,.5);margin-top:16px;">Delivery time in distant markets, once Amazon carries the stock.</p>
+        </div>
+        <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
+          <div class="rule"><span class="icon" data-lucide="zap"></span><div>Amazon collapses delivery time — the single thing an urgent buyer values most.</div></div>
+          <div class="rule"><span class="icon" data-lucide="globe-2"></span><div>Growth markets with no distributor (South America, Africa, China) become reachable.</div></div>
+          <div class="rule"><span class="icon" data-lucide="search"></span><div>And a large pool of <b>latent demand</b> is buying adjacent gear right now — we go get it.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">03</span></div>
+  </section>
+
+  <!-- 4 · TWO WORKSTREAMS -->
+  <section class="paper" data-label="The plan">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">The plan</span>
+        <h2 class="anim">Two workstreams, one outcome.</h2>
+      </div>
+      <div class="ws-grid">
+        <div class="ws anim">
+          <span class="tag">Workstream 1 · one-off</span>
+          <h3>Setup</h3>
+          <div class="price">€5.000</div>
+          <ul>
+            <li><span class="icon" data-lucide="check"></span>Get both brands live &amp; optimized across 4 markets</li>
+            <li><span class="icon" data-lucide="check"></span>Fix the foundations before a single euro of ads</li>
+          </ul>
+        </div>
+        <div class="ws anim">
+          <span class="tag">Workstream 2 · 6 months</span>
+          <h3>Advertising</h3>
+          <div class="price">€4.500</div>
+          <ul>
+            <li><span class="icon" data-lucide="check"></span>Managed campaigns across IT · DE · FR · ES to year-end</li>
+            <li><span class="icon" data-lucide="check"></span>Capture explicit + latent demand, protect the budget</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">04</span></div>
+  </section>
+
+  <!-- 5 · WORKSTREAM 1 — SETUP -->
+  <section data-label="Setup">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Workstream 1 · Setup · €5.000</span>
+        <h2 class="anim">One-off setup, all four markets.</h2>
+      </div>
+      <div class="detail">
+        <ul class="detail-list anim">
+          <li><span class="icon" data-lucide="radar"></span><div><b>Marketplace &amp; competitor assessment</b> across IT · DE · FR · ES.</div></li>
+          <li><span class="icon" data-lucide="layout-panel-top"></span><div><b>Listing optimization + A+ content</b> for Fuelstat &amp; AquaFighter — premium technical positioning.</div></li>
+          <li><span class="icon" data-lucide="languages"></span><div><b>Localization</b> in IT · DE · FR · ES, written for each market.</div></li>
+          <li><span class="icon" data-lucide="git-branch"></span><div><b>1P → 3P evaluation</b> to regain pricing control and align with your distributors.</div></li>
+        </ul>
+        <div class="note-card anim">
+          <div class="eyebrow o">No brand store</div>
+          <p>With a single hero product per brand, a full store wouldn't earn its cost. We put the whole budget where it moves sales — and add a store later only if the range grows.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
+  </section>
+
+  <!-- 6 · WORKSTREAM 2 — ADVERTISING (interactive) -->
+  <section class="paper" data-label="Advertising">
+    <div class="pad">
+      <div class="head" style="margin-bottom:36px;">
+        <span class="eyebrow anim">Workstream 2 · Advertising · €4.500 · 6 months</span>
+        <h2 class="anim">Three layers of demand.</h2>
+      </div>
+      <div class="adv anim">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-tab="explicit"><span class="n">01</span>Explicit</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="latent"><span class="n">02</span>Latent</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="negative"><span class="n">03</span>Negatives</button>
+        </div>
+
+        <div class="panel" data-panel="explicit" data-active>
+          <div>
+            <h3>People already searching for you.</h3>
+            <p>The easy wins: buyers typing exactly what you sell. We own these keywords first and convert them.</p>
+          </div>
+          <div class="kwchips">
+            <span class="kw hot">fuel test kit</span>
+            <span class="kw hot">diesel tester</span>
+            <span class="kw hot">water absorber</span>
+            <span class="kw">jet fuel test</span>
+            <span class="kw">fuel contamination test</span>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="latent">
+          <div>
+            <h3>People buying <span class="o">around</span> you.</h3>
+            <p>The real upside: buyers who never search your product but purchase adjacent gear. We place you right next to it — the natural companion buy.</p>
+          </div>
+          <div class="kwchips">
+            <span class="kw">diesel pump</span>
+            <span class="kw">fuel transfer pump</span>
+            <span class="kw">storage tank</span>
+            <span class="kw">cistern / IBC</span>
+            <span class="kw">jerry can</span>
+            <span class="kw">fuel storage</span>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="negative">
+          <div>
+            <h3>Cutting the wasted spend.</h3>
+            <p>Some keywords surface domestic water filters and unrelated products. We exclude them aggressively so budget and ACOS stay under control.</p>
+          </div>
+          <div class="kwchips">
+            <span class="kw neg">water filter home</span>
+            <span class="kw neg">brita jug</span>
+            <span class="kw neg">drinking water</span>
+            <span class="kw neg">shower filter</span>
+            <span class="kw neg">aquarium</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:20px;color:var(--g500);margin:26px 0 0;">Ad budget (your side): from <b style="color:#000;font-weight:600;">€1.000 / month per channel</b> to start — then we optimize on real data.</p>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
+  </section>
+
+  <!-- 7 · TIMELINE -->
+  <section data-label="Timeline">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Timeline</span>
+        <h2 class="anim">Live in August, running to year-end.</h2>
+      </div>
+      <div class="tl anim">
+        <div class="tl-step">
+          <div class="tl-dot"></div>
+          <div class="tl-month">July</div>
+          <h3>Product &amp; listings</h3>
+          <p>Assessment, optimized listings + A+ content, localization across the 4 markets.</p>
+        </div>
+        <div class="tl-step">
+          <div class="tl-dot"></div>
+          <div class="tl-month">August</div>
+          <h3>Advertising live</h3>
+          <p>Campaigns switched on — explicit demand first, then latent, negatives from day one.</p>
+        </div>
+        <div class="tl-step">
+          <div class="tl-dot"></div>
+          <div class="tl-month">Sep → Dec</div>
+          <h3>Optimize &amp; scale</h3>
+          <p>Read the data, cut waste, scale what works across channels through year-end.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">07</span></div>
+  </section>
+
+  <!-- 8 · INVESTMENT -->
+  <section class="dark" data-label="Investment">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Investment</span>
+        <h2 class="anim">Clear numbers, no smoke.</h2>
+      </div>
+      <div class="inv">
+        <div class="card anim" style="background:#fff;color:#000;">
+          <span class="clabel">Setup · one-off</span>
+          <div class="cval"><span class="o">€</span>5.000</div>
+          <div class="csub">All 4 markets. Assessment, listings, A+ content, localization, 1P→3P.</div>
+        </div>
+        <div class="card anim" style="background:#fff;color:#000;">
+          <span class="clabel">Advertising · 6 months</span>
+          <div class="cval"><span class="o">€</span>4.500</div>
+          <div class="csub">mentor management fee, all 4 countries, through year-end.</div>
+        </div>
+        <div class="card accent anim">
+          <span class="clabel">Ad budget · your side</span>
+          <div class="cval">€1.000<span style="font-size:34px;font-weight:500;color:rgba(255,255,255,.6);">/mo·ch</span></div>
+          <div class="csub">Starting floor per channel, paid to Amazon — optimized as we learn.</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">08</span></div>
+  </section>
+
+  <!-- 9 · PROOF -->
+  <section data-label="Proof">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Track record</span>
+        <h2 class="anim">Technical brands we've already grown.</h2>
+      </div>
+      <div class="cases">
+        <a class="case anim" href="https://www.amazon.it/dp/B08LMZ4V6L" target="_blank" rel="noopener">
+          <div class="cmark"><span data-lucide="fuel"></span></div>
+          <div><div class="cname">Piusi</div><div class="cdesc">Fuel-handling equipment — managed with Vassallo Sistemi. Sector next to yours.</div></div>
+          <span class="clink">amazon.it <span data-lucide="external-link"></span></span>
+        </a>
+        <a class="case anim" href="https://www.amazon.co.uk/dp/B087GD4CVL" target="_blank" rel="noopener">
+          <div class="cmark"><span data-lucide="package"></span></div>
+          <div><div class="cname">Technical brand · UK</div><div class="cdesc">Premium technical product scaled on Amazon UK.</div></div>
+          <span class="clink">amazon.co.uk <span data-lucide="external-link"></span></span>
+        </a>
+        <a class="case anim" href="https://www.amazon.co.uk/dp/B00SOE10GM" target="_blank" rel="noopener">
+          <div class="cmark"><span data-lucide="package"></span></div>
+          <div><div class="cname">Technical brand · UK</div><div class="cdesc">Listing + content build for a specialist product line.</div></div>
+          <span class="clink">amazon.co.uk <span data-lucide="external-link"></span></span>
+        </a>
+      </div>
+    </div>
+    <div class="foot"><span>+11 countries · +300 mln in sales generated</span><span class="num-badge">09</span></div>
+  </section>
+
+  <!-- 10 · CLOSE / NEXT STEPS -->
+  <section class="dark" data-label="Next steps">
+    <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
+    <div class="pad">
+      <div class="close-wrap">
+        <div class="kicker anim o" style="margin-bottom:34px;">Next steps</div>
+        <h2 class="anim">Let's turn Amazon into a channel that works<span class="o">.</span></h2>
+        <ul class="next-list anim">
+          <li><span class="step-n">1</span><span>Confirm your Amazon UK account type — vendor 1P or seller 3P.</span></li>
+          <li><span class="step-n">2</span><span>30-minute call to lock scope &amp; timing.</span></li>
+          <li><span class="step-n">3</span><span>Kickoff: product in July, ads live in August.</span></li>
+        </ul>
+        <div class="anim" style="margin-top:56px;"><img src="assets/mentor-logo-white-dot.svg" style="height:48px;" alt="mentor" /></div>
+      </div>
+    </div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">10</span></div>
+  </section>
+
+</deck-stage>
+
+<script type="application/json" id="speaker-notes">
+{
+  "0": "Cover. Conidia × mentor. Two workstreams: setup + advertising. Markets IT/DE/FR/ES.",
+  "1": "Today: vendor 1P. Amazon controls price, resells into IT at ~€155 below floor, wins buy box. Confirm account type.",
+  "2": "Opportunity: urgency purchase → speed beats price. 1-2 weeks to 1-2 days. Growth markets + latent demand.",
+  "3": "The plan at a glance: Setup €5k one-off, Advertising €4.5k for 6 months.",
+  "4": "Setup detail. No store — single hero product per brand.",
+  "5": "Advertising. Walk the three tabs: explicit, latent (the real upside), negatives. Budget €1k/mo/channel to start.",
+  "6": "Timeline: July product, August ads live, Sep-Dec optimize.",
+  "7": "Investment. Three clean numbers.",
+  "8": "Proof: Piusi + UK cases.",
+  "9": "Close. Confirm account type → 30-min call → kickoff."
+}
+</script>
+
+<script src="deck-stage.js"></script>
+<script>
+  function paint(){ if(window.lucide){ lucide.createIcons(); } }
+  paint();
+  document.querySelector('deck-stage')?.addEventListener('slidechange', paint);
+  window.addEventListener('load', paint);
+
+  // Advertising slide — interactive tabs (scoped, does not interfere with deck nav)
+  document.querySelectorAll('.adv .tab').forEach(function(tab){
+    tab.addEventListener('click', function(e){
+      e.stopPropagation();
+      var adv = tab.closest('.adv');
+      adv.querySelectorAll('.tab').forEach(function(t){ t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+      var name = tab.getAttribute('data-tab');
+      adv.querySelectorAll('.panel').forEach(function(p){
+        if(p.getAttribute('data-panel') === name){ p.setAttribute('data-active',''); }
+        else { p.removeAttribute('data-active'); }
+      });
+    });
+  });
+</script>
+</body>
+</html>
