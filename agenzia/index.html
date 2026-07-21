@@ -136,6 +136,11 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .app-bar .dot{width:12px;height:12px;border-radius:50%;background:var(--g300);}
 .app-bar .url{margin-left:18px;font-size:15px;color:var(--g500);font-weight:500;letter-spacing:.02em;}
 .app-frame img{display:block;width:100%;height:auto;}
+/* stacked screenshots (dashboard in-flow front + heatmap absolute behind) */
+.app-stack{position:relative;max-width:1220px;margin:0 auto;padding:64px 140px 0 0;}
+.app-stack .app-frame.app-front{position:relative;z-index:2;width:100%;max-width:none;margin:0;}
+.app-back{position:absolute;top:0;right:0;width:54%;z-index:1;border-radius:12px;overflow:hidden;border:1px solid var(--g200);box-shadow:0 18px 44px rgba(0,0,0,.13);opacity:.92;}
+.app-back img{display:block;width:100%;height:auto;}
 
 /* inline link */
 .ilink{display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:600;color:var(--orange);text-decoration:none;margin-top:30px;}
@@ -337,9 +342,12 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <span class="eyebrow anim">Tecnologia proprietaria</span>
         <h2 class="anim">Il tuo business marketplace,<br>in un solo centro di controllo<span class="o">.</span></h2>
       </div>
-      <div class="app-frame anim">
-        <div class="app-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">app.marketplace-mentor.com · control center</span></div>
-        <img src="assets/marketforce-dashboard.png" alt="La piattaforma proprietaria di mentor — dashboard di controllo con KPI, sync automatico e anomalie operative" />
+      <div class="app-stack anim">
+        <div class="app-back"><img src="assets/marketforce-heatmap.png" alt="Performance heatmap con insight automatici generati dall'AI" /></div>
+        <div class="app-frame app-front">
+          <div class="app-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">app.marketforce.com</span></div>
+          <img src="assets/marketforce-dashboard.png" alt="La piattaforma proprietaria di mentor — dashboard di controllo con KPI, sync automatico e anomalie operative" />
+        </div>
       </div>
       <div class="rule-row anim" style="margin-top:32px;">
         <div class="rule"><span class="icon" data-lucide="activity"></span><div><b>Monitoraggio in tempo reale</b> — auto-sync di vendite, catalogo, advertising e account in un cruscotto unico su tutti i canali.</div></div>
