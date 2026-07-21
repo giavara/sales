@@ -102,14 +102,29 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .subnote{font-size:19px;color:var(--g400);margin-top:26px;}
 .dark .subnote{color:rgba(255,255,255,.4);}
 
-/* service cards */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;flex:1;}
+/* service / format cards */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;}
+.svc-grid.c4{grid-template-columns:repeat(4,1fr);}
 .svc{background:#fff;border:1px solid var(--g200);border-radius:16px;padding:32px 32px;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(20,20,20,.05);}
+.paper .svc,.dark .svc{box-shadow:none;}
 .svc .sic{width:56px;height:56px;border-radius:12px;background:rgba(255,114,55,.10);display:grid;place-items:center;color:var(--orange);margin-bottom:22px;}
 .svc .sic svg{width:28px;height:28px;}
 .svc h3{font-size:25px;margin-bottom:12px;}
 .svc p{font-size:18px;line-height:1.45;color:var(--g500);margin:0;}
 .svc b{color:#000;font-weight:600;}
+.svc-grid.c4 .svc{padding:28px 26px;} .svc-grid.c4 h3{font-size:22px;} .svc-grid.c4 p{font-size:17px;}
+.dark .svc{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);}
+.dark .svc h3{color:#fff;} .dark .svc p{color:rgba(255,255,255,.62);} .dark .svc b{color:#fff;}
+.dark .svc .sic{background:rgba(255,114,55,.18);}
+
+/* founders */
+.founder{margin-bottom:28px;}
+.founder b{display:block;font-size:27px;font-weight:600;color:#000;}
+.dark .founder b{color:#fff;}
+.founder span{display:block;font-size:19px;line-height:1.45;color:var(--g500);margin-top:6px;max-width:32ch;}
+.photo-frame{border-radius:18px;overflow:hidden;border:1px solid var(--g200);box-shadow:0 24px 60px rgba(0,0,0,.20);}
+.photo-frame img{display:block;width:100%;height:auto;}
+.caption{font-size:18px;line-height:1.45;color:var(--g500);margin-top:18px;font-style:italic;max-width:56ch;}
 
 /* case study visual */
 .case-visual{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 64px rgba(0,0,0,.45);height:720px;}
@@ -184,7 +199,26 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">02</span></div>
   </section>
 
-  <!-- 3 · GLOBAL SCALE-UP -->
+  <!-- 3 · I FONDATORI -->
+  <section class="paper" data-label="I fondatori">
+    <div class="pad">
+      <div class="split" style="grid-template-columns:0.82fr 1.18fr;gap:64px;align-items:center;">
+        <div>
+          <span class="eyebrow anim">Chi c'è dietro</span>
+          <h2 class="anim" style="margin:16px 0 34px;">I fondatori<span class="o">.</span></h2>
+          <div class="founder anim"><b>Eleonora Calvi Parisetti</b><span>Managing Partner. Esperta Amazon e marketplace, autrice di «Vendere su Amazon» e «Amazon Advertising».</span></div>
+          <div class="founder anim"><b>Andrea Giavara</b><span>Founder. Marketing &amp; advertising strategist, con focus su vendita e crescita sui marketplace.</span></div>
+        </div>
+        <div class="anim">
+          <div class="photo-frame"><img src="assets/founders-podcast.jpg" alt="I fondatori di mentor durante un podcast per Amazon" /></div>
+          <div class="caption">I fondatori di mentor, Eleonora e Andrea, durante la registrazione di un podcast per Amazon.</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>mentor® · marketplace-mentor.com</span><span class="num-badge">03</span></div>
+  </section>
+
+  <!-- 4 · GLOBAL SCALE-UP -->
   <section class="dark" data-label="Ti facciamo vendere in tutto il mondo">
     <div class="pad">
       <div class="head" style="margin-bottom:34px;">
@@ -202,10 +236,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       </div>
       <div class="subnote anim">…e altri marketplace europei e globali.</div>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">03</span></div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">04</span></div>
   </section>
 
-  <!-- 4 · IL METODO MENTOR -->
+  <!-- 5 · IL METODO MENTOR -->
   <section class="paper" data-label="Il Metodo Mentor">
     <div class="pad">
       <div class="head">
@@ -223,29 +257,73 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="rule"><span class="icon" data-lucide="rocket"></span><div><b>ADV performante</b><br><span style="font-size:19px;">Advertising e tecnicismi presidiati con dati alla mano.</span></div></div>
       </div>
     </div>
-    <div class="foot"><span>Strategia · Advertising · Tecnicismi — un'unica regia</span><span class="num-badge">04</span></div>
+    <div class="foot"><span>Strategia · Advertising · Tecnicismi — un'unica regia</span><span class="num-badge">05</span></div>
   </section>
 
-  <!-- 5 · I NOSTRI SERVIZI -->
+  <!-- 6 · I NOSTRI SERVIZI -->
   <section data-label="I nostri servizi">
     <div class="pad">
       <div class="head" style="margin-bottom:34px;">
         <span class="eyebrow anim">Cosa possiamo fare</span>
         <h2 class="anim">Un servizio completo,<br>strategico e operativo<span class="o">.</span></h2>
       </div>
-      <div class="svc-grid anim">
-        <div class="svc"><div class="sic"><span data-lucide="rocket"></span></div><h3>Avvio marketplace</h3><p>Apertura e setup account, primo catalogo ottimizzato, prima campagna advertising. <b>Pronti a vendere in ~30 giorni.</b></p></div>
-        <div class="svc"><div class="sic"><span data-lucide="settings-2"></span></div><h3>Gestione operativa</h3><p>Gestione strategica e operativa dell'account: catalogo, prezzi, offerte, presidio quotidiano. <b>La macchina di vendita gestita da noi.</b></p></div>
-        <div class="svc"><div class="sic"><span data-lucide="compass"></span></div><h3>Consulenza strategica</h3><p>Analisi di mercato, competitor e keyword; <b>piano strategico-operativo</b> su misura per il tuo brand.</p></div>
-        <div class="svc"><div class="sic"><span data-lucide="megaphone"></span></div><h3>Advertising &amp; Retail Media</h3><p>Sponsored Products, Brands, Display e DSP: <b>funnel completo</b>, taCOS 8–12%.</p></div>
-        <div class="svc"><div class="sic"><span data-lucide="images"></span></div><h3>Contenuti &amp; Brand</h3><p>Schede, A+, Store, <b>foto e SEO</b> marketplace. Brand protection e identità coerente.</p></div>
-        <div class="svc"><div class="sic"><span data-lucide="graduation-cap"></span></div><h3>Formazione &amp; Customer Care</h3><p>Formazione del tuo team e <b>customer care 360°</b> per fidelizzare il cliente.</p></div>
+      <div class="svc-grid anim" style="flex:1;">
+        <div class="svc"><div class="sic"><span data-lucide="rocket"></span></div><h3>Avvio &amp; apertura canale</h3><p>Setup account Seller o Vendor, primo catalogo ottimizzato, prima campagna. <b>Pronti a vendere in ~30 giorni.</b></p></div>
+        <div class="svc"><div class="sic"><span data-lucide="settings-2"></span></div><h3>Gestione operativa</h3><p>Gestione strategica e operativa quotidiana dell'account: catalogo, prezzi, offerte, presidio. <b>La macchina di vendita gestita da noi.</b></p></div>
+        <div class="svc"><div class="sic"><span data-lucide="images"></span></div><h3>Contenuti &amp; Listing</h3><p>Schede, testi <b>SEO</b>, foto prodotto, A+ e famiglie prodotto per la miglior resa del catalogo.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="shield-check"></span></div><h3>Brand protection</h3><p>Brand Registry, <b>Transparency</b>, gestione infringement e difesa dalla contraffazione.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="megaphone"></span></div><h3>Advertising &amp; Retail Media</h3><p>Sponsored Products, Brands, Display e <b>Amazon DSP</b>. Il dettaglio nella prossima slide.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="trending-up"></span></div><h3>Vendor &amp; margini</h3><p>Chargeback, giacenze, sell-in / sell-out, LQS &amp; BQS. <b>Il lato business del canale.</b></p></div>
       </div>
+      <div class="subnote anim" style="margin-top:24px;">+ analisi di mercato &amp; margini · roadmap strategica · promozioni, offerte &amp; influencer · formazione · customer care 360°</div>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
   </section>
 
-  <!-- 6 · LEGAMI CASE STUDY -->
+  <!-- 7 · AMAZON ADVERTISING -->
+  <section class="dark" data-label="Amazon Advertising">
+    <div class="pad">
+      <div class="head" style="margin-bottom:26px;">
+        <span class="eyebrow anim">Amazon Advertising</span>
+        <h2 class="anim">Non è «solo Amazon».<br>È un canale media globale<span class="o">.</span></h2>
+      </div>
+      <p class="lead anim" style="max-width:66ch;">Strategia, campagne, creatività, bidding e report: lavoriamo ogni giorno per <b style="color:#fff;font-weight:600">ridurre l'ACoS</b> e far crescere vendite e visibilità.</p>
+      <div class="svc-grid c4 anim" style="margin-top:38px;">
+        <div class="svc"><div class="sic"><span data-lucide="search"></span></div><h3>Sponsored Products</h3><p>Annunci CPC sui risultati di ricerca, targeting manuale e automatico.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="flag"></span></div><h3>Sponsored Brands</h3><p>Banner, logo e prodotti per i brand registrati. Presidio del marchio.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="monitor"></span></div><h3>Sponsored Display</h3><p>Retargeting e audience per interessi d'acquisto, dentro e fuori Amazon.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="radio-tower"></span></div><h3>Amazon DSP</h3><p>Display, video e audio programmatici: un vero canale media.</p></div>
+      </div>
+      <div class="rule-row anim" style="margin-top:40px;">
+        <div class="rule"><span class="icon" data-lucide="target"></span><div><b>Automation bidding</b> in tempo reale a livello di singola keyword.</div></div>
+        <div class="rule"><span class="icon" data-lucide="bar-chart-3"></span><div>Report <b>bisettimanali</b> + analisi del trend vendite settimanale.</div></div>
+        <div class="rule"><span class="icon" data-lucide="gauge"></span><div>Focus su <b>ACoS ↓</b>, ROAS e visibilità — budget importanti ottimizzati.</div></div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">07</span></div>
+  </section>
+
+  <!-- 8 · VENDOR & 1P -->
+  <section data-label="Business Vendor 1P">
+    <div class="pad">
+      <div class="head" style="margin-bottom:28px;">
+        <span class="eyebrow anim">Business Vendor (1P)</span>
+        <h2 class="anim">Il lato Vendor:<br>dove si recupera margine<span class="o">.</span></h2>
+      </div>
+      <p class="lead anim" style="max-width:64ch;">Sul canale Vendor il valore è nel <b style="color:#000;font-weight:600">business</b>, non solo nel media: rotazioni, marginalità e logistica. È il lavoro che facciamo ogni giorno sui vendor.</p>
+      <div class="svc-grid anim" style="margin-top:36px;">
+        <div class="svc"><div class="sic"><span data-lucide="badge-percent"></span></div><h3>Chargeback</h3><p>Recupero di punti di margine su addebiti e <b>deduction</b> Amazon.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="boxes"></span></div><h3>Giacenze &amp; rotazioni</h3><p>Verifica delle giacenze, gestione stock e riordini per evitare rotture.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="arrow-left-right"></span></div><h3>Sell-in / sell-out</h3><p>Riallineamento e lettura a <b>livello business</b>, non solo media.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="gauge"></span></div><h3>LQS &amp; BQS</h3><p>Analisi qualità di listing e contenuti, <b>retail readiness</b>.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="shuffle"></span></div><h3>Valutazione 1P ↔ 3P</h3><p>Controllo su prezzo e distribuzione EU: quando conviene passare a Seller.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="file-text"></span></div><h3>PO &amp; negoziazione</h3><p>Gestione ordini e trattativa con Amazon, a tutela del brand.</p></div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">08</span></div>
+  </section>
+
+  <!-- 9 · LEGAMI CASE STUDY -->
   <section class="dark" data-label="Case study — Legami">
     <div class="pad">
       <div class="split" style="grid-template-columns:1.08fr 0.92fr;gap:64px;align-items:center;">
@@ -263,10 +341,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="case-visual anim"><img src="assets/legami-store.png" alt="Legami su Amazon" /></div>
       </div>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">09</span></div>
   </section>
 
-  <!-- 7 · CI HANNO SCELTO -->
+  <!-- 10 · CI HANNO SCELTO -->
   <section class="paper" data-label="Ci hanno scelto">
     <div class="pad">
       <div class="head" style="margin-bottom:34px;">
@@ -285,10 +363,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="logo-cell"><img src="assets/cl-arbremagique.png" alt="Arbre Magique" /></div>
       </div>
     </div>
-    <div class="foot"><span>Brand che crescono con noi sui marketplace</span><span class="num-badge">07</span></div>
+    <div class="foot"><span>Brand che crescono con noi sui marketplace</span><span class="num-badge">10</span></div>
   </section>
 
-  <!-- 8 · PROVEN SUCCESS -->
+  <!-- 11 · PROVEN SUCCESS -->
   <section data-label="Proven success">
     <div class="pad">
       <div class="head">
@@ -308,10 +386,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">08</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">11</span></div>
   </section>
 
-  <!-- 9 · RASSEGNA STAMPA -->
+  <!-- 12 · RASSEGNA STAMPA -->
   <section class="paper" data-label="Rassegna stampa">
     <div class="pad">
       <div class="head" style="margin-bottom:30px;">
@@ -336,10 +414,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="logo-cell"><img src="assets/pr-innovationnation.png" alt="Innovation Nation" /></div>
       </div>
     </div>
-    <div class="foot"><span>Testate giornalistiche di business ed economia</span><span class="num-badge">09</span></div>
+    <div class="foot"><span>Testate giornalistiche di business ed economia</span><span class="num-badge">12</span></div>
   </section>
 
-  <!-- 10 · CONTATTI / CLOSE -->
+  <!-- 13 · CONTATTI / CLOSE -->
   <section class="dark" data-label="Contatti">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
@@ -358,7 +436,7 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="cta-sub anim">Prenota in agenda, oppure inviaci una email pre-compilata in un click.</div>
       </div>
     </div>
-    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">10</span></div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">13</span></div>
   </section>
 
 </deck-stage>
