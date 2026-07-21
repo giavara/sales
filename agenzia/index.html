@@ -68,21 +68,6 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 
 /* two-column split */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;align-items:center;}
-.prod-list{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-direction:column;gap:18px;}
-.prod-list li{display:flex;gap:14px;align-items:flex-start;font-size:23px;line-height:1.4;color:var(--g600);}
-.dark .prod-list li{color:rgba(255,255,255,.78);}
-.prod-list .icon{color:var(--orange);flex:none;margin-top:3px;}
-.prod-list b{color:#000;font-weight:600;}
-.dark .prod-list b{color:#fff;}
-
-/* KPI cards */
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:8px;}
-.kpi{background:#fff;border:1px solid var(--g200);border-radius:14px;padding:32px 30px;display:flex;flex-direction:column;}
-.paper .kpi{box-shadow:0 4px 14px rgba(20,20,20,.05);}
-.kpi .kic{color:var(--orange);margin-bottom:20px;}
-.kpi .kval{font-size:60px;font-weight:600;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;}
-.kpi .kunit{font-size:26px;font-weight:600;color:var(--g400);}
-.kpi .klabel{font-size:19px;font-weight:500;color:var(--g500);margin-top:14px;line-height:1.35;}
 
 /* big number band */
 .band{display:flex;gap:40px;margin-top:20px;}
@@ -90,19 +75,6 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .band .bval{font-size:76px;font-weight:600;letter-spacing:-0.02em;line-height:1;color:var(--orange);font-variant-numeric:tabular-nums;}
 .band .blabel{font-size:21px;color:var(--g600);margin-top:14px;line-height:1.4;max-width:20ch;}
 .dark .band .blabel{color:rgba(255,255,255,.7);}
-
-/* roadmap */
-.road{display:flex;gap:0;margin-top:20px;flex:1;align-items:stretch;}
-.rstep{flex:1;position:relative;padding:0 26px;display:flex;flex-direction:column;}
-.rstep:not(:last-child){border-right:1px solid var(--g200);}
-.rstep .rnum{width:52px;height:52px;border-radius:999px;background:#000;color:#fff;font-size:24px;font-weight:600;display:grid;place-items:center;margin-bottom:24px;}
-.rstep.accent .rnum{background:var(--orange);}
-.rstep h3{margin-bottom:14px;}
-.rstep p{font-size:19px;line-height:1.45;color:var(--g600);margin:0;}
-.rstep .when{font-size:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--g400);margin-top:auto;padding-top:22px;}
-.dark .rstep p{color:rgba(255,255,255,.72);}
-.dark .rstep:not(:last-child){border-right-color:rgba(255,255,255,.14);}
-.dark .rstep .when{color:rgba(255,255,255,.45);}
 
 /* quote cards */
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;align-content:center;}
@@ -112,22 +84,36 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .qcard .qwho{margin-top:30px;padding-top:22px;border-top:1px solid var(--g200);font-size:20px;font-weight:600;color:#000;}
 .qcard .qwho span{display:block;font-size:17px;font-weight:500;color:var(--g500);margin-top:4px;}
 
-/* flags / marketplace pills */
-.flags{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;}
-.flag{font-size:23px;font-weight:600;padding:14px 28px;border-radius:999px;background:var(--g100);color:var(--g600);border:1px solid var(--g200);}
-.dark .flag{background:rgba(255,255,255,.06);color:rgba(255,255,255,.82);border-color:rgba(255,255,255,.16);}
-.flag.live{background:var(--orange);color:#fff;border-color:var(--orange);}
-
 /* credential pills */
 .creds{display:flex;flex-wrap:wrap;gap:16px;margin-top:6px;}
 .cred{display:inline-flex;align-items:center;gap:12px;font-size:20px;font-weight:600;padding:15px 26px;border-radius:14px;background:#fff;border:1px solid var(--g200);color:#000;}
 .dark .cred{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16);color:#fff;}
 .cred .icon{color:var(--orange);}
 
-/* press logo placeholders */
-.press{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px;}
-.press .plogo{height:120px;border:1px dashed var(--g300);border-radius:14px;display:grid;place-items:center;color:var(--g400);font-size:17px;font-weight:600;letter-spacing:.04em;}
-.dark .press .plogo{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.4);}
+/* logo walls (marketplace / clients / press) */
+.logo-wall{display:grid;gap:18px;margin-top:8px;}
+.logo-wall.c3{grid-template-columns:repeat(3,1fr);}
+.logo-wall.c5{grid-template-columns:repeat(5,1fr);}
+.logo-cell{background:#fff;border:1px solid var(--g200);border-radius:14px;display:grid;place-items:center;padding:22px;box-shadow:0 3px 10px rgba(20,20,20,.04);}
+.logo-cell img{max-width:100%;max-height:100%;object-fit:contain;}
+.mpw .logo-cell{height:168px;} .mpw .logo-cell img{max-height:88px;}
+.cliw .logo-cell{height:152px;} .cliw .logo-cell img{max-height:76px;}
+.prw .logo-cell{height:118px;padding:16px 22px;} .prw .logo-cell img{max-height:58px;filter:grayscale(1);opacity:.7;}
+.subnote{font-size:19px;color:var(--g400);margin-top:26px;}
+.dark .subnote{color:rgba(255,255,255,.4);}
+
+/* service cards */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;flex:1;}
+.svc{background:#fff;border:1px solid var(--g200);border-radius:16px;padding:32px 32px;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(20,20,20,.05);}
+.svc .sic{width:56px;height:56px;border-radius:12px;background:rgba(255,114,55,.10);display:grid;place-items:center;color:var(--orange);margin-bottom:22px;}
+.svc .sic svg{width:28px;height:28px;}
+.svc h3{font-size:25px;margin-bottom:12px;}
+.svc p{font-size:18px;line-height:1.45;color:var(--g500);margin:0;}
+.svc b{color:#000;font-weight:600;}
+
+/* case study visual */
+.case-visual{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 64px rgba(0,0,0,.45);height:720px;}
+.case-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
 
 /* inline link */
 .ilink{display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:600;color:var(--orange);text-decoration:none;margin-top:30px;}
@@ -186,7 +172,7 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       <div class="band anim" style="margin-top:48px;">
         <div class="bcell"><div class="bval">+300<span style="font-size:34px;color:var(--g400);">M €</span></div><div class="blabel">di vendite online generate per i brand</div></div>
         <div class="bcell"><div class="bval">+10<span style="font-size:34px;color:var(--g400);">M €</span></div><div class="blabel">di budget advertising gestito</div></div>
-        <div class="bcell"><div class="bval">2019<span style="font-size:34px;color:var(--g400);">→oggi</span></div><div class="blabel">brand italiani accompagnati sui marketplace globali</div></div>
+        <div class="bcell"><div class="bval">350<span style="font-size:34px;color:var(--g400);">+</span></div><div class="blabel">brand seguiti sui marketplace globali</div></div>
       </div>
       <div class="creds anim" style="margin-top:52px;">
         <span class="cred"><span class="icon" data-lucide="award"></span>Amazon Advanced Partner</span>
@@ -201,23 +187,20 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
   <!-- 3 · GLOBAL SCALE-UP -->
   <section class="dark" data-label="Ti facciamo vendere in tutto il mondo">
     <div class="pad">
-      <div class="head">
+      <div class="head" style="margin-bottom:34px;">
         <span class="eyebrow anim">Global scale-up</span>
         <h2 class="anim">Ti facciamo vendere<br>in tutto il mondo<span class="o">.</span></h2>
       </div>
-      <p class="lead anim" style="max-width:56ch;">In partnership con i principali marketplace, costruiamo strategie di vendita internazionali per i brand che vogliono sfruttare tutte le possibilità della vendita online nei mercati globali.</p>
-      <div class="flags anim" style="margin-top:52px;">
-        <span class="flag live">Amazon</span>
-        <span class="flag">eBay</span>
-        <span class="flag">Kaufland</span>
-        <span class="flag">Zalando</span>
-        <span class="flag">Leroy Merlin</span>
-        <span class="flag">ManoMano</span>
-        <span class="flag">Cdiscount</span>
-        <span class="flag">Metro</span>
-        <span class="flag">bol.com</span>
-        <span class="flag">Maisons du Monde</span>
+      <p class="lead anim" style="max-width:60ch;">In partnership diretta con i principali marketplace, costruiamo strategie di vendita internazionali per i brand che vogliono crescere nei mercati globali.</p>
+      <div class="logo-wall c3 mpw anim" style="margin-top:40px;">
+        <div class="logo-cell"><img src="assets/mp-amazon.png" alt="Amazon" /></div>
+        <div class="logo-cell"><img src="assets/mp-kaufland.png" alt="Kaufland" /></div>
+        <div class="logo-cell"><img src="assets/mp-metro.png" alt="Metro" /></div>
+        <div class="logo-cell"><img src="assets/mp-bol.png" alt="bol.com" /></div>
+        <div class="logo-cell"><img src="assets/mp-leroymerlin.png" alt="Leroy Merlin" /></div>
+        <div class="logo-cell"><img src="assets/mp-maisons.png" alt="Maisons du Monde" /></div>
       </div>
+      <div class="subnote anim">…e altri marketplace europei e globali.</div>
     </div>
     <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">03</span></div>
   </section>
@@ -243,24 +226,69 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><span>Strategia · Advertising · Tecnicismi — un'unica regia</span><span class="num-badge">04</span></div>
   </section>
 
-  <!-- 5 · LEGAMI CASE STUDY -->
-  <section class="dark" data-label="Case study — Legami">
+  <!-- 5 · I NOSTRI SERVIZI -->
+  <section data-label="I nostri servizi">
     <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">Case study — Legami</span>
-        <h2 class="anim">Consulenza strategica<br>e operatività, su Amazon<span class="o">.</span></h2>
+      <div class="head" style="margin-bottom:34px;">
+        <span class="eyebrow anim">Cosa possiamo fare</span>
+        <h2 class="anim">Un servizio completo,<br>strategico e operativo<span class="o">.</span></h2>
       </div>
-      <p class="lead anim" style="max-width:56ch;">Per Legami abbiamo sviluppato una sinergia tra consulenza strategica e supporto operativo per consolidare la presenza del brand su Amazon.</p>
-      <div class="band anim" style="margin-top:44px;">
-        <div class="bcell"><div class="bval">+77<span style="font-size:34px;color:rgba(255,255,255,.5);">%</span></div><div class="blabel">aumento delle vendite mensili</div></div>
-        <div class="bcell"><div class="bval">+93<span style="font-size:34px;color:rgba(255,255,255,.5);">%</span></div><div class="blabel">aumento visualizzazioni pagina prodotto</div></div>
+      <div class="svc-grid anim">
+        <div class="svc"><div class="sic"><span data-lucide="rocket"></span></div><h3>Avvio marketplace</h3><p>Apertura e setup account, primo catalogo ottimizzato, prima campagna advertising. <b>Pronti a vendere in ~30 giorni.</b></p></div>
+        <div class="svc"><div class="sic"><span data-lucide="settings-2"></span></div><h3>Gestione operativa</h3><p>Gestione strategica e operativa dell'account: catalogo, prezzi, offerte, presidio quotidiano. <b>La macchina di vendita gestita da noi.</b></p></div>
+        <div class="svc"><div class="sic"><span data-lucide="compass"></span></div><h3>Consulenza strategica</h3><p>Analisi di mercato, competitor e keyword; <b>piano strategico-operativo</b> su misura per il tuo brand.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="megaphone"></span></div><h3>Advertising &amp; Retail Media</h3><p>Sponsored Products, Brands, Display e DSP: <b>funnel completo</b>, taCOS 8–12%.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="images"></span></div><h3>Contenuti &amp; Brand</h3><p>Schede, A+, Store, <b>foto e SEO</b> marketplace. Brand protection e identità coerente.</p></div>
+        <div class="svc"><div class="sic"><span data-lucide="graduation-cap"></span></div><h3>Formazione &amp; Customer Care</h3><p>Formazione del tuo team e <b>customer care 360°</b> per fidelizzare il cliente.</p></div>
       </div>
-      <a class="ilink anim" href="https://www.marketplace-mentor.com/portfolio-legami/" target="_blank" rel="noopener"><span data-lucide="arrow-up-right"></span>Guarda il caso studio completo</a>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
   </section>
 
-  <!-- 6 · PROVEN SUCCESS -->
+  <!-- 6 · LEGAMI CASE STUDY -->
+  <section class="dark" data-label="Case study — Legami">
+    <div class="pad">
+      <div class="split" style="grid-template-columns:1.08fr 0.92fr;gap:64px;align-items:center;">
+        <div>
+          <span class="eyebrow anim">Case study</span>
+          <img class="anim" src="assets/cl-legami.png" alt="Legami" style="height:66px;display:block;margin:20px 0 26px;" />
+          <h2 class="anim" style="font-size:58px;">Presenza Amazon<br>consolidata<span class="o">.</span></h2>
+          <p class="lead anim" style="margin-top:24px;max-width:32ch;font-size:24px;">Sinergia tra <b style="color:#fff;font-weight:600">consulenza strategica</b> e <b style="color:#fff;font-weight:600">supporto operativo</b> per consolidare la presenza del brand su Amazon.</p>
+          <div class="band anim" style="margin-top:38px;">
+            <div class="bcell"><div class="bval">+77<span style="font-size:34px;color:rgba(255,255,255,.5);">%</span></div><div class="blabel">vendite mensili</div></div>
+            <div class="bcell"><div class="bval">+93<span style="font-size:34px;color:rgba(255,255,255,.5);">%</span></div><div class="blabel">visualizzazioni pagina prodotto</div></div>
+          </div>
+          <a class="ilink anim" href="https://www.marketplace-mentor.com/portfolio-legami/" target="_blank" rel="noopener"><span data-lucide="arrow-up-right"></span>Guarda il caso studio completo</a>
+        </div>
+        <div class="case-visual anim"><img src="assets/legami-store.png" alt="Legami su Amazon" /></div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
+  </section>
+
+  <!-- 7 · CI HANNO SCELTO -->
+  <section class="paper" data-label="Ci hanno scelto">
+    <div class="pad">
+      <div class="head" style="margin-bottom:34px;">
+        <span class="eyebrow anim">I nostri clienti</span>
+        <h2 class="anim">Ci hanno scelto<span class="o">.</span></h2>
+      </div>
+      <div class="logo-wall c3 cliw anim">
+        <div class="logo-cell"><img src="assets/cl-legami.png" alt="Legami" /></div>
+        <div class="logo-cell"><img src="assets/cl-dsquared.png" alt="Dsquared2" /></div>
+        <div class="logo-cell"><img src="assets/cl-pegperego.png" alt="Peg Perego" /></div>
+        <div class="logo-cell"><img src="assets/cl-parlux.png" alt="Parlux" /></div>
+        <div class="logo-cell"><img src="assets/cl-italchimica.png" alt="Italchimica" /></div>
+        <div class="logo-cell"><img src="assets/cl-watt.png" alt="+Watt" /></div>
+        <div class="logo-cell"><img src="assets/cl-innovet.png" alt="Innovet" /></div>
+        <div class="logo-cell"><img src="assets/cl-dorelan.png" alt="Dorelan" /></div>
+        <div class="logo-cell"><img src="assets/cl-arbremagique.png" alt="Arbre Magique" /></div>
+      </div>
+    </div>
+    <div class="foot"><span>Brand che crescono con noi sui marketplace</span><span class="num-badge">07</span></div>
+  </section>
+
+  <!-- 8 · PROVEN SUCCESS -->
   <section data-label="Proven success">
     <div class="pad">
       <div class="head">
@@ -280,28 +308,38 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">08</span></div>
   </section>
 
-  <!-- 7 · RASSEGNA STAMPA -->
+  <!-- 9 · RASSEGNA STAMPA -->
   <section class="paper" data-label="Rassegna stampa">
     <div class="pad">
-      <div class="head">
+      <div class="head" style="margin-bottom:30px;">
         <span class="eyebrow anim">Rassegna stampa</span>
         <h2 class="anim">Ne hanno parlato<span class="o">.</span></h2>
       </div>
-      <p class="lead anim" style="max-width:56ch;">La nostra esperienza sui marketplace è stata raccontata dalle principali testate giornalistiche italiane di business ed economia.</p>
-      <div class="press anim" style="margin-top:44px;">
-        <div class="plogo">Logo testata</div>
-        <div class="plogo">Logo testata</div>
-        <div class="plogo">Logo testata</div>
-        <div class="plogo">Logo testata</div>
+      <div class="logo-wall c5 prw anim">
+        <div class="logo-cell"><img src="assets/pr-corriere.png" alt="Corriere della Sera" /></div>
+        <div class="logo-cell"><img src="assets/pr-sole24.png" alt="Il Sole 24 Ore" /></div>
+        <div class="logo-cell"><img src="assets/pr-panorama.png" alt="Panorama" /></div>
+        <div class="logo-cell"><img src="assets/pr-la7.png" alt="LA7" /></div>
+        <div class="logo-cell"><img src="assets/pr-gazzettino.png" alt="Il Gazzettino" /></div>
+        <div class="logo-cell"><img src="assets/pr-mattino.png" alt="Il Mattino di Padova" /></div>
+        <div class="logo-cell"><img src="assets/pr-startupitalia.png" alt="StartupItalia" /></div>
+        <div class="logo-cell"><img src="assets/pr-smau.png" alt="SMAU" /></div>
+        <div class="logo-cell"><img src="assets/pr-millionaire.png" alt="Millionaire" /></div>
+        <div class="logo-cell"><img src="assets/pr-ninja.png" alt="Ninja Marketing" /></div>
+        <div class="logo-cell"><img src="assets/pr-nordest.png" alt="NordEst Economia" /></div>
+        <div class="logo-cell"><img src="assets/pr-arena.png" alt="L'Arena" /></div>
+        <div class="logo-cell"><img src="assets/pr-altoadige.png" alt="AltoAdige Innovazione" /></div>
+        <div class="logo-cell"><img src="assets/pr-venetoeco.png" alt="Venetoeconomia" /></div>
+        <div class="logo-cell"><img src="assets/pr-innovationnation.png" alt="Innovation Nation" /></div>
       </div>
     </div>
-    <div class="foot"><span>Inserire i loghi delle testate (erano immagini nella slide originale)</span><span class="num-badge">07</span></div>
+    <div class="foot"><span>Testate giornalistiche di business ed economia</span><span class="num-badge">09</span></div>
   </section>
 
-  <!-- 8 · CONTATTI / CLOSE -->
+  <!-- 10 · CONTATTI / CLOSE -->
   <section class="dark" data-label="Contatti">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
@@ -320,7 +358,7 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="cta-sub anim">Prenota in agenda, oppure inviaci una email pre-compilata in un click.</div>
       </div>
     </div>
-    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">08</span></div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">10</span></div>
   </section>
 
 </deck-stage>
