@@ -70,23 +70,16 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .stat small{display:block;font-size:26px;font-weight:500;color:var(--g500);letter-spacing:0;margin-top:18px;max-width:24ch;line-height:1.4;}
 .dark .stat small{color:rgba(255,255,255,.6);}
 
-/* problem grid */
-.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;align-content:center;}
-.prob{border:1px solid var(--g200);border-radius:14px;background:#fff;padding:36px 38px;display:flex;gap:20px;align-items:flex-start;}
-.prob .icon{color:var(--orange);flex:none;margin-top:4px;}
-.prob h3{font-size:29px;margin-bottom:12px;}
-.prob p{font-size:21px;line-height:1.45;color:var(--g600);margin:0;}
+/* two-layer bands (come lavoriamo) */
+.layers{display:flex;flex-direction:column;gap:28px;flex:1;justify-content:center;}
+.layer{display:flex;gap:34px;align-items:flex-start;border:1px solid var(--g200);border-radius:16px;padding:38px 42px;background:#fff;}
+.layer .lmark{width:74px;height:74px;border-radius:16px;background:var(--ink);display:grid;place-items:center;flex:none;}
+.layer .lmark svg{width:34px;height:34px;color:var(--orange);}
+.layer .ltag{font-size:18px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);}
+.layer h3{font-size:32px;margin:8px 0 14px;}
+.layer p{font-size:22px;line-height:1.45;color:var(--g600);margin:0;max-width:62ch;}
 
-/* monthly cycle timeline */
-.tl{display:flex;gap:0;flex:1;align-items:stretch;margin-top:20px;}
-.tl-step{flex:1;position:relative;padding:0 26px;display:flex;flex-direction:column;justify-content:center;}
-.tl-step:not(:last-child)::after{content:"";position:absolute;top:64px;right:-1px;width:2px;height:60%;background:var(--g200);}
-.tl-dot{width:26px;height:26px;border-radius:999px;background:var(--orange);margin-bottom:28px;}
-.tl-step.muted .tl-dot{background:var(--g300);}
-.tl-month{font-size:24px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
-.tl-step.muted .tl-month{color:var(--g400);}
-.tl-step h3{font-size:28px;margin-bottom:14px;}
-.tl-step p{font-size:20px;line-height:1.45;color:var(--g500);margin:0;max-width:24ch;}
+/* note-card */
 .note-card{background:var(--g050);border:1px solid var(--g200);border-radius:14px;padding:30px 36px;}
 .note-card p{font-size:22px;line-height:1.5;color:var(--g600);margin:0;}
 
@@ -98,6 +91,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .plan .pval{font-size:72px;font-weight:600;letter-spacing:-0.02em;margin:20px 0 4px;font-variant-numeric:tabular-nums;line-height:1;}
 .plan .pval small{font-size:26px;font-weight:500;color:var(--g500);letter-spacing:0;}
 .plan .pper{font-size:20px;color:var(--g500);margin-bottom:26px;}
+.plan .pper b{color:var(--orange);font-weight:600;}
 .plan ul{list-style:none;padding:26px 0 0;margin:0;border-top:1px solid var(--g200);display:flex;flex-direction:column;gap:15px;}
 .plan li{display:flex;gap:13px;align-items:flex-start;font-size:20.5px;line-height:1.35;color:var(--g600);}
 .plan li .icon{color:var(--orange);flex:none;margin-top:2px;}
@@ -106,23 +100,6 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .fee-note .icon{color:var(--orange);flex:none;}
 .fee-note p{font-size:21px;line-height:1.45;color:rgba(255,255,255,.75);margin:0;}
 .fee-note b{color:#fff;font-weight:600;}
-
-/* math slide */
-.math{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;flex:1;align-items:center;}
-.price-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;}
-.price-list li{display:flex;align-items:baseline;gap:18px;font-size:25px;line-height:1.4;color:var(--g600);padding:20px 4px;border-bottom:1px solid var(--g200);}
-.price-list li:first-child{border-top:1px solid var(--g200);}
-.price-list .plname b{color:#000;font-weight:600;}
-.price-list .plname span{display:block;font-size:18px;color:var(--g400);margin-top:2px;}
-.price-list .plval{margin-left:auto;font-weight:600;color:#000;font-variant-numeric:tabular-nums;white-space:nowrap;}
-.price-list li.total{border-bottom:2px solid var(--ink);}
-.price-list li.total .plval{font-size:32px;}
-.math-card{background:var(--ink);color:#fff;border-radius:16px;padding:48px 46px;display:flex;flex-direction:column;}
-.math-card .plabel{font-size:19px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);}
-.math-card .pval{font-size:76px;font-weight:600;letter-spacing:-0.02em;margin:22px 0 8px;font-variant-numeric:tabular-nums;line-height:1;}
-.math-card .pval small{font-size:26px;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:0;}
-.math-card p{font-size:22px;line-height:1.5;color:rgba(255,255,255,.72);margin:18px 0 0;}
-.math-card b{color:#fff;font-weight:600;}
 
 /* close */
 .close-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;}
@@ -155,132 +132,89 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><span>marketplace-mentor.com</span><span>Preparato per PromoPharma · luglio 2026</span></div>
   </section>
 
-  <!-- 2 · DOVE SIAMO -->
-  <section data-label="Dove siamo">
+  <!-- 2 · CONTESTO (numeri catalogo + perché adesso) -->
+  <section data-label="Contesto">
     <div class="pad">
       <div class="head">
-        <span class="eyebrow anim">Dove siamo</span>
-        <h2 class="anim">La base c'è. Ora va fatta rendere.</h2>
+        <span class="eyebrow anim">Il contesto</span>
+        <h2 class="anim">Un catalogo grande, in un Amazon che cambia di continuo.</h2>
       </div>
       <div class="split">
         <div class="anim">
-          <div class="stat">110<small>prodotti main — 25 famiglie e 85 singoli, 194 SKU in tutto. Contenuti e gestione costruiti insieme in questi anni.</small></div>
+          <div class="stat">110<small>prodotti main — 25 famiglie e 85 singoli, 194 SKU in tutto. Base contenuti già costruita insieme in questi anni.</small></div>
         </div>
         <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
-          <div class="rule"><span class="icon" data-lucide="circle-check"></span><div><b>Il grosso del lavoro è fatto</b>: schede, contenuti, posizionamento. È un investimento che oggi produce vendite.</div></div>
-          <div class="rule"><span class="icon" data-lucide="shield-check"></span><div><b>Il canale è presidiato</b> dalla gestione operativa continuativa che già conoscete.</div></div>
-          <div class="rule"><span class="icon" data-lucide="triangle-alert"></span><div>Quello che manca è un <b>metodo di manutenzione</b>: oggi il catalogo si tocca quando serve, non con un ciclo che lo mantiene aggiornato di continuo.</div></div>
+          <div class="rule"><span class="icon" data-lucide="hourglass"></span><div><b>I contenuti invecchiano</b>: keyword, immagini e A+ perdono efficacia. La conversione cala piano, senza fare rumore.</div></div>
+          <div class="rule"><span class="icon" data-lucide="swords"></span><div><b>I competitor si muovono</b>: negli integratori contenuti e offerte si aggiornano di continuo. Chi sta fermo scivola in basso.</div></div>
+          <div class="rule"><span class="icon" data-lucide="eye-off"></span><div><b>Gli errori sono silenziosi</b>: schede soppresse, varianti che si staccano — costano vendite finché qualcuno non le vede.</div></div>
         </div>
       </div>
     </div>
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">02</span></div>
   </section>
 
-  <!-- 3 · PERCHÉ ADESSO -->
-  <section class="paper" data-label="Perché adesso">
+  <!-- 3 · COME LAVORIAMO (due livelli) -->
+  <section class="paper" data-label="Come lavoriamo">
     <div class="pad">
       <div class="head" style="margin-bottom:40px;">
-        <span class="eyebrow anim">Perché adesso</span>
-        <h2 class="anim">Amazon non sta fermo. I contenuti sì.</h2>
+        <span class="eyebrow anim">Come lavoriamo</span>
+        <h2 class="anim">Tutto sotto controllo. Ogni mese, la spinta dove serve.</h2>
       </div>
-      <div class="prob-grid">
-        <div class="prob anim">
-          <span class="icon" data-lucide="bot"></span>
+      <div class="layers">
+        <div class="layer anim">
+          <div class="lmark"><span data-lucide="radar"></span></div>
           <div>
-            <h3>Rufus e la ricerca AI</h3>
-            <p>Amazon sta riscrivendo il modo in cui i clienti trovano i prodotti. I testi scritti per il vecchio algoritmo perdono visibilità, un po' alla volta.</p>
+            <span class="ltag">Sempre</span>
+            <h3>Tutto il catalogo monitorato</h3>
+            <p>Teniamo d'occhio di continuo i 110 main e i 194 SKU: suppression, errori, varianti, schede degradate. Appena qualcosa si rompe interveniamo — niente cade nel vuoto.</p>
           </div>
         </div>
-        <div class="prob anim">
-          <span class="icon" data-lucide="swords"></span>
+        <div class="layer anim">
+          <div class="lmark"><span data-lucide="target"></span></div>
           <div>
-            <h3>I competitor si muovono</h3>
-            <p>Nella categoria integratori i competitor aggiornano contenuti, offerte e keyword di continuo. Chi sta fermo scivola in basso nei risultati.</p>
+            <span class="ltag">Ogni mese</span>
+            <h3>Ottimizzazione dove rende di più</h3>
+            <p>Ogni mese lavoriamo in profondità i prodotti a più alta priorità. A rotazione, nel corso dell'anno tutto il catalogo viene coperto — senza ripassare tutto ogni mese a vuoto.</p>
           </div>
         </div>
-        <div class="prob anim">
-          <span class="icon" data-lucide="hourglass"></span>
-          <div>
-            <h3>I contenuti invecchiano</h3>
-            <p>Keyword, immagini e A+ perdono efficacia nel tempo. La conversione cala piano, senza fare rumore: dal fatturato del mese non si vede.</p>
-          </div>
-        </div>
-        <div class="prob anim">
-          <span class="icon" data-lucide="eye-off"></span>
-          <div>
-            <h3>Gli errori sono silenziosi</h3>
-            <p>Schede soppresse, varianti che si staccano, contenuti degradati dai sistemi Amazon: costano vendite finché qualcuno non li vede.</p>
-          </div>
-        </div>
+      </div>
+      <div class="note-card anim" style="margin-top:32px;">
+        <p>Non rifacciamo tutto ogni mese: <b style="color:#000;font-weight:600;">teniamo tutto monitorato sempre</b>, e ogni mese spingiamo dove il ritorno è più alto.</p>
       </div>
     </div>
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">03</span></div>
   </section>
 
-  <!-- 4 · LA PROPOSTA -->
-  <section data-label="La proposta">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">La proposta</span>
-        <h2 class="anim">Un ciclo fisso, ogni mese, su tutto il catalogo.</h2>
-      </div>
-      <div class="tl anim">
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Settimana 1</div>
-          <h3>Controllo</h3>
-          <p>Audit del catalogo: errori, suppression, contenuti, keyword, mosse dei competitor.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Settimane 2–3</div>
-          <h3>Interventi</h3>
-          <p>Ottimizzazione per priorità, a rotazione: prima i prodotti che vendono di più, tutto il catalogo main nell'arco dell'anno.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Settimana 4</div>
-          <h3>Report</h3>
-          <p>Cosa abbiamo fatto, cosa abbiamo trovato, priorità del mese successivo.</p>
-        </div>
-      </div>
-      <div class="note-card anim">
-        <p>Non è un pacchetto di ore: è un metodo. Il catalogo smette di essere un cantiere da riaprire ogni volta e diventa <b style="color:#000;font-weight:600;">un asset mantenuto</b>, sempre allineato a come Amazon cambia.</p>
-      </div>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">04</span></div>
-  </section>
-
-  <!-- 5 · LE DUE FORMULE -->
+  <!-- 4 · LE DUE FORMULE -->
   <section class="dark" data-label="Le due formule">
     <div class="pad">
       <div class="head" style="margin-bottom:36px;">
         <span class="eyebrow anim">Le due formule</span>
-        <h2 class="anim">Scegliete quanto spingere.</h2>
+        <h2 class="anim">Ci mandate voi i materiali, o pensiamo a tutto noi.</h2>
       </div>
       <div class="plans">
         <div class="plan anim">
-          <span class="plabel">Base · Manutenzione</span>
+          <span class="plabel">Base · Manutenzione e ottimizzazione</span>
           <div class="pval">€400<small> /mese</small></div>
           <div class="pper">€3,64 a prodotto al mese</div>
           <ul>
-            <li><span class="icon" data-lucide="activity"></span><div><b>Monitoraggio continuo</b>: suppression, errori, varianti, schede degradate</div></li>
-            <li><span class="icon" data-lucide="wrench"></span><div><b>Manutenzione tecnica listing</b>: attributi, flat file, correzioni</div></li>
-            <li><span class="icon" data-lucide="search"></span><div><b>Keyword refresh</b> a rotazione su tutti i main</div></li>
-            <li><span class="icon" data-lucide="file-text"></span><div><b>Report mensile</b> con interventi fatti e priorità</div></li>
+            <li><span class="icon" data-lucide="radar"></span><div><b>Monitoraggio continuo</b> di tutto il catalogo: suppression, errori, varianti</div></li>
+            <li><span class="icon" data-lucide="wrench"></span><div><b>Sistemazione e ottimizzazione</b> tecnica: attributi, flat file, correzioni</div></li>
+            <li><span class="icon" data-lucide="target"></span><div><b>Ogni mese</b>, ottimizzazione profonda dei prodotti prioritari</div></li>
+            <li><span class="icon" data-lucide="search"></span><div><b>Testi ottimizzati SEO</b> a rotazione</div></li>
+            <li><span class="icon" data-lucide="image"></span><div><b>Aggiornamento di infografiche e A+</b> — sui materiali che ci fornite</div></li>
           </ul>
         </div>
         <div class="plan anim">
           <span class="pill">Consigliata</span>
-          <span class="plabel">Premium · Ottimizzazione completa</span>
+          <span class="plabel">Premium · Facciamo tutto noi</span>
           <div class="pval">€600<small> /mese</small></div>
-          <div class="pper">€5,45 a prodotto al mese · creatività inclusa</div>
+          <div class="pper">€5,45 a prodotto · <b>+€200 e facciamo tutto noi</b></div>
           <ul>
             <li><span class="icon" data-lucide="circle-check"></span><div><b>Tutto il piano Base</b>, più:</div></li>
-            <li><span class="icon" data-lucide="bot"></span><div><b>Testi ottimizzati per SEO e Rufus</b>: schede riscritte per la ricerca AI</div></li>
-            <li><span class="icon" data-lucide="image"></span><div><b>Infografiche e contenuti A+</b>: creazione e refresh a rotazione</div></li>
-            <li><span class="icon" data-lucide="repeat"></span><div><b>Rotazione completa</b>: tutto il catalogo main nell'arco dell'anno, priorità ai bestseller</div></li>
-            <li><span class="icon" data-lucide="store"></span><div><b>Store Amazon</b> aggiornato nel ciclo · nuovi lanci a parte</div></li>
+            <li><span class="icon" data-lucide="image"></span><div><b>Infografiche e A+ creati da noi</b>, ottimizzati per Amazon — basta ufficio grafico interno</div></li>
+            <li><span class="icon" data-lucide="store"></span><div><b>Store Amazon gestito da noi</b>: pagine, categorie, lanci stagionali e promo</div></li>
+            <li><span class="icon" data-lucide="sparkles"></span><div><b>Tutto in mano nostra</b>: produzione, ottimizzazione e caricamento — zero stress</div></li>
           </ul>
         </div>
       </div>
@@ -289,98 +223,31 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <p><b>La gestione attuale resta invariata</b> (€700/mese + 1% sul sell-out): l'upgrade si somma e copre un lavoro che oggi non è incluso.</p>
       </div>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">04</span></div>
   </section>
 
-  <!-- 6 · DUE CONTI -->
-  <section data-label="Due conti">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">Due conti</span>
-        <h2 class="anim">Lo stesso lavoro, comprato a progetto, costa di più. E invecchia.</h2>
-      </div>
-      <div class="math">
-        <div class="anim">
-          <ul class="price-list">
-            <li><span class="plname"><b>Contenuti A+</b><span>creazione o rifacimento, €120 a prodotto</span></span><span class="plval">€13.200</span></li>
-            <li><span class="plname"><b>Infografiche</b><span>set di immagini, €150 a prodotto</span></span><span class="plval">€16.500</span></li>
-            <li><span class="plname"><b>Testi SEO / Rufus</b><span>riscrittura, €90 a prodotto</span></span><span class="plval">€9.900</span></li>
-            <li class="total"><span class="plname"><b>Sul catalogo, una tantum</b><span>110 prodotti main, senza manutenzione</span></span><span class="plval">€39.600</span></li>
-          </ul>
-        </div>
-        <div class="math-card anim">
-          <span class="plabel">Premium · un anno</span>
-          <div class="pval">€7.200<small> /anno</small></div>
-          <p>Lo stesso lavoro creativo, ma <b>rifatto a rotazione dentro il ciclo</b> — più monitoraggio, manutenzione e report che a progetto non si comprano.</p>
-          <p style="margin-top:14px;">Il progetto una tantum tra un anno è di nuovo vecchio. <b>Il canone no.</b></p>
-        </div>
-      </div>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
-  </section>
-
-  <!-- 7 · PERCORSO -->
-  <section class="paper" data-label="Percorso">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">Percorso</span>
-        <h2 class="anim">Si parte a settembre. Pronti per il Q4.</h2>
-      </div>
-      <div class="tl anim">
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Agosto</div>
-          <h3>Conferma</h3>
-          <p>Scelta della formula e definizione delle priorità sul catalogo.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Settembre</div>
-          <h3>Primo ciclo</h3>
-          <p>Audit completo del catalogo e primi interventi sui prodotti chiave.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">Ottobre</div>
-          <h3>Prodotti chiave pronti</h3>
-          <p>I prodotti che pesano di più sistemati prima del picco: Black Friday e Q4 si preparano adesso.</p>
-        </div>
-        <div class="tl-step muted">
-          <div class="tl-dot"></div>
-          <div class="tl-month">A regime</div>
-          <h3>Ciclo mensile</h3>
-          <p>Controllo, interventi, report. Ogni mese, senza che dobbiate chiederlo.</p>
-        </div>
-      </div>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">07</span></div>
-  </section>
-
-  <!-- 8 · CLOSE -->
+  <!-- 5 · CLOSE -->
   <section class="dark" data-label="Next step">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
       <div class="close-wrap">
         <h2 class="anim">Il catalogo è l'asset<span class="o">.</span><br>Teniamolo al massimo.</h2>
-        <p class="lead anim" style="margin-top:28px;max-width:40ch;">Basta una conferma sulla formula: il primo ciclo parte a settembre, in tempo per il Q4.</p>
+        <p class="lead anim" style="margin-top:28px;max-width:40ch;">Basta scegliere la formula: il primo ciclo parte a settembre, in tempo per il Q4.</p>
         <p class="anim" style="margin-top:44px;font-size:24px;color:rgba(255,255,255,.6);">Ne parliamo quando volete, anche in call.</p>
       </div>
     </div>
-    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">08</span></div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">05</span></div>
   </section>
 
 </deck-stage>
 
 <script type="application/json" id="speaker-notes">
 {
-  "0": "Cover. Upgrade della collaborazione esistente, non una vendita da zero: manutenzione + aggiornamento + ottimizzazione continua del catalogo.",
-  "1": "Dove siamo: 110 prodotti main (25 famiglie + 85 singoli, 194 SKU), base contenuti fatta, canale presidiato. Il gap: manca un ciclo di manutenzione sistematico — oggi si interviene a chiamata.",
-  "2": "Perché adesso: Rufus/AI search cambia la visibilità, competitor integratori attivissimi, contenuti che invecchiano, errori silenziosi (suppression, varianti). La conversione cala senza fare rumore.",
-  "3": "La proposta: ciclo mensile fisso — settimana 1 audit, 2-3 interventi a rotazione (priorità ai bestseller, tutto il catalogo main nell'anno), 4 report. Metodo, non pacchetto ore.",
-  "4": "Le due formule: Base €400 (solo tecnica: monitoraggio, manutenzione listing, keyword, report) vs Premium €600 CONSIGLIATA (tutto + creatività: testi Rufus, infografiche/A+ a rotazione, store; nuovi lanci a parte). €3,64 vs €5,45 per prodotto/mese su 110 main. Gestione attuale €700+1% invariata.",
-  "5": "Due conti: a progetto A+ €120 + infografiche €150 + testi €90 = €360/prodotto × 110 → €39.600 sul catalogo, una tantum e invecchia. Premium €7.200/anno: stesso lavoro, continuo, più manutenzione. VERIFICARE listino infografiche/testi prima dell'invio (unico dato reale: A+ €120/ASIN dalla quotazione aprile).",
-  "6": "Percorso: agosto conferma, settembre primo ciclo, ottobre prodotti chiave pronti per BF/Q4, poi regime mensile. Leva urgenza = Q4.",
-  "7": "Close: il catalogo è l'asset. Serve solo la conferma della formula. Disponibili per call."
+  "0": "Cover. Upgrade della collaborazione esistente: manutenzione + ottimizzazione continua del catalogo, non una vendita da zero.",
+  "1": "Contesto (numeri + perché adesso, slide fuse): 110 main (25 famiglie + 85 singoli, 194 SKU), base contenuti fatta. Amazon cambia: contenuti invecchiano, competitor si muovono, errori silenziosi (suppression, varianti). Serve manutenzione sistematica.",
+  "2": "Come lavoriamo — CHIARIRE il malinteso: NON ripassiamo tutto il catalogo ogni mese. Due livelli: (1) SEMPRE monitoriamo tutti i 110 main / 194 SKU; (2) OGNI MESE ottimizziamo in profondità i prioritari, a rotazione sull'anno.",
+  "3": "Le due formule. Base €400: monitoraggio + ottimizzazione tecnica + testi SEO + aggiornamento infografiche/A+ SUI LORO MATERIALI (loro hanno ufficio grafico). Premium €600 (+€200): le creiamo NOI, ottimizzate per Amazon, + store gestito da noi (pagine, categorie, lanci, promo) = zero stress. Messaggio: €200 in più e pensiamo a tutto noi. Gestione €700+1% invariata.",
+  "4": "Close: il catalogo è l'asset. Scegliere la formula, primo ciclo a settembre per il Q4. Disponibili per call."
 }
 </script>
 
