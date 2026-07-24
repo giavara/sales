@@ -1,0 +1,276 @@
+<!doctype html>
+<!-- Peg Perego × mentor — Upgrade: gestione completa dei prodotti su 4 mercati (IT/FR/ES/DE) -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Peg Perego × mentor — Gestione completa catalogo</title>
+<link rel="icon" href="assets/mentor-mark-black.svg" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* ---- Poppins (self-hosted) ---- */
+@font-face{font-family:'Poppins';font-weight:300;font-style:normal;font-display:swap;src:url('fonts/Poppins-Light.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/Poppins-Regular.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/Poppins-Medium.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:600;font-style:normal;font-display:swap;src:url('fonts/Poppins-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/Poppins-Bold.ttf') format('truetype');}
+
+:root{
+  --ink:#000000; --white:#FFFFFF; --orange:#FF7237;
+  --g050:#FAFAF8; --g100:#F4F4F1; --g150:#ECECE8; --g200:#E4E4DF; --g300:#C7C7C2;
+  --g400:#9A9A96; --g500:#6E6E6B; --g600:#4A4A48;
+  --success:#1F9D63; --success100:#E4F3EA; --warning:#E5A019; --warning100:#FBF0D6;
+  --danger:#E0474D; --danger100:#FBE6E7;
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;}
+deck-stage:not(:defined){visibility:hidden;}
+deck-stage{background:#000;}
+
+section{
+  font-family:var(--font); color:var(--ink); background:var(--white);
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+.pad{position:absolute; inset:0; padding:96px 110px; display:flex; flex-direction:column;}
+.dark{background:var(--ink); color:var(--white);}
+.paper{background:var(--g050);}
+.o{color:var(--orange);}
+
+/* type helpers */
+.eyebrow{font-size:21px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--g500);}
+.dark .eyebrow{color:rgba(255,255,255,.55);}
+h1{font-size:104px;line-height:1.0;letter-spacing:-0.03em;font-weight:600;margin:0;}
+h2{font-size:68px;line-height:1.05;letter-spacing:-0.025em;font-weight:600;margin:0;}
+h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin:0;}
+.lead{font-size:30px;line-height:1.5;font-weight:400;color:var(--g600);max-width:32ch;}
+.dark .lead{color:rgba(255,255,255,.72);}
+.foot{position:absolute;left:110px;right:110px;bottom:54px;display:flex;align-items:center;justify-content:space-between;font-size:18px;color:var(--g400);}
+.dark .foot{color:rgba(255,255,255,.4);}
+.foot img{height:22px;display:block;}
+.num-badge{font-size:18px;font-weight:600;color:var(--g400);}
+
+/* cover */
+.cover-logo{height:88px;}
+.cover-mark{position:absolute;right:-120px;bottom:-140px;height:760px;opacity:.06;}
+.flags{display:flex;gap:14px;align-items:center;margin-top:34px;font-size:20px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.5);text-transform:uppercase;}
+.flags span{color:var(--orange);}
+
+/* generic grid header */
+.head{display:flex;flex-direction:column;gap:18px;margin-bottom:54px;}
+.head h2{max-width:26ch;}
+
+/* rules */
+.rule{flex:1;display:flex;gap:14px;align-items:flex-start;font-size:21px;line-height:1.45;color:var(--g600);}
+.dark .rule{color:rgba(255,255,255,.72);}
+.rule .icon{color:var(--orange);flex:none;margin-top:2px;}
+.rule b{color:#000;font-weight:600;}
+.dark .rule b{color:#fff;}
+
+/* two-column split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;align-items:center;}
+.stat{font-size:120px;font-weight:600;letter-spacing:-0.03em;line-height:.95;}
+.stat small{display:block;font-size:26px;font-weight:500;color:var(--g500);letter-spacing:0;margin-top:18px;max-width:24ch;line-height:1.4;}
+.dark .stat small{color:rgba(255,255,255,.6);}
+.stat .sub{display:block;font-size:30px;font-weight:600;color:var(--orange);letter-spacing:0;margin-top:22px;line-height:1.25;}
+
+/* thesis — contrasting cards */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:36px;flex:1;align-content:center;}
+.vcard{border-radius:18px;padding:44px 46px;display:flex;flex-direction:column;gap:20px;}
+.vcard.bad{background:var(--danger100);border:1px solid #F1C7C9;}
+.vcard.good{background:#fff;border:1px solid var(--g200);box-shadow:0 24px 60px rgba(255,114,55,.12);}
+.vcard .vtag{display:inline-flex;align-items:center;gap:12px;font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.vcard.bad .vtag{color:var(--danger);}
+.vcard.good .vtag{color:var(--orange);}
+.vcard .vtag svg{width:30px;height:30px;}
+.vcard h3{font-size:36px;line-height:1.1;}
+.vcard p{font-size:23px;line-height:1.45;color:var(--g600);margin:0;}
+.vcard p b{color:#000;font-weight:600;}
+
+/* two-layer bands (come lavoriamo) */
+.layers{display:flex;flex-direction:column;gap:24px;flex:1;justify-content:center;}
+.layer{display:flex;gap:34px;align-items:flex-start;border:1px solid var(--g200);border-radius:16px;padding:32px 42px;background:#fff;}
+.layer .lmark{width:74px;height:74px;border-radius:16px;background:var(--ink);display:grid;place-items:center;flex:none;}
+.layer .lmark svg{width:34px;height:34px;color:var(--orange);}
+.layer .ltag{font-size:18px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);}
+.layer h3{font-size:32px;margin:8px 0 14px;}
+.layer p{font-size:22px;line-height:1.45;color:var(--g600);margin:0;max-width:66ch;}
+.layer p b{color:#000;font-weight:600;}
+
+/* note-card */
+.note-card{background:var(--g050);border:1px solid var(--g200);border-radius:14px;padding:30px 36px;}
+.note-card p{font-size:22px;line-height:1.5;color:var(--g600);margin:0;}
+
+/* single offer */
+.offer{display:grid;grid-template-columns:0.82fr 1.18fr;gap:60px;flex:1;align-items:center;}
+.offer-price{border-right:1px solid rgba(255,255,255,.15);padding-right:56px;}
+.offer-price .plabel{font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);line-height:1.4;}
+.pval-xl{font-size:136px;font-weight:600;letter-spacing:-0.03em;line-height:1;margin:22px 0 18px;font-variant-numeric:tabular-nums;}
+.pval-xl small{font-size:34px;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:0;}
+.offer-price .pper{font-size:23px;line-height:1.45;color:rgba(255,255,255,.72);}
+.offer-price .pper b{color:var(--orange);font-weight:600;}
+.offer-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:19px;}
+.offer-list li{display:flex;gap:15px;align-items:flex-start;font-size:22px;line-height:1.38;color:rgba(255,255,255,.8);}
+.offer-list li .icon{color:var(--orange);flex:none;margin-top:2px;}
+.offer-list li b{color:#fff;font-weight:600;}
+.fee-note{border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:24px 32px;margin-top:30px;display:flex;align-items:center;gap:18px;}
+.fee-note .icon{color:var(--orange);flex:none;}
+.fee-note p{font-size:21px;line-height:1.45;color:rgba(255,255,255,.75);margin:0;}
+.fee-note b{color:#fff;font-weight:600;}
+
+/* entrance — transform-only so print/PPTX never hides content */
+@media (prefers-reduced-motion:no-preference){
+  [data-deck-active] .anim{animation:rise .55s cubic-bezier(.2,.7,.2,1) both;}
+  [data-deck-active] .anim:nth-child(2){animation-delay:.05s;}
+  [data-deck-active] .anim:nth-child(3){animation-delay:.1s;}
+  [data-deck-active] .anim:nth-child(4){animation-delay:.15s;}
+  [data-deck-active] .anim:nth-child(5){animation-delay:.2s;}
+}
+@keyframes rise{from{transform:translateY(16px);}to{transform:none;}}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 1 · COVER -->
+  <section class="dark" data-label="Cover">
+    <div class="pad">
+      <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
+      <img class="cover-logo anim" src="assets/mentor-logo-white-dot.svg" alt="mentor" style="align-self:flex-start;" />
+      <div style="flex:1;"></div>
+      <div class="eyebrow anim" style="margin-bottom:26px;">Proposta di upgrade · Peg Perego</div>
+      <h1 class="anim">Un catalogo che vende<br>non sta mai fermo<span class="o">.</span></h1>
+      <p class="lead anim" style="margin-top:34px;max-width:46ch;">Gestione completa dei prodotti su Amazon. L'esecuzione operativa che oggi manca — dentro la collaborazione che abbiamo già.</p>
+      <div class="flags anim">Italia<span>·</span>Francia<span>·</span>Spagna<span>·</span>Germania</div>
+    </div>
+    <div class="foot"><span>marketplace-mentor.com</span><span>Preparato per Peg Perego · luglio 2026</span></div>
+  </section>
+
+  <!-- 2 · CONTESTO -->
+  <section data-label="Contesto">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Il contesto</span>
+        <h2 class="anim">Un catalogo grande, su quattro mercati che corrono.</h2>
+      </div>
+      <div class="split">
+        <div class="anim">
+          <div class="stat">162<small>prodotti main — 30 famiglie e 132 singoli, 268 SKU in tutto.</small>
+            <span class="sub">× 4 mercati<br>oltre 640 schede da presidiare.</span>
+          </div>
+        </div>
+        <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
+          <div class="rule"><span class="icon" data-lucide="hourglass"></span><div><b>I contenuti restano fermi</b>: prodotti non aggiornati, schede che invecchiano. La conversione cala piano, senza fare rumore.</div></div>
+          <div class="rule"><span class="icon" data-lucide="tags"></span><div><b>Le promo passano senza presidio</b>: Prime Day, Black Friday, eventi stagionali arrivano — e le schede non sono pronte a convertirli.</div></div>
+          <div class="rule"><span class="icon" data-lucide="globe"></span><div><b>Quattro mercati, quattro lingue</b>: keyword, competitor e varianti diversi in ogni paese. Errori e schede staccate si moltiplicano ×4.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">02</span></div>
+  </section>
+
+  <!-- 3 · LA TESI -->
+  <section class="paper" data-label="Prima il prodotto">
+    <div class="pad">
+      <div class="head" style="margin-bottom:44px;">
+        <span class="eyebrow anim">Il punto</span>
+        <h2 class="anim">Sono i prodotti a guidare l'advertising.<br>Non il contrario.</h2>
+      </div>
+      <div class="versus">
+        <div class="vcard bad anim">
+          <span class="vtag"><span data-lucide="flame"></span>Oggi</span>
+          <h3>Advertising su schede ferme</h3>
+          <p>Spingere una campagna su un prodotto non ottimizzato è <b>bruciare budget</b>: paghi il clic, ma la scheda non converte. L'ACoS sale, il ritorno scende.</p>
+        </div>
+        <div class="vcard good anim">
+          <span class="vtag"><span data-lucide="rocket"></span>Come dovrebbe essere</span>
+          <h3>Advertising su schede pronte</h3>
+          <p>Prima il prodotto è ottimizzato, poi si spinge. <b>Stesso clic, conversione più alta, ACoS sotto controllo.</b> L'adv amplifica un prodotto che già vende.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">03</span></div>
+  </section>
+
+  <!-- 4 · COME LAVORIAMO -->
+  <section data-label="Come lavoriamo">
+    <div class="pad">
+      <div class="head" style="margin-bottom:34px;">
+        <span class="eyebrow anim">Come lavoriamo</span>
+        <h2 class="anim">Tutto sotto controllo. Ogni mese, la spinta dove serve.</h2>
+      </div>
+      <div class="layers">
+        <div class="layer anim">
+          <div class="lmark"><span data-lucide="radar"></span></div>
+          <div>
+            <span class="ltag">Sempre</span>
+            <h3>Tutto il catalogo monitorato — su 4 mercati</h3>
+            <p>Teniamo d'occhio di continuo i 162 main e i 268 SKU su Italia, Francia, Spagna e Germania: suppression, errori, varianti, schede degradate. Appena qualcosa si rompe, interveniamo — in ogni paese.</p>
+          </div>
+        </div>
+        <div class="layer anim">
+          <div class="lmark"><span data-lucide="target"></span></div>
+          <div>
+            <span class="ltag">Ogni mese</span>
+            <h3>Ottimizzazione dove rende di più</h3>
+            <p>A decidere le priorità è soprattutto l'<b>advertising</b>: le linee spinte in campagna — e la stagionalità di ogni mercato — sono quelle che ottimizziamo per prime. Il contenuto lo creiamo una volta e lo adattiamo ai 4 paesi: lingua, keyword e competitor locali.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note-card anim" style="margin-top:24px;">
+        <p>Non rifacciamo tutto ogni mese: <b style="color:#000;font-weight:600;">monitoriamo sempre</b> e spingiamo dove il ritorno è più alto, allineati alle vostre campagne.</p>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">04</span></div>
+  </section>
+
+  <!-- 5 · LA PROPOSTA -->
+  <section class="dark" data-label="La proposta">
+    <div class="pad">
+      <div class="head" style="margin-bottom:40px;">
+        <span class="eyebrow anim">La proposta</span>
+        <h2 class="anim">Gestione completa dei prodotti. Su tutti e quattro i mercati.</h2>
+      </div>
+      <div class="offer">
+        <div class="offer-price anim">
+          <span class="plabel">Gestione completa<br>IT · FR · ES · DE</span>
+          <div class="pval-xl">€990<small> /mese</small></div>
+          <div class="pper">162 prodotti · 4 mercati<br><b>≈ €1,53 a scheda al mese</b></div>
+        </div>
+        <ul class="offer-list anim">
+          <li><span class="icon" data-lucide="radar"></span><div><b>Monitoraggio continuo</b> di tutto il catalogo sui 4 mercati: suppression, errori, varianti</div></li>
+          <li><span class="icon" data-lucide="wrench"></span><div><b>Ottimizzazione tecnica</b>: attributi, flat file, varianti, correzioni</div></li>
+          <li><span class="icon" data-lucide="target"></span><div><b>Ogni mese, ottimizzazione profonda</b> dei prodotti prioritari — guidata dall'advertising</div></li>
+          <li><span class="icon" data-lucide="languages"></span><div><b>Testi SEO e per ricerca AI</b> (Rufus), localizzati per Italia, Francia, Spagna e Germania</div></li>
+          <li><span class="icon" data-lucide="image"></span><div><b>Infografiche e A+ creati da noi</b>, ottimizzati per Amazon e adattati a ogni mercato</div></li>
+          <li><span class="icon" data-lucide="store"></span><div><b>Brand Store gestito da noi</b> ×4: pagine, categorie, lanci stagionali, promo ed eventi</div></li>
+        </ul>
+      </div>
+      <div class="fee-note anim">
+        <span class="icon" data-lucide="circle-check"></span>
+        <p><b>La consulenza strategica resta inclusa come oggi.</b> Questa è l'esecuzione operativa che oggi manca — tutto in mano nostra, zero stress.</p>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
+  </section>
+
+</deck-stage>
+
+<script type="application/json" id="speaker-notes">
+{
+  "0": "Cover. Upgrade della collaborazione esistente: gestione completa dei prodotti su 4 mercati (IT/FR/ES/DE). Non una vendita da zero — l'esecuzione operativa che oggi manca. NB a voce: il servizio attuale (~€3.000/mese) resta, questa e' l'aggiunta.",
+  "1": "Contesto. 162 main (30 famiglie + 132 singoli), 268 SKU, replicati su 4 marketplace = oltre 640 schede da presidiare. Il problema: contenuti fermi (conversione cala piano), promo non presidiate (Prime Day/BF/eventi), e su 4 lingue keyword/competitor/varianti diversi -> errori x4.",
+  "2": "LA TESI — il cuore del pitch. Sono i PRODOTTI a guidare l'advertising, non il contrario. Fare adv su schede ferme = bruciare budget (paghi il clic, non converte, ACoS sale). Prima ottimizzi il prodotto, poi spingi. Questo e' il motivo per cui serve un presidio esecutivo continuo: oggi sono lenti, i prodotti non sono pronti quando parte la campagna.",
+  "3": "Come lavoriamo — chiarire il malinteso: NON rifacciamo tutto ogni mese. Due livelli: (1) SEMPRE monitoriamo tutti i 162 main / 268 SKU su tutti e 4 i mercati; (2) OGNI MESE ottimizziamo in profondita' i prioritari, guidati dall'advertising + stagionalita' di ogni paese. Contenuto creato una volta e localizzato x4.",
+  "4": "La proposta — UNICA formula. €990/mese per la gestione completa su 4 mercati = ~€1,53 a scheda/mese (162 main x 4). Include: monitoraggio, ottimizzazione tecnica, ottimizzazione mensile guidata da adv, testi SEO+Rufus localizzati x4, infografiche/A+ create da noi, Brand Store gestito x4. A VOCE: la consulenza e' gia' inclusa come oggi; questo e' l'operativo, tutto in mano nostra. Anchor verbale: il valore pieno a listino sarebbe ~€1.800/mese — facciamo €990 perche' sono gia' cliente strategico. Alternativa: €1.200 se vogliamo spingere."
+}
+</script>
+
+<script src="deck-stage.js"></script>
+<script>
+  function paint(){ if(window.lucide){ lucide.createIcons(); } }
+  paint();
+  document.querySelector('deck-stage')?.addEventListener('slidechange', paint);
+  window.addEventListener('load', paint);
+</script>
+</body>
+</html>
