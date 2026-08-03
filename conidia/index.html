@@ -143,6 +143,18 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .gate .gdec .icon{color:var(--orange);flex:none;margin-top:2px;}
 .gate .gdec b{color:#000;font-weight:600;}
 
+/* horizontal timeline — roadmap + gates combined */
+.htl{display:flex;align-items:flex-start;flex:1;position:relative;padding-top:6px;}
+.htl::before{content:"";position:absolute;top:23px;left:24px;right:44px;height:3px;background:var(--g200);}
+.htl-node{flex:1;position:relative;padding-right:28px;}
+.htl-dot{width:48px;height:48px;border-radius:999px;display:grid;place-items:center;background:var(--ink);color:#fff;margin-bottom:26px;}
+.htl-node.gate .htl-dot{background:var(--orange);}
+.htl-dot svg{width:24px;height:24px;stroke-width:2.2;}
+.htl-when{font-size:18px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g400);margin-bottom:10px;}
+.htl-node.gate .htl-when{color:var(--orange);}
+.htl-node h3{font-size:26px;margin-bottom:12px;line-height:1.15;}
+.htl-node p{font-size:19px;line-height:1.42;color:var(--g500);margin:0;max-width:19ch;}
+
 /* proof / cases */
 .cases{display:flex;flex-direction:column;gap:22px;flex:1;justify-content:center;}
 .case{display:flex;align-items:center;gap:28px;border:1px solid var(--g200);border-radius:14px;padding:30px 36px;background:var(--g050);text-decoration:none;color:inherit;transition:border-color .18s,transform .18s;}
@@ -207,7 +219,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
         <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
           <div class="rule"><span class="icon" data-lucide="lock"></span><div>As <b>vendor (1P)</b>, Amazon controls final price &amp; EU distribution — you lose the lever.</div></div>
-          <div class="rule"><span class="icon" data-lucide="truck"></span><div>Distributors stay your <b>primary route to market</b>; Amazon today creates friction, not growth.</div></div>
+          <div class="rule"><span class="icon" data-lucide="truck"></span><div>Distributors stay your <b>primary route to market</b>; today Amazon just gets in the way.</div></div>
           <div class="rule"><span class="icon" data-lucide="help-circle"></span><div>Open question: is the account really 1P, and is a move to <b>seller (3P)</b> on the table?</div></div>
         </div>
       </div>
@@ -427,7 +439,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
         <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
           <div class="rule"><span class="icon" data-lucide="flag"></span><div><b>First-mover is real:</b> no EU competitor ranks yet. The edge is being first to bank reviews and ranking — assets latecomers can't buy back.</div></div>
-          <div class="rule"><span class="icon" data-lucide="hourglass"></span><div><b>It's time-limited:</b> the same gap is open to anyone. The moat is speed of execution, not the product alone.</div></div>
+          <div class="rule"><span class="icon" data-lucide="hourglass"></span><div><b>It's time-limited:</b> the same gap is open to anyone. The moat is how fast you execute.</div></div>
           <div class="rule"><span class="icon" data-lucide="shield-check"></span><div><b>Premium price holds:</b> a healthy-margin technical product lets you out-invest newcomers on ads and still profit.</div></div>
         </div>
       </div>
@@ -475,12 +487,12 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       </div>
       <div class="split">
         <div class="anim">
-          <div class="stat" style="font-size:92px;"><span class="o">€</span>120–180K<small>Our estimate for EU revenue in 2027 — built on your &gt;50% margin and premium price, not on a best-case spreadsheet.</small></div>
+          <div class="stat" style="font-size:92px;"><span class="o">€</span>120–180K<small>Our estimate for EU revenue in 2027, built on your &gt;50% margin and premium price.</small></div>
         </div>
         <div class="anim" style="display:flex;flex-direction:column;gap:26px;">
           <div class="rule"><span class="icon" data-lucide="flag"></span><div><b>€500K is the ceiling</b> your analysis flagged — a multi-year horizon and category #1, not a 2027 line.</div></div>
           <div class="rule"><span class="icon" data-lucide="trending-up"></span><div>2026 is a learning year; the real step-up comes in 2027, once reviews and ranking compound.</div></div>
-          <div class="rule"><span class="icon" data-lucide="shield-check"></span><div>A conservative call on purpose — we'd rather beat it than sell you a number.</div></div>
+          <div class="rule"><span class="icon" data-lucide="shield-check"></span><div>A conservative call on purpose, so the number holds up.</div></div>
         </div>
       </div>
       <p style="font-size:20px;color:rgba(255,255,255,.5);margin:26px 0 0;">Illustrative — to validate on your real price, margin and sell-through.</p>
@@ -493,7 +505,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="pad">
       <div class="head">
         <span class="eyebrow anim">How we decide · the gates</span>
-        <h2 class="anim">We don't just spend — we decide at gates.</h2>
+        <h2 class="anim">We scale on evidence, gate by gate.</h2>
       </div>
       <div class="gates">
         <div class="gate anim">
@@ -512,17 +524,61 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
           <div class="gdec"><span class="icon" data-lucide="rocket"></span><div><b>Push or hold.</b> Go aggressive where unit economics are healthy, hold steady where they aren't.</div></div>
         </div>
       </div>
-      <p style="font-size:20px;color:var(--g500);margin:28px 0 0;">Every step is a decision with a metric behind it, not a leap of faith. You always know why we spend more — or why we don't.</p>
+      <p style="font-size:20px;color:var(--g500);margin:28px 0 0;">Every step is a decision with a metric behind it. You always see the number before we spend more.</p>
     </div>
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">12</span></div>
   </section>
 
-  <!-- 13 · OUR 2027 PLAN -->
+  <!-- 13 · ROADMAP + GATES (combined timeline — comparison slide) -->
+  <section class="paper" data-label="Roadmap + gates">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">The plan · month by month</span>
+        <h2 class="anim">From launch to category lead.</h2>
+      </div>
+      <div class="htl anim">
+        <div class="htl-node phase">
+          <div class="htl-dot"><span data-lucide="rocket"></span></div>
+          <div class="htl-when">Sep 2026</div>
+          <h3>Launch</h3>
+          <p>Foundations live, ads on across the 4 markets.</p>
+        </div>
+        <div class="htl-node gate">
+          <div class="htl-dot"><span data-lucide="check"></span></div>
+          <div class="htl-when">Month 3 · gate</div>
+          <h3>First read</h3>
+          <p>First reviews in, ACOS baseline. Keep budget lean, sharpen the listing.</p>
+        </div>
+        <div class="htl-node gate">
+          <div class="htl-dot"><span data-lucide="check"></span></div>
+          <div class="htl-when">Month 6 · gate</div>
+          <h3>Scale the winners</h3>
+          <p>Reviews and page-1 ranking. Step budget up on DE + IT first.</p>
+        </div>
+        <div class="htl-node gate">
+          <div class="htl-dot"><span data-lucide="check"></span></div>
+          <div class="htl-when">Month 9 · gate</div>
+          <h3>Push or hold</h3>
+          <p>Profitable TACOS. Go harder on what works, hold the rest.</p>
+        </div>
+        <div class="htl-node phase">
+          <div class="htl-dot"><span data-lucide="trophy"></span></div>
+          <div class="htl-when">2028</div>
+          <h3>Maturity</h3>
+          <p>Category lead defended, more SKUs, US as a later phase.</p>
+        </div>
+      </div>
+      <p style="font-size:19px;color:var(--g500);margin:30px 0 0;">Each gate is a checkpoint: we read the metric, then scale, hold or fix.</p>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">13</span></div>
+  </section>
+
+  <!-- 14 · OUR 2027 PLAN -->
   <section class="paper" data-label="2027 plan">
     <div class="pad">
       <div class="head">
         <span class="eyebrow anim">2027 · our plan</span>
-        <h2 class="anim">One plan for 2027 — not a menu.</h2>
+        <h2 class="anim">Our recommended plan for 2027.</h2>
       </div>
       <div class="inv">
         <div class="card anim" style="background:#fff;color:#000;">
@@ -543,10 +599,10 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       </div>
       <p style="font-size:19px;color:var(--g500);margin:24px 0 0;">Fee = a fixed monthly retainer plus a small % on sales. All figures illustrative, to validate against your real margin and sell-through — no smoke.</p>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">13</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">14</span></div>
   </section>
 
-  <!-- 14 · PROOF -->
+  <!-- 15 · PROOF -->
   <section data-label="Proof">
     <div class="pad">
       <div class="head">
@@ -571,10 +627,10 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </a>
       </div>
     </div>
-    <div class="foot"><span>+11 countries · +300 mln in sales generated</span><span class="num-badge">14</span></div>
+    <div class="foot"><span>+11 countries · +300 mln in sales generated</span><span class="num-badge">15</span></div>
   </section>
 
-  <!-- 15 · CLOSE / NEXT STEPS -->
+  <!-- 16 · CLOSE / NEXT STEPS -->
   <section class="dark" data-label="Next steps">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
@@ -588,7 +644,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">15</span></div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">16</span></div>
   </section>
 
 </deck-stage>
@@ -607,9 +663,10 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
   "9": "Roadmap: 2026 H2 setup+launch (learn the numbers, don't scale), 2027 scale, 2028 maturity/defend. US is a separate later phase.",
   "10": "What to expect: our single estimate €120-180K EU revenue 2027 (conservative, built on >50% margin). €500K = multi-year ceiling from their analysis, not 2027. Illustrative, to validate.",
   "11": "Decision gates: M3 hold&fix, M6 scale winners (DE+IT first), M9 push or hold. Engineers' language — a metric behind every spend decision.",
-  "12": "Our 2027 plan (one, not a menu): mentor fee €900-1.800/mo + 1-3% on sales, ad budget €3-4K/mo across 4 markets, targeting €120-180K. Fee = fixed retainer + small %.",
-  "13": "Proof: Piusi + UK cases.",
-  "14": "Close. Confirm account type → 30-min call → kickoff."
+  "12": "COMPARISON slide: roadmap + gates fused into one horizontal timeline — Sep 2026 launch → M3 first read → M6 scale winners (DE+IT) → M9 push or hold → 2028 maturity. Compare against slides 10 (roadmap) + 12 (gates); keep one.",
+  "13": "Our recommended 2027 plan: mentor fee €900-1.800/mo + 1-3% on sales, ad budget €3-4K/mo across 4 markets, targeting €120-180K. Fee = fixed retainer + small %.",
+  "14": "Proof: Piusi + UK cases.",
+  "15": "Close. Confirm account type → 30-min call → kickoff."
 }
 </script>
 
