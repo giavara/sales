@@ -134,15 +134,6 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .card .csub{font-size:21px;color:var(--g500);line-height:1.4;margin-top:auto;}
 .card.accent .csub{color:rgba(255,255,255,.65);}
 
-/* gates (decision gates) */
-.gates{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;flex:1;align-content:center;}
-.gate{border:2px solid var(--ink);border-radius:16px;padding:38px 34px;display:flex;flex-direction:column;}
-.gate .gwhen{font-size:19px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);}
-.gate .gmetric{font-size:27px;font-weight:600;line-height:1.25;margin:16px 0 22px;}
-.gate .gdec{display:flex;gap:12px;align-items:flex-start;font-size:20px;line-height:1.35;color:var(--g600);margin-top:auto;padding-top:22px;border-top:1px solid var(--g200);}
-.gate .gdec .icon{color:var(--orange);flex:none;margin-top:2px;}
-.gate .gdec b{color:#000;font-weight:600;}
-
 /* horizontal timeline — roadmap + gates combined */
 .htl{display:flex;align-items:flex-start;flex:1;position:relative;padding-top:6px;}
 .htl::before{content:"";position:absolute;top:23px;left:24px;right:44px;height:3px;background:var(--g200);}
@@ -448,96 +439,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">09</span></div>
   </section>
 
-  <!-- 10 · ROADMAP -->
-  <section class="paper" data-label="Roadmap">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">The roadmap</span>
-        <h2 class="anim">Where this goes after 2026.</h2>
-      </div>
-      <div class="tl anim">
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">2026 · H2</div>
-          <h3>Setup &amp; launch</h3>
-          <p>Foundations live, ads on across 4 markets, first sales and reviews. Goal this year: learn the real numbers — not scale.</p>
-        </div>
-        <div class="tl-step">
-          <div class="tl-dot"></div>
-          <div class="tl-month">2027</div>
-          <h3>Scale</h3>
-          <p>Full-year advertising, budget scaled on proven ACOS, ranking climbing and reviews compounding. Revenue steps up.</p>
-        </div>
-        <div class="tl-step muted">
-          <div class="tl-dot"></div>
-          <div class="tl-month">2028</div>
-          <h3>Maturity</h3>
-          <p>Category lead defended at efficient TACOS. We can also test different pack sizes — units per pack.</p>
-        </div>
-      </div>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">10</span></div>
-  </section>
-
-  <!-- 11 · WHAT TO EXPECT -->
-  <section class="dark" data-label="What to expect">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">What to expect · EU revenue</span>
-        <h2 class="anim">What 2027 can look like.</h2>
-      </div>
-      <div class="inv">
-        <div class="card anim" style="background:#fff;color:#000;">
-          <span class="clabel">Conservative</span>
-          <div class="cval" style="font-size:54px;"><span class="o">€</span>60–100K</div>
-          <div class="csub">Lean budget, cautious ranking climb. The floor if we stay careful.</div>
-        </div>
-        <div class="card anim" style="background:#fff;color:#000;border-color:var(--orange);">
-          <span class="kw hot" style="align-self:flex-start;">Base case</span>
-          <div class="cval" style="font-size:54px;margin-top:18px;"><span class="o">€</span>120–180K</div>
-          <div class="csub">Budget scaled on results, reviews compounding. Our central estimate.</div>
-        </div>
-        <div class="card anim" style="background:#fff;color:#000;">
-          <span class="clabel">Stretch → ceiling</span>
-          <div class="cval" style="font-size:54px;"><span class="o">€</span>300–500K</div>
-          <div class="csub"><b>€500K is the ceiling</b> your analysis flagged: sustained investment and category #1, over multiple years.</div>
-        </div>
-      </div>
-      <p style="font-size:20px;color:rgba(255,255,255,.5);margin:26px 0 0;">Illustrative EU run-rate at 24–36 months, built on your &gt;50% margin. To validate on your real price and sell-through.</p>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">11</span></div>
-  </section>
-
-  <!-- 12 · DECISION GATES -->
-  <section data-label="Decision gates">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">How we decide · the gates</span>
-        <h2 class="anim">We scale on evidence, gate by gate.</h2>
-      </div>
-      <div class="gates">
-        <div class="gate anim">
-          <span class="gwhen">Dec 2026</span>
-          <div class="gmetric">Listing indexed, first 10–15 reviews, ACOS baseline read.</div>
-          <div class="gdec"><span class="icon" data-lucide="wrench"></span><div><b>Hold &amp; fix.</b> Keep budget lean, sharpen listing and review velocity before we scale.</div></div>
-        </div>
-        <div class="gate anim">
-          <span class="gwhen">Mar 2027</span>
-          <div class="gmetric">Reviews past ~25, page-1 ranking on core terms, ACOS trending to target.</div>
-          <div class="gdec"><span class="icon" data-lucide="trending-up"></span><div><b>Scale the winners.</b> Step budget up on the markets that prove out — likely DE + IT first.</div></div>
-        </div>
-        <div class="gate anim">
-          <span class="gwhen">Jun 2027</span>
-          <div class="gmetric">Profitable TACOS, organic share rising, buy box under control.</div>
-          <div class="gdec"><span class="icon" data-lucide="rocket"></span><div><b>Push or hold.</b> Go aggressive where unit economics are healthy, hold steady where they aren't.</div></div>
-        </div>
-      </div>
-      <p style="font-size:20px;color:var(--g500);margin:28px 0 0;">Every step is a decision with a metric behind it. You always see the number before we spend more.</p>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">12</span></div>
-  </section>
-
-  <!-- 13 · ROADMAP + GATES (combined timeline — comparison slide) -->
+  <!-- 10 · ROADMAP + GATES (combined timeline) -->
   <section class="paper" data-label="Roadmap + gates">
     <div class="pad">
       <div class="head">
@@ -578,10 +480,39 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       </div>
       <p style="font-size:19px;color:var(--g500);margin:30px 0 0;">Each gate is a checkpoint: we read the metric, then scale, hold or fix.</p>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">13</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">10</span></div>
   </section>
 
-  <!-- 14 · OUR 2027 PLAN -->
+  <!-- 11 · WHAT TO EXPECT -->
+  <section class="dark" data-label="What to expect">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">What to expect · EU revenue</span>
+        <h2 class="anim">What 2027 can look like.</h2>
+      </div>
+      <div class="inv">
+        <div class="card anim" style="background:#fff;color:#000;">
+          <span class="clabel">Conservative</span>
+          <div class="cval" style="font-size:54px;"><span class="o">€</span>60–100K</div>
+          <div class="csub">Lean budget, cautious ranking climb. The floor if we stay careful.</div>
+        </div>
+        <div class="card anim" style="background:#fff;color:#000;border-color:var(--orange);">
+          <span class="kw hot" style="align-self:flex-start;">Base case</span>
+          <div class="cval" style="font-size:54px;margin-top:18px;"><span class="o">€</span>120–180K</div>
+          <div class="csub">Budget scaled on results, reviews compounding. Our central estimate.</div>
+        </div>
+        <div class="card anim" style="background:#fff;color:#000;">
+          <span class="clabel">Stretch → ceiling</span>
+          <div class="cval" style="font-size:54px;"><span class="o">€</span>300–500K</div>
+          <div class="csub"><b>€500K is the ceiling</b> your analysis flagged: sustained investment and category #1, over multiple years.</div>
+        </div>
+      </div>
+      <p style="font-size:20px;color:rgba(255,255,255,.5);margin:26px 0 0;">Illustrative EU run-rate at 24–36 months, built on your &gt;50% margin. To validate on your real price and sell-through.</p>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">11</span></div>
+  </section>
+
+  <!-- 12 · OUR 2027 PLAN -->
   <section class="paper" data-label="2027 plan">
     <div class="pad">
       <div class="head">
@@ -607,10 +538,10 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       </div>
       <p style="font-size:19px;color:var(--g500);margin:24px 0 0;">Fee = a fixed monthly retainer plus a small % on sales. All figures illustrative, to validate against your real margin and sell-through — no smoke.</p>
     </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">14</span></div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">12</span></div>
   </section>
 
-  <!-- 15 · PROOF -->
+  <!-- 13 · PROOF -->
   <section data-label="Proof">
     <div class="pad">
       <div class="head">
@@ -635,10 +566,10 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </a>
       </div>
     </div>
-    <div class="foot"><span>+11 countries · +300 mln in sales generated</span><span class="num-badge">15</span></div>
+    <div class="foot"><span>+11 countries · +300 mln in sales generated</span><span class="num-badge">13</span></div>
   </section>
 
-  <!-- 16 · CLOSE / NEXT STEPS -->
+  <!-- 14 · CLOSE / NEXT STEPS -->
   <section class="dark" data-label="Next steps">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
@@ -652,7 +583,7 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">16</span></div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">14</span></div>
   </section>
 
 </deck-stage>
@@ -668,13 +599,11 @@ h3{font-size:34px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
   "6": "Timeline: August product, September ads live, Oct-Dec optimize.",
   "7": "Investment. Three clean numbers for this year.",
   "8": "Market read: EU shelf is empty (€0), but the US benchmark ($1-1.5M, Dunkive/REV X/Samorillo) proves demand. First-mover is real but time-limited — speed is the moat. Premium margin lets us out-invest latecomers.",
-  "9": "Roadmap: 2026 H2 setup+launch (learn the numbers, don't scale), 2027 scale, 2028 maturity/defend. US is a separate later phase.",
-  "10": "What to expect: 3 revenue scenarios — conservative €60-100K, base €120-180K, stretch €300-500K (€500K = multi-year ceiling from their analysis). Revenue has scenarios; our fee stays a single proposal (slide 14). Illustrative.",
-  "11": "Decision gates: Dec 2026 hold&fix, Mar 2027 scale winners (DE+IT first), Jun 2027 push or hold. Engineers' language — a metric behind every spend decision. Months counted from Sep 2026 ads launch.",
-  "12": "COMPARISON slide: roadmap + gates fused into one horizontal timeline — Sep 2026 launch → Dec 2026 first read → Mar 2027 scale winners (DE+IT) → Jun 2027 push or hold → 2028 maturity. Compare against slides 10 (roadmap) + 12 (gates); keep one.",
-  "13": "Our recommended 2027 plan (single proposal): mentor fee €900-1.800/mo + 1-3% on sales, ad budget €2-4K/mo across 4 markets, targeting the €120-180K base case. Fee = fixed retainer + small %.",
-  "14": "Proof: Piusi + UK cases.",
-  "15": "Close. Confirm account type → 30-min call → kickoff."
+  "9": "Roadmap + gates in one timeline: Sep 2026 launch → Dec 2026 first read → Mar 2027 scale winners (DE+IT) → Jun 2027 push or hold → 2028 maturity (test pack sizes). Months from Sep 2026 ads launch.",
+  "10": "What to expect: 3 revenue scenarios — conservative €60-100K, base €120-180K, stretch €300-500K (€500K = multi-year ceiling from their analysis). Revenue has scenarios; our fee stays a single proposal. Illustrative.",
+  "11": "Our recommended 2027 plan (single proposal): mentor fee €900-1.800/mo + 1-3% on sales, ad budget €2-4K/mo across 4 markets, targeting the €120-180K base case. Fee = fixed retainer + small %.",
+  "12": "Proof: Piusi + UK cases.",
+  "13": "Close. Confirm account type → 30-min call → kickoff."
 }
 </script>
 
