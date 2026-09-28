@@ -1,0 +1,531 @@
+<!doctype html>
+<!-- Mentor × Amazon Ads — Agency Roadshow · v1.0 — 2026-09-28
+     v1.0: struttura approvata da Andrea (27/9), dati verificati su Drive/Gmail/Marketforce, 2 su 3 clienti oltre 3 anni (Andrea).
+           Ancora da inserire (segnaposto arancioni): % clienti con strumento nuovo da Natale 2025; 2 obiettivi PPP raggiunti.
+     v0.1: prima stesura -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>mentor × Amazon Ads — Agency Roadshow</title>
+<link rel="icon" href="assets/mentor-mark-black.svg" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* ---- Poppins (self-hosted) ---- */
+@font-face{font-family:'Poppins';font-weight:300;font-style:normal;font-display:swap;src:url('fonts/Poppins-Light.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/Poppins-Regular.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/Poppins-Medium.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:600;font-style:normal;font-display:swap;src:url('fonts/Poppins-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'Poppins';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/Poppins-Bold.ttf') format('truetype');}
+:root{
+  --ink:#000000; --white:#FFFFFF; --orange:#FF7237; --orange600:#E85F26;
+  --g050:#FAFAF8; --g100:#F4F4F1; --g150:#ECECE8; --g200:#E4E4DF; --g300:#C7C7C2;
+  --g400:#9A9A96; --g500:#6E6E6B; --g600:#4A4A48;
+  --success:#1F9D63; --success100:#E4F3EA;
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;}
+deck-stage:not(:defined){visibility:hidden;}
+deck-stage{background:#000;}
+section{font-family:var(--font);color:var(--ink);background:var(--white);overflow:hidden;-webkit-font-smoothing:antialiased;}
+.pad{position:absolute;inset:0;padding:96px 110px;display:flex;flex-direction:column;}
+.dark{background:var(--ink);color:var(--white);}
+.paper{background:var(--g050);}
+.o{color:var(--orange);}
+
+/* type */
+.eyebrow{font-size:21px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--g500);}
+.dark .eyebrow{color:rgba(255,255,255,.55);}
+h1{font-size:100px;line-height:1.0;letter-spacing:-0.03em;font-weight:600;margin:0;}
+h2{font-size:60px;line-height:1.07;letter-spacing:-0.025em;font-weight:600;margin:0;}
+h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin:0;}
+.lead{font-size:27px;line-height:1.5;font-weight:400;color:var(--g600);}
+.dark .lead{color:rgba(255,255,255,.72);}
+.lead b{color:#000;font-weight:600;}
+.dark .lead b{color:#fff;}
+.foot{position:absolute;left:110px;right:110px;bottom:54px;display:flex;align-items:center;justify-content:space-between;font-size:18px;color:var(--g400);}
+.dark .foot{color:rgba(255,255,255,.4);}
+.foot img{height:22px;display:block;}
+.num-badge{font-size:18px;font-weight:600;color:var(--g400);}
+.head{display:flex;flex-direction:column;gap:16px;margin-bottom:40px;}
+.head h2{max-width:34ch;}
+
+/* data still to be provided (visible on purpose) */
+.ph{display:inline-block;border:2px dashed var(--orange);border-radius:10px;padding:0 12px;color:var(--orange);background:rgba(255,114,55,.07);font-weight:600;}
+
+/* cover */
+.cover-logo{height:80px;}
+.cover-mark{position:absolute;right:-120px;bottom:-140px;height:760px;opacity:.06;}
+
+/* 2 · la nostra agenzia (dalla slide Google) */
+.agency{display:grid;grid-template-columns:1fr 1fr;gap:28px;flex:1;min-height:0;}
+.agency-left{display:grid;grid-template-rows:1fr auto;gap:28px;}
+.ncards{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.ncard{border-radius:26px;padding:42px 44px;font-size:40px;line-height:1.22;font-weight:400;letter-spacing:-0.01em;}
+.ncard b{font-weight:600;}
+.ncard.black{background:var(--ink);color:#fff;}
+.ncard.grey{background:var(--g150);color:#000;}
+.creds-card{background:var(--g100);border-radius:26px;padding:26px 34px;display:flex;align-items:center;gap:26px;}
+.creds-card img{height:92px;display:block;}
+.creds-list{display:flex;flex-direction:column;gap:10px;font-size:21px;font-weight:600;}
+.creds-list span{display:flex;align-items:center;gap:12px;}
+.creds-list .icon{color:var(--orange);width:24px;height:24px;}
+.agency-photo{border-radius:26px;overflow:hidden;}
+.agency-photo img{display:block;width:100%;height:100%;object-fit:cover;}
+
+/* 3 · metodo + profondità */
+.method{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;flex:1;min-height:0;}
+.pillars{display:flex;flex-direction:column;gap:22px;justify-content:center;}
+.pillar{display:flex;gap:20px;align-items:flex-start;}
+.pillar .pic{width:58px;height:58px;border-radius:14px;background:var(--ink);display:grid;place-items:center;flex:none;}
+.pillar .pic svg{width:28px;height:28px;color:var(--orange);}
+.pillar h3{font-size:27px;margin:4px 0 8px;}
+.pillar p{font-size:20px;line-height:1.45;color:var(--g600);margin:0;}
+.depth{background:#fff;border:1px solid var(--g200);border-radius:20px;padding:34px 38px;display:flex;flex-direction:column;}
+.depth .dtag{font-size:18px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin-bottom:18px;}
+.depth ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;}
+.depth li{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--g150);}
+.depth li:first-child{border-top:none;padding-top:0;}
+.depth .who{font-size:18px;font-weight:600;color:var(--g500);letter-spacing:.02em;}
+.depth .what{font-size:20.5px;line-height:1.42;color:var(--g600);}
+.depth .what b{color:#000;font-weight:600;}
+
+/* "Per Amazon" strip on case slides */
+.amz{margin-top:auto;display:flex;align-items:center;gap:16px;border-top:1px solid var(--g200);padding-top:24px;font-size:22px;color:var(--g600);}
+.dark .amz{border-top-color:rgba(255,255,255,.16);color:rgba(255,255,255,.75);}
+.amz .atag{font-size:16px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--ink);border-radius:999px;padding:8px 16px;flex:none;}
+.dark .amz .atag{background:var(--orange);}
+.amz b{color:#000;font-weight:600;}
+.dark .amz b{color:#fff;}
+
+/* 4 · Legami S·T — split + chart */
+.st{display:grid;grid-template-columns:0.95fr 1.05fr;gap:64px;flex:1;min-height:0;align-items:stretch;}
+.facts{display:flex;flex-direction:column;gap:18px;}
+.fact{display:flex;gap:16px;align-items:flex-start;font-size:22px;line-height:1.42;color:var(--g600);}
+.fact .icon{color:var(--orange);flex:none;margin-top:3px;width:24px;height:24px;}
+.fact b{color:#000;font-weight:600;}
+.chart-card{background:#fff;border:1px solid var(--g200);border-radius:20px;padding:30px 36px 26px;display:flex;flex-direction:column;}
+.chart-title{font-size:22px;font-weight:600;color:#000;}
+.chart-sub{font-size:17px;color:var(--g500);margin-top:4px;}
+.chart{flex:1;min-height:0;margin-top:14px;}
+.chart svg{width:100%;height:100%;display:block;overflow:visible;}
+.chart .tick{font-size:15px;fill:var(--g500);font-family:var(--font);}
+.chart .val{font-size:17px;font-weight:600;fill:#000;font-family:var(--font);}
+.chart .grid{stroke:var(--g150);stroke-width:1;}
+.chart .bar{fill:var(--g300);}
+.chart .bar.key{fill:var(--orange);}
+.chart .bar.target{fill:rgba(255,114,55,.12);stroke:var(--orange);stroke-width:2;stroke-dasharray:6 5;}
+.chart .bar:hover{filter:brightness(.92);}
+.kline{display:flex;gap:40px;margin-top:22px;padding-top:20px;border-top:1px solid var(--g150);}
+.kline .k{font-size:17px;color:var(--g500);line-height:1.35;}
+.kline .k b{display:block;font-size:34px;font-weight:600;color:#000;letter-spacing:-0.01em;margin-bottom:2px;}
+
+/* 5 · Legami A — ladder */
+.ladder{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:10px;position:relative;}
+.rung{padding:0 22px 0 0;position:relative;}
+.rung .yr{font-size:20px;font-weight:600;color:var(--g400);letter-spacing:.04em;}
+.rung .bar{height:8px;border-radius:4px;background:var(--g300);margin:14px 16px 22px 0;}
+.rung.accent .bar{background:var(--orange);}
+.rung.next .bar{background:transparent;border:2px dashed var(--g300);height:8px;}
+.rung h3{font-size:25px;line-height:1.2;margin-bottom:10px;}
+.rung p{font-size:18.5px;line-height:1.42;color:var(--g600);margin:0;}
+.rung p b{color:#000;font-weight:600;}
+.marker{margin-top:30px;display:flex;align-items:center;gap:14px;font-size:21px;color:var(--g600);background:var(--g100);border-radius:14px;padding:18px 26px;}
+.marker .icon{color:var(--orange);flex:none;}
+.marker b{color:#000;font-weight:600;}
+.retain{display:flex;align-items:center;gap:30px;margin-top:26px;}
+.retain .rv{font-size:78px;font-weight:600;letter-spacing:-0.02em;line-height:1;color:var(--orange);}
+.retain .rl{font-size:22px;line-height:1.4;color:var(--g600);max-width:40ch;}
+.retain .rl b{color:#000;font-weight:600;}
+
+/* 6 · Legami R — boxes */
+.rboxes{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:24px;margin-top:6px;}
+.rbox{border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px 32px;background:rgba(255,255,255,.04);}
+.rbox .rl{font-size:17px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.rbox .rv{font-size:62px;font-weight:600;letter-spacing:-0.02em;line-height:1.05;margin:14px 0 10px;color:#fff;}
+.rbox.key .rv{color:var(--orange);}
+.rbox .rs{font-size:19px;line-height:1.42;color:rgba(255,255,255,.66);}
+.rbox .rs b{color:#fff;font-weight:600;}
+.next-step{margin-top:26px;display:flex;align-items:center;gap:16px;font-size:23px;color:rgba(255,255,255,.8);}
+.next-step .icon{color:var(--orange);flex:none;}
+.next-step b{color:#fff;font-weight:600;}
+.book{margin-top:28px;display:flex;align-items:center;gap:30px;border:1.5px solid var(--orange);border-radius:18px;padding:22px 32px;}
+.book .bv{font-size:64px;font-weight:600;color:var(--orange);letter-spacing:-0.02em;line-height:1;flex:none;}
+.book .bl{font-size:22px;line-height:1.42;color:rgba(255,255,255,.8);}
+.book .bl b{color:#fff;font-weight:600;}
+
+/* 7 · PPP timeline + PEG */
+.tl{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:4px 0 30px;}
+.tl::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:var(--g200);}
+.tstep{position:relative;padding-right:18px;}
+.tstep .dot{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--g300);position:relative;z-index:1;display:grid;place-items:center;}
+.tstep.no .dot{border-color:var(--g400);}
+.tstep.key .dot{background:var(--orange);border-color:var(--orange);}
+.tstep.key .dot svg{color:#fff;width:18px;height:18px;}
+.tstep .td{font-size:17px;font-weight:600;color:var(--g400);letter-spacing:.04em;margin-top:14px;}
+.tstep .tt{font-size:21px;line-height:1.35;color:#000;font-weight:600;margin-top:6px;}
+.tstep .tx{font-size:17px;line-height:1.4;color:var(--g500);margin-top:4px;}
+.two{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;flex:1;min-height:0;}
+.panel{border:1px solid var(--g200);border-radius:18px;padding:28px 32px;background:#fff;display:flex;flex-direction:column;}
+.panel .ptag{font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.panel .ptag img{height:30px;}
+.goals{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.goals li{display:flex;gap:14px;align-items:flex-start;font-size:20px;line-height:1.4;color:var(--g600);}
+.goals li .icon{flex:none;width:24px;height:24px;margin-top:2px;color:var(--success);}
+.goals li b{color:#000;font-weight:600;}
+.peg-acts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;flex:1;}
+.pact .pl{font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);}
+.pact .pt{font-size:19px;line-height:1.42;color:var(--g600);margin-top:8px;}
+.pact .pt b{color:#000;font-weight:600;}
+.pact .pv{font-size:44px;font-weight:600;color:var(--orange);letter-spacing:-0.02em;line-height:1;margin-top:10px;}
+
+/* 8 · identikit */
+.idk{display:grid;grid-template-columns:1.2fr 0.8fr;gap:44px;flex:1;min-height:0;}
+.signals{display:flex;flex-direction:column;gap:14px;}
+.signal{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--g200);border-radius:16px;padding:20px 26px;}
+.signal .sn{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:600;flex:none;}
+.signal .sx{font-size:22px;line-height:1.38;color:var(--g600);}
+.signal .sx b{color:#000;font-weight:600;}
+.portrait{background:var(--ink);color:#fff;border-radius:20px;padding:36px 38px;display:flex;flex-direction:column;}
+.portrait .ptag{font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.portrait h3{font-size:32px;line-height:1.25;margin:16px 0 22px;}
+.portrait p{font-size:20px;line-height:1.5;color:rgba(255,255,255,.72);margin:0 0 14px;}
+.portrait p b{color:#fff;font-weight:600;}
+.notfor{margin-top:auto;border-top:1px solid rgba(255,255,255,.16);padding-top:20px;font-size:18px;line-height:1.45;color:rgba(255,255,255,.55);}
+.notfor b{color:rgba(255,255,255,.85);font-weight:600;}
+
+/* 9 · processo */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:10px;}
+.stepc{background:#fff;border:1px solid var(--g200);border-radius:18px;padding:32px 30px;display:flex;flex-direction:column;}
+.stepc.accent{border:1.5px solid var(--orange);box-shadow:0 24px 60px rgba(255,114,55,.12);}
+.stepc .sn{font-size:58px;font-weight:600;color:var(--g300);line-height:1;letter-spacing:-0.02em;}
+.stepc.accent .sn{color:var(--orange);}
+.stepc h3{font-size:26px;margin:18px 0 12px;}
+.stepc p{font-size:19px;line-height:1.45;color:var(--g600);margin:0;}
+.stepc p b{color:#000;font-weight:600;}
+.promise{margin-top:34px;display:flex;align-items:center;gap:16px;font-size:23px;color:var(--g600);}
+.promise .icon{color:var(--orange);flex:none;}
+.promise b{color:#000;font-weight:600;}
+
+/* 10 · close */
+.close-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.close-wrap h2{font-size:92px;max-width:18ch;line-height:1.02;}
+.cband{display:flex;gap:30px;margin-top:48px;}
+.cband .cc{flex:1;border-top:1px solid rgba(255,255,255,.18);padding-top:20px;}
+.cband .cv{font-size:50px;font-weight:600;color:#fff;letter-spacing:-0.02em;line-height:1;}
+.cband .cc.key .cv{color:var(--orange);}
+.cband .cl{font-size:18px;line-height:1.4;color:rgba(255,255,255,.6);margin-top:12px;max-width:24ch;}
+.people{display:flex;gap:56px;margin-top:52px;flex-wrap:wrap;}
+.people .pp{display:flex;flex-direction:column;gap:6px;}
+.people .pn{font-size:22px;font-weight:600;color:#fff;}
+.people .pr{font-size:16px;color:rgba(255,255,255,.5);}
+.people .pe{font-size:18px;color:rgba(255,255,255,.8);}
+.invite{margin-top:40px;display:flex;align-items:center;gap:14px;font-size:20px;color:rgba(255,255,255,.7);}
+.invite .icon{color:var(--orange);flex:none;}
+.invite b{color:#fff;font-weight:600;}
+
+@media (prefers-reduced-motion:no-preference){
+  [data-deck-active] .anim{animation:rise .55s cubic-bezier(.2,.7,.2,1) both;}
+  [data-deck-active] .anim:nth-child(2){animation-delay:.05s;}
+  [data-deck-active] .anim:nth-child(3){animation-delay:.1s;}
+  [data-deck-active] .anim:nth-child(4){animation-delay:.15s;}
+  [data-deck-active] .anim:nth-child(5){animation-delay:.2s;}
+}
+@keyframes rise{from{transform:translateY(16px);}to{transform:none;}}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 1 · COVER -->
+  <section class="dark" data-label="Cover">
+    <div class="pad">
+      <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
+      <img class="cover-logo anim" src="assets/mentor-logo-white-dot.svg" alt="mentor" style="align-self:flex-start;" />
+      <div style="flex:1;"></div>
+      <div class="eyebrow anim" style="margin-bottom:26px;">Agency Roadshow · Amazon Ads Milano</div>
+      <h1 class="anim">Mentor × Amazon Ads<span class="o">.</span></h1>
+      <p class="lead anim" style="margin-top:34px;max-width:48ch;">Come facciamo crescere la spesa dei brand che seguiamo, e quali dei vostri clienti mandarci.</p>
+    </div>
+    <div class="foot"><span>Ottobre 2026</span><span>mentor® · marketplace-mentor.com</span></div>
+  </section>
+
+  <!-- 2 · LA NOSTRA AGENZIA (dalla slide 2 della presentazione agenzia 2026) -->
+  <section data-label="La nostra agenzia">
+    <div class="pad">
+      <div class="head" style="margin-bottom:22px;">
+        <h2 class="anim">La nostra agenzia<span class="o">.</span></h2>
+      </div>
+      <p class="lead anim" style="font-size:24px;max-width:none;margin:0 0 30px;">Siamo i partner che danno ai brand italiani la <b>potenza globale dei marketplace</b>. Come Mentor ti guidiamo dentro la complessità dei marketplace e lavoriamo operativamente ogni giorno, con <b>partnership dirette</b> con le principali piattaforme. <b>Ti guidiamo nelle scelte che contano</b> e ci prendiamo la responsabilità dell'operatività.</p>
+      <div class="agency anim">
+        <div class="agency-left">
+          <div class="ncards">
+            <div class="ncard black">Negli ultimi anni abbiamo generato <b>+300 milioni</b> in vendite online.</div>
+            <div class="ncard grey">Abbiamo gestito <b>+10 milioni</b> di budget advertising.</div>
+          </div>
+          <div class="creds-card">
+            <img src="assets/badge-amazon-ads-advanced.png" alt="Amazon Ads Advanced Partner" />
+            <div class="creds-list">
+              <span><i class="icon" data-lucide="star"></i>Amazon Ads Preferred Partner</span>
+              <span><i class="icon" data-lucide="graduation-cap"></i>Amazon Ads Official Educator</span>
+            </div>
+          </div>
+        </div>
+        <div class="agency-photo"><img src="assets/founders-podcast.jpg" alt="I fondatori di mentor durante la registrazione di un podcast Amazon Ads" /></div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">02</span></div>
+  </section>
+
+  <!-- 3 · METODO + PROFONDITÀ -->
+  <section class="paper" data-label="Come seguiamo i brand">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Come lavoriamo</span>
+        <h2 class="anim">Pochi brand, seguiti da vicino: per questo, quando proponiamo, il cliente dice sì<span class="o">.</span></h2>
+      </div>
+      <div class="method">
+        <div class="pillars anim">
+          <div class="pillar"><div class="pic"><span data-lucide="user-check"></span></div><div><h3>Soci e senior sull'account</h3><p>Chi imposta il progetto lo segue negli anni: il brand parla sempre con chi decide.</p></div></div>
+          <div class="pillar"><div class="pic"><span data-lucide="sliders-horizontal"></span></div><div><h3>Su misura, anche nel software</h3><p>Marketforce, la nostra piattaforma, la adattiamo al cliente: strumenti costruiti sulle sue esigenze.</p></div></div>
+          <div class="pillar"><div class="pic"><span data-lucide="handshake"></span></div><div><h3>Allineati con voi</h3><p>Gli obiettivi Amazon stanno dentro il piano del brand. Proposte coordinate con l'AE, mai a sorpresa.</p></div></div>
+        </div>
+        <div class="depth anim">
+          <div class="dtag">Quanto andiamo a fondo · qualche esempio</div>
+          <ul>
+            <li><span class="who">Legami</span><span class="what"><b>106 riunioni</b> documentate dal 2022. Solo nel 2026 sono 30, e <b>10 insieme ad Amazon</b> su ordini, buy box e compliance.</span></li>
+            <li><span class="who">Legami</span><span class="what">Media plan su <b>34 portafogli e 316 campagne</b> in 4 paesi, ribilanciato stagione per stagione.</span></li>
+            <li><span class="who">Legami</span><span class="what">2023, esce la loro responsabile Amazon: ci chiedono di farci carico di <b>158 nuovi prodotti</b> e della Francia.</span></li>
+            <li><span class="who">Peg Perego</span><span class="what"><b>4 riunioni al mese</b>, una di strategia e tre di controllo, più il report mensile.</span></li>
+            <li><span class="who">Peg Perego</span><span class="what">Un monitor <b>buy box su 217 ASIN</b>, costruito in Marketforce sulle loro esigenze.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">03</span></div>
+  </section>
+
+  <!-- 4 · LEGAMI — SITUAZIONE E OBIETTIVO -->
+  <section data-label="Legami · situazione">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Caso · Legami · situazione e obiettivo</span>
+        <h2 class="anim">Un brand in forte crescita, che decide con i suoi tempi<span class="o">.</span></h2>
+      </div>
+      <div class="st">
+        <div class="facts anim">
+          <img src="assets/cl-legami.png" alt="Legami" style="height:60px;align-self:flex-start;margin-bottom:8px;" />
+          <div class="fact"><span class="icon" data-lucide="trending-up"></span><div>Cartoleria e regalo, <b>~€383M di ricavi, +56%</b> nell'esercizio chiuso a marzo 2026.</div></div>
+          <div class="fact"><span class="icon" data-lucide="globe"></span><div><b>Vendor 1P su 10 marketplace</b> europei, advertising su Italia, Germania, Francia e Spagna.</div></div>
+          <div class="fact"><span class="icon" data-lucide="heart"></span><div>Il brand viene prima di tutto: le novità le vuole capire, non subire.</div></div>
+          <div class="fact"><span class="icon" data-lucide="target"></span><div><b>Obiettivo 2026:</b> far crescere la spesa senza forzare il cliente e rispettare un DAA da <b>€1,3M</b> su EU4.</div></div>
+        </div>
+        <div class="chart-card anim">
+          <div class="chart-title">Spesa advertising Amazon di Legami</div>
+          <div class="chart-sub">Anno solare. 2022 da aprile, solo Italia · 2025 dato Amazon · 2026 impegno DAA</div>
+          <div class="chart" id="legami-chart"></div>
+          <div class="kline">
+            <div class="k"><b>~10×</b>spesa in 3 anni, 2022 → 2025</div>
+            <div class="k"><b>1 → 4</b>paesi in advertising, più la DSP</div>
+            <div class="k"><b>+41%</b>il DAA 2026 sulla spesa 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="amz anim"><span class="atag">Per Amazon</span><span>Un vendor <b>tier 1</b> che ha aumentato la spesa ogni anno, con spazio sui formati upper funnel.</span></div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">04</span></div>
+  </section>
+
+  <!-- 5 · LEGAMI — AZIONE -->
+  <section class="paper" data-label="Legami · il percorso">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Caso · Legami · cosa abbiamo fatto</span>
+        <h2 class="anim">In 5 anni Legami ci ha affidato un pezzo in più quasi ogni anno<span class="o">.</span></h2>
+      </div>
+      <div class="ladder anim">
+        <div class="rung"><div class="yr">2021</div><div class="bar"></div><h3>Consulenza</h3><p>Un progetto per impostare Amazon.</p></div>
+        <div class="rung"><div class="yr">2022</div><div class="bar"></div><h3>Gestione e ads</h3><p>Gestione continuativa, advertising in Italia.</p></div>
+        <div class="rung"><div class="yr">2024</div><div class="bar"></div><h3>+3 paesi</h3><p>Advertising anche in <b>Germania, Francia e Spagna</b>.</p></div>
+        <div class="rung"><div class="yr">2025</div><div class="bar"></div><h3>DSP</h3><p>Entra nel contratto, oggi arrivata <b>su 4 paesi</b>.</p></div>
+        <div class="rung accent"><div class="yr">2026</div><div class="bar"></div><h3>Accordo quadro</h3><p>Catalogo su 8 paesi, chargeback e il <b>DAA da €1,3M</b>.</p></div>
+        <div class="rung next"><div class="yr">Novembre 2026</div><div class="bar"></div><h3>Regno Unito</h3><p>Ce l'hanno chiesto a settembre.</p></div>
+      </div>
+      <div class="marker anim"><span class="icon" data-lucide="refresh-cw"></span><span>Nel 2023 esce la loro responsabile Amazon, nel 2026 il nostro referente storico. <b>Tutte e due le volte ci hanno affidato di più.</b></span></div>
+      <div class="retain anim">
+        <div class="rv">2 su 3</div>
+        <div class="rl">dei nostri clienti marketplace di oggi sono con noi <b>da più di 3 anni</b>. Legami non è un'eccezione, e sono loro a generare <b>oltre il 70%</b> della spesa advertising che gestiamo nel 2026.</div>
+      </div>
+      <div class="amz anim"><span class="atag">Per Amazon</span><span>Più paesi, la DSP, un DAA, il Regno Unito. <b>Nessun passo forzato: il cliente li ha fatti quando era pronto.</b></span></div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
+  </section>
+
+  <!-- 6 · LEGAMI — RISULTATO -->
+  <section class="dark" data-label="Legami · risultato">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Caso · Legami · risultato</span>
+        <h2 class="anim">Un DAA da €1,3M, la DSP accesa, il video come prossimo passo<span class="o">.</span></h2>
+      </div>
+      <div class="rboxes anim">
+        <div class="rbox key"><div class="rl">DAA 2026</div><div class="rv">€1,3M</div><div class="rs">Su Italia, Germania, Francia e Spagna: <b>+41% sulla spesa 2025</b>. Costruito insieme a Mattia.</div></div>
+        <div class="rbox"><div class="rl">DSP</div><div class="rv">4 paesi</div><div class="rs">Accesa in Italia nel 2025, oggi su 4 paesi. I <b>bonus DAA</b> vanno in DSP dal 25 agosto.</div></div>
+        <div class="rbox"><div class="rl">Ordini Amazon</div><div class="rv">+104%</div><div class="rs">Sell-in nell'anno fiscale <b>aprile 2024 – marzo 2025</b>, sull'anno prima.</div></div>
+      </div>
+      <div class="next-step anim"><span class="icon" data-lucide="clapperboard"></span><span><b>Prossimo passo: il video.</b> Oggi oltre l'80% della spesa è su search. Lo prepariamo con Mattia e Riccardo.</span></div>
+      <div class="book anim">
+        <div class="bv"><span class="ph">X%</span></div>
+        <div class="bl">dei nostri clienti ha attivato <b>almeno uno strumento pubblicitario nuovo</b> da Natale 2025. <span class="ph">dato Andrea</span></div>
+      </div>
+      <div class="amz anim"><span class="atag">Per Amazon</span><span>DAA da €1,3M, DSP accesa, <b>prossima attivazione: video.</b></span></div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
+  </section>
+
+  <!-- 7 · PREFERRED PARTNER + PEG -->
+  <section data-label="Preferred Partner e Peg Perego">
+    <div class="pad">
+      <div class="head" style="margin-bottom:30px;">
+        <span class="eyebrow anim">Lo stesso metodo, su tutti i clienti</span>
+        <h2 class="anim">A dicembre Amazon ci ha detto «non ancora». A giugno eravamo Preferred Partner<span class="o">.</span></h2>
+      </div>
+      <div class="tl anim">
+        <div class="tstep"><div class="dot"></div><div class="td">Settembre 2025</div><div class="tt">Si parte</div><div class="tx">Partnership con il team Amazon Ads.</div></div>
+        <div class="tstep no"><div class="dot"></div><div class="td">16 dicembre</div><div class="tt">«Non ancora»</div><div class="tx">8 clienti in comune, sotto €1,5M.</div></div>
+        <div class="tstep"><div class="dot"></div><div class="td">29 gennaio 2026</div><div class="tt">Obiettivi condivisi</div><div class="tx">Fissati insieme ad Amazon, a Milano.</div></div>
+        <div class="tstep"><div class="dot"></div><div class="td">10 marzo – 1 aprile</div><div class="tt">3 DAA in 22 giorni</div><div class="tx">Chiusi con i vostri colleghi.</div></div>
+        <div class="tstep key"><div class="dot"><span data-lucide="check"></span></div><div class="td">18 giugno 2026</div><div class="tt">Preferred Partner</div><div class="tx">Sei mesi dopo il «non ancora».</div></div>
+      </div>
+      <div class="two anim">
+        <div class="panel">
+          <div class="ptag">Obiettivi raggiunti</div>
+          <ul class="goals">
+            <li><span class="icon" data-lucide="circle-check"></span><span><b>3 DAA chiusi</b> entro l'1 aprile, contro i 2 richiesti per fine Q1.</span></li>
+            <li><span class="icon" data-lucide="circle-check"></span><span><span class="ph">obiettivo raggiunto · dato Andrea</span></span></li>
+            <li><span class="icon" data-lucide="circle-check"></span><span><span class="ph">obiettivo raggiunto · dato Andrea</span></span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="ptag"><img src="assets/cl-pegperego.png" alt="Peg Perego" /> La conferma</div>
+          <div class="peg-acts">
+            <div class="pact"><div class="pl">Prima</div><div class="pv" style="color:var(--ink);">−34%</div><div class="pt">la prima infanzia su Amazon nel primo semestre 2025. E un'azienda <b>in piena ristrutturazione</b>.</div></div>
+            <div class="pact"><div class="pl">Cosa ci ha affidato</div><div class="pt"><b>Più budget e più libertà.</b> Un DAA da €115K, quasi il doppio della spesa 2025 in Italia. Ad aprile la prima DSP e l'advertising in Francia. E le interazioni con Amazon gestite da noi.</div></div>
+            <div class="pact"><div class="pl">Risultato</div><div class="pv">+56%</div><div class="pt">spesa advertising 2026 a oggi: <b>ha già superato tutto il 2025</b>. Nel Q2, +141%.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">07</span></div>
+  </section>
+
+  <!-- 8 · IDENTIKIT -->
+  <section class="paper" data-label="Quali brand mandarci">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Quali brand mandarci</span>
+        <h2 class="anim">Mandateci i brand che vogliono essere seguiti, non solo gestiti<span class="o">.</span></h2>
+      </div>
+      <div class="idk">
+        <div class="signals anim">
+          <div class="signal"><span class="sn">1</span><span class="sx">Deve <b>aumentare la spesa</b> o firmare il suo <b>primo DAA</b>, e da solo non ci arriva.</span></div>
+          <div class="signal"><span class="sn">2</span><span class="sx">È tutto su search e <b>diffida dei formati nuovi</b>: va accompagnato, non spinto.</span></div>
+          <div class="signal"><span class="sn">3</span><span class="sx">È <b>vendor</b> e ha catalogo, chargeback o buy box che frenano la pubblicità.</span></div>
+          <div class="signal"><span class="sn">4</span><span class="sx">Vuole <b>aprire nuovi paesi</b> in Europa.</span></div>
+          <div class="signal"><span class="sn">5</span><span class="sx">Ha appena <b>cambiato referente o CMO</b> e rischia di ripartire da zero.</span></div>
+        </div>
+        <div class="portrait anim">
+          <div class="ptag">L'identikit</div>
+          <h3>Un brand che vuole parlare con un senior, non con un ticket.</h3>
+          <p>Ha bisogno di essere <b>seguito da vicino</b>: qualcuno che conosca il suo business, ragioni con lui e lo porti un passo alla volta a investire di più.</p>
+          <p>In una struttura molto grande rischierebbe di essere <b>uno dei tanti account</b>. Da noi è uno dei pochi.</p>
+          <div class="notfor"><b>Non siamo la scelta giusta</b> per chi cerca solo la gestione Sponsored al prezzo più basso.</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">08</span></div>
+  </section>
+
+  <!-- 9 · PROCESSO -->
+  <section data-label="Come mandarci un brand">
+    <div class="pad">
+      <div class="head">
+        <span class="eyebrow anim">Come funziona</span>
+        <h2 class="anim">Ci mandate un nome, vi riportiamo un piano con dentro il vostro obiettivo<span class="o">.</span></h2>
+      </div>
+      <div class="steps anim">
+        <div class="stepc"><div class="sn">01</div><h3>Ci scrivete</h3><p>Il nome del brand e due righe su cosa vi serve: più spesa, primo DAA, un formato nuovo.</p></div>
+        <div class="stepc"><div class="sn">02</div><h3>Call a tre</h3><p>Voi, noi e il brand. Capiamo il business prima di proporre qualsiasi cosa.</p></div>
+        <div class="stepc accent"><div class="sn">03</div><h3>Il piano</h3><p>Con dentro il <b>vostro obiettivo</b>: spesa, DAA, formato o paese.</p></div>
+        <div class="stepc"><div class="sn">04</div><h3>Voi sempre in copia</h3><p>Sugli step che contano, e ci sentiamo a tre per vedere a che punto siamo.</p></div>
+      </div>
+      <div class="promise anim"><span class="icon" data-lucide="message-circle"></span><span>E se il brand non fa per noi, <b>ve lo diciamo subito.</b></span></div>
+    </div>
+    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">09</span></div>
+  </section>
+
+  <!-- 10 · CHIUSURA -->
+  <section class="dark" data-label="Chiusura">
+    <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
+    <div class="pad">
+      <div class="close-wrap">
+        <h2 class="anim">Clienti che restano. Budget che crescono<span class="o">.</span></h2>
+        <div class="cband anim">
+          <div class="cc"><div class="cv">2 su 3</div><div class="cl">clienti marketplace con noi da più di 3 anni</div></div>
+          <div class="cc"><div class="cv"><span class="ph">X%</span></div><div class="cl">clienti con uno strumento nuovo da Natale 2025</div></div>
+          <div class="cc key"><div class="cv">3 DAA</div><div class="cl">chiusi in 22 giorni</div></div>
+          <div class="cc"><div class="cv">6 mesi</div><div class="cl">dal «non ancora» al Preferred Partner</div></div>
+        </div>
+        <div class="people anim">
+          <div class="pp"><span class="pn">Eleonora Calvi Parisetti</span><span class="pr">Managing Partner</span><span class="pe">eleonora@marketplace-mentor.com</span></div>
+          <div class="pp"><span class="pn">Andrea Giavara</span><span class="pr">Founder</span><span class="pe">andrea@growers.agency</span></div>
+          <div class="pp"><span class="pn">Andrea Orfei</span><span class="pr">Amazon Ads Specialist</span><span class="pe">andreaorfei@marketplace-mentor.com</span></div>
+        </div>
+        <div class="invite anim"><span class="icon" data-lucide="calendar-heart"></span><span><b>6 novembre, Padova:</b> festeggiamo 10 anni di Mentor, con Riccardo sul palco. Siete invitati.</span></div>
+      </div>
+    </div>
+    <div class="foot"><span>mentor® · marketplace-mentor.com</span><span class="num-badge">10</span></div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script>
+  // Colonne: spesa advertising Amazon di Legami (€K). key = colonna in accento, label = valore scritto sul cap.
+  // Barre ≤24px, cap arrotondato 4px e base squadrata, griglia hairline, etichette selettive, tooltip nativo.
+  const LEGAMI_SPEND = [
+    {label:'2022', value:83,   show:true, tip:'2022: €83K (da aprile, solo Italia)'},
+    {label:'2023', value:151,  tip:'2023: €151K (Italia)'},
+    {label:'2024', value:523,  tip:'2024: €523K (Italia, da maggio anche Germania, Francia, Spagna)'},
+    {label:'2025', value:919,  show:true, key:true, tip:'2025: €919K (dato Amazon, 4 paesi + DSP)'},
+    {label:'2026', value:1300, show:true, target:true, tip:'2026: DAA da €1,3M su EU4 (impegno, non consuntivo)'}
+  ];
+  function drawColumns(el, data, opt){
+    if(!el || !data.length) return;
+    const W = el.clientWidth || 760, H = el.clientHeight || 360;
+    const m = {t:36, r:8, b:40, l:56}, iw = W-m.l-m.r, ih = H-m.t-m.b;
+    const max = Math.max(...data.map(d=>d.value)), step = opt.step, top = Math.ceil(max/step)*step;
+    const y = v => m.t + ih - (v/top)*ih, bw = 24, slot = iw/data.length;
+    const fmt = v => v>=1000 ? '€'+(v/1000).toLocaleString('it-IT',{maximumFractionDigits:1})+'M' : '€'+Math.round(v)+'K';
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opt.aria}">`;
+    for(let v=0; v<=top; v+=step){ s += `<line class="grid" x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}"/><text class="tick" x="${m.l-12}" y="${y(v)+5}" text-anchor="end">${v?fmt(v):'0'}</text>`; }
+    data.forEach((d,i)=>{
+      const cx = m.l + slot*i + slot/2, x = cx-bw/2, yt = y(d.value), h = m.t+ih-yt, r = Math.min(4,h);
+      const path = `M${x},${m.t+ih} V${yt+r} Q${x},${yt} ${x+r},${yt} H${x+bw-r} Q${x+bw},${yt} ${x+bw},${yt+r} V${m.t+ih} Z`;
+      s += `<g><title>${d.tip || (d.label+': '+fmt(d.value))}</title><rect x="${cx-slot/2}" y="${m.t}" width="${slot}" height="${ih}" fill="transparent"/><path class="bar${d.key?' key':''}${d.target?' target':''}" d="${path}"/></g>`;
+      if(d.show) s += `<text class="val" x="${cx}" y="${yt-12}" text-anchor="middle">${fmt(d.value)}</text>`;
+      s += `<text class="tick" x="${cx}" y="${H-12}" text-anchor="middle">${d.label}</text>`;
+    });
+    el.innerHTML = s + '</svg>';
+  }
+  function paint(){
+    if(window.lucide){ lucide.createIcons(); }
+    drawColumns(document.getElementById('legami-chart'), LEGAMI_SPEND, {step:500, aria:'Spesa advertising Amazon di Legami per anno'});
+  }
+  paint();
+  document.querySelector('deck-stage')?.addEventListener('slidechange', paint);
+  window.addEventListener('load', paint);
+</script>
+</body>
+</html>
