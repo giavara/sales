@@ -1,5 +1,6 @@
 <!doctype html>
-<!-- Mentor × Amazon Ads — Agency Roadshow · v1.4 — 2026-09-28
+<!-- Mentor × Amazon Ads — Agency Roadshow · v1.5 — 2026-09-28
+     v1.5: slide 6 sostituita: caso PromoPharma (al posto di Legami risultato)
      v1.4: dati Andrea: 80% clienti con formato nuovo da Natale 2025, 33% clienti con nuovi DAA 2026
      v1.3: slide 7, etichette PEG "Inizio 2025" e "2026"
      v1.2: cover, tabella slide 4 in cima, titolo slide 8, chiusura senza occhiello e nuovi ruoli
@@ -158,6 +159,19 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .book .bv{font-size:64px;font-weight:600;color:var(--orange);letter-spacing:-0.02em;line-height:1;flex:none;}
 .book .bl{font-size:22px;line-height:1.42;color:rgba(255,255,255,.8);}
 .book .bl b{color:#fff;font-weight:600;}
+
+/* 6 · PromoPharma — dark timeline + 4 boxes */
+.tl.dk::before{background:rgba(255,255,255,.16);}
+.tl.dk .dot{background:#000;border-color:rgba(255,255,255,.35);}
+.tl.dk .tstep.key .dot{background:var(--orange);border-color:var(--orange);}
+.tl.dk .tstep.next .dot{border-style:dashed;}
+.tl.dk .td{color:rgba(255,255,255,.5);}
+.tl.dk .tt{color:#fff;}
+.tl.dk .tx{color:rgba(255,255,255,.62);}
+.rboxes.c4{grid-template-columns:1.15fr 1fr 1fr 1fr;gap:22px;}
+.rboxes.c4 .rbox{padding:26px 28px;}
+.rboxes.c4 .rv{font-size:56px;margin:12px 0 8px;}
+.rboxes.c4 .rs{font-size:18.5px;}
 
 /* 7 · PPP timeline + PEG */
 .tl{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:4px 0 30px;}
@@ -375,24 +389,29 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
   </section>
 
-  <!-- 6 · LEGAMI — RISULTATO -->
-  <section class="dark" data-label="Legami · risultato">
+  <!-- 6 · PROMOPHARMA -->
+  <section class="dark" data-label="PromoPharma">
     <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">Caso · Legami · risultato</span>
-        <h2 class="anim">Un DAA da €1,3M, la DSP accesa, il video come prossimo passo<span class="o">.</span></h2>
+      <div class="head" style="margin-bottom:18px;">
+        <span class="eyebrow anim">Caso · PromoPharma</span>
+        <h2 class="anim" style="max-width:none;">Partito dalla search, arrivato al Prime Video<span class="o">.</span></h2>
       </div>
-      <div class="rboxes anim">
-        <div class="rbox key"><div class="rl">DAA 2026</div><div class="rv">€1,3M</div><div class="rs">Su Italia, Germania, Francia e Spagna: <b>+41% sulla spesa 2025</b>. Costruito insieme a Mattia.</div></div>
-        <div class="rbox"><div class="rl">DSP</div><div class="rv">4 paesi</div><div class="rs">Accesa in Italia nel 2025, oggi su 4 paesi. I <b>bonus DAA</b> vanno in DSP dal 25 agosto.</div></div>
-        <div class="rbox"><div class="rl">Ordini Amazon</div><div class="rv">+104%</div><div class="rs">Sell-in nell'anno fiscale <b>aprile 2024 – marzo 2025</b>, sull'anno prima.</div></div>
+      <p class="lead anim" style="font-size:24px;max-width:none;margin:0 0 34px;">Integratori da farmacia, <b>piccolo su Amazon</b>: solo vendor Italia, €1,1M di sell-out nel 2025. Con noi dal 2021.</p>
+      <div class="tl dk anim" style="grid-template-columns:repeat(6,1fr);margin-bottom:34px;">
+        <div class="tstep"><div class="dot"></div><div class="td">2021</div><div class="tt">Si parte</div><div class="tx">Vendor solo Italia, consulenza Amazon.</div></div>
+        <div class="tstep"><div class="dot"></div><div class="td">Gennaio 2024</div><div class="tt">Restare e investire</div><div class="tx">Pensavano di chiudere il vendor. Spesa da €50K a €104K.</div></div>
+        <div class="tstep"><div class="dot"></div><div class="td">2025</div><div class="tt">Semina</div><div class="tx">Proponiamo DSP e Sponsored TV. Non è ancora il momento.</div></div>
+        <div class="tstep"><div class="dot"></div><div class="td">Marzo 2026</div><div class="tt">DAA e DSP</div><div class="tx">DAA confermato, DSP sempre accesa.</div></div>
+        <div class="tstep key"><div class="dot"><span data-lucide="check"></span></div><div class="td">Maggio 2026</div><div class="tt">Prime Video</div><div class="tx">Primo flight su Nutritask Shot.</div></div>
+        <div class="tstep next"><div class="dot"></div><div class="td">Prossimo passo</div><div class="tt">Secondo flight</div><div class="tx">In preparazione.</div></div>
       </div>
-      <div class="next-step anim"><span class="icon" data-lucide="clapperboard"></span><span><b>Prossimo passo: il video.</b> Oggi oltre l'80% della spesa è su search. Lo prepariamo con Mattia e Riccardo.</span></div>
-      <div class="book anim">
-        <div class="bv">80%</div>
-        <div class="bl">dei nostri clienti ha attivato <b>un formato pubblicitario nuovo</b> da Natale 2025.</div>
+      <div class="rboxes c4 anim">
+        <div class="rbox key"><div class="rl">DAA 2026</div><div class="rv">€150K</div><div class="rs"><b>+45%</b> sulla spesa 2025, solo Italia. Confermato a marzo.</div></div>
+        <div class="rbox"><div class="rl">Spesa gen–ago 2026</div><div class="rv">€107K</div><div class="rs">In 8 mesi ha già superato <b>tutto il 2025</b> (€103K).</div></div>
+        <div class="rbox"><div class="rl">Formati nuovi</div><div class="rv">40%</div><div class="rs">della spesa 2026 va su <b>DSP e Prime Video</b>, che nel 2025 non usava.</div></div>
+        <div class="rbox"><div class="rl">Prime Video</div><div class="rv">830K</div><div class="rs">persone raggiunte in 30 giorni. VCR 97%, <b>90 nuovi clienti</b> del brand.</div></div>
       </div>
-      <div class="amz anim"><span class="atag">Per Amazon</span><span>DAA da €1,3M, DSP accesa, <b>prossima attivazione: video.</b></span></div>
+      <div class="amz anim"><span class="atag">Per Amazon</span><span>Dalla sola search a DAA, DSP e Prime Video, un passo alla volta sulle nostre proposte. <b>Brand così ne avete tanti.</b></span></div>
     </div>
     <div class="foot"><img src="assets/mentor-logo-white-dot.svg" alt="mentor" /><span class="num-badge">06</span></div>
   </section>
