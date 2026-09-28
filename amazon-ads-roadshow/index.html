@@ -1,5 +1,6 @@
 <!doctype html>
-<!-- Mentor × Amazon Ads — Agency Roadshow · v1.0 — 2026-09-28
+<!-- Mentor × Amazon Ads — Agency Roadshow · v1.1 — 2026-09-28
+     v1.1: modifiche Andrea: slide 3-8 testi, grafico slide 4 con numeri sopra, tolta slide processo, chiusura = 3 punti per gli AE (9 slide)
      v1.0: struttura approvata da Andrea (27/9), dati verificati su Drive/Gmail/Marketforce, 2 su 3 clienti oltre 3 anni (Andrea).
            Ancora da inserire (segnaposto arancioni): % clienti con strumento nuovo da Natale 2025; 2 obiettivi PPP raggiunti.
      v0.1: prima stesura -->
@@ -117,7 +118,7 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .chart .bar.key{fill:var(--orange);}
 .chart .bar.target{fill:rgba(255,114,55,.12);stroke:var(--orange);stroke-width:2;stroke-dasharray:6 5;}
 .chart .bar:hover{filter:brightness(.92);}
-.kline{display:flex;gap:40px;margin-top:22px;padding-top:20px;border-top:1px solid var(--g150);}
+.kline{display:flex;gap:40px;margin-top:20px;padding-bottom:20px;border-bottom:1px solid var(--g150);}
 .kline .k{font-size:17px;color:var(--g500);line-height:1.35;}
 .kline .k b{display:block;font-size:34px;font-weight:600;color:#000;letter-spacing:-0.01em;margin-bottom:2px;}
 
@@ -208,7 +209,16 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .promise .icon{color:var(--orange);flex:none;}
 .promise b{color:#000;font-weight:600;}
 
-/* 10 · close */
+/* 9 · close — 3 takeaways */
+.takeaways{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.tk{border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:30px 32px;background:rgba(255,255,255,.04);display:flex;flex-direction:column;}
+.tk.key{border-color:var(--orange);}
+.tk .tgoal{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);}
+.tk .tgoal svg{width:20px;height:20px;}
+.tk h3{font-size:30px;line-height:1.2;color:#fff;margin:16px 0 12px;}
+.tk p{font-size:19.5px;line-height:1.48;color:rgba(255,255,255,.7);margin:0;}
+.tk p b{color:#fff;font-weight:600;}
+/* legacy close styles */
 .close-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;}
 .close-wrap h2{font-size:92px;max-width:18ch;line-height:1.02;}
 .cband{display:flex;gap:30px;margin-top:48px;}
@@ -216,12 +226,12 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .cband .cv{font-size:50px;font-weight:600;color:#fff;letter-spacing:-0.02em;line-height:1;}
 .cband .cc.key .cv{color:var(--orange);}
 .cband .cl{font-size:18px;line-height:1.4;color:rgba(255,255,255,.6);margin-top:12px;max-width:24ch;}
-.people{display:flex;gap:56px;margin-top:52px;flex-wrap:wrap;}
+.people{display:flex;gap:56px;margin-top:40px;flex-wrap:wrap;}
 .people .pp{display:flex;flex-direction:column;gap:6px;}
 .people .pn{font-size:22px;font-weight:600;color:#fff;}
 .people .pr{font-size:16px;color:rgba(255,255,255,.5);}
 .people .pe{font-size:18px;color:rgba(255,255,255,.8);}
-.invite{margin-top:40px;display:flex;align-items:center;gap:14px;font-size:20px;color:rgba(255,255,255,.7);}
+.invite{margin-top:26px;display:flex;align-items:center;gap:14px;font-size:20px;color:rgba(255,255,255,.7);}
 .invite .icon{color:var(--orange);flex:none;}
 .invite b{color:#fff;font-weight:600;}
 
@@ -297,7 +307,7 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
             <li><span class="who">Legami</span><span class="what"><b>106 riunioni</b> documentate dal 2022. Solo nel 2026 sono 30, e <b>10 insieme ad Amazon</b> su ordini, buy box e compliance.</span></li>
             <li><span class="who">Legami</span><span class="what">Media plan su <b>34 portafogli e 316 campagne</b> in 4 paesi, ribilanciato stagione per stagione.</span></li>
             <li><span class="who">Legami</span><span class="what">2023, esce la loro responsabile Amazon: ci chiedono di farci carico di <b>158 nuovi prodotti</b> e della Francia.</span></li>
-            <li><span class="who">Peg Perego</span><span class="what"><b>4 riunioni al mese</b>, una di strategia e tre di controllo, più il report mensile.</span></li>
+            <li><span class="who">Peg Perego</span><span class="what"><b>4 riunioni al mese</b>, una di strategia e tre di controllo, più una di visione ogni trimestre.</span></li>
             <li><span class="who">Peg Perego</span><span class="what">Un monitor <b>buy box su 217 ASIN</b>, costruito in Marketforce sulle loro esigenze.</span></li>
           </ul>
         </div>
@@ -318,18 +328,18 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
           <img src="assets/cl-legami.png" alt="Legami" style="height:60px;align-self:flex-start;margin-bottom:8px;" />
           <div class="fact"><span class="icon" data-lucide="trending-up"></span><div>Cartoleria e regalo, <b>~€383M di ricavi, +56%</b> nell'esercizio chiuso a marzo 2026.</div></div>
           <div class="fact"><span class="icon" data-lucide="globe"></span><div><b>Vendor 1P su 10 marketplace</b> europei, advertising su Italia, Germania, Francia e Spagna.</div></div>
-          <div class="fact"><span class="icon" data-lucide="heart"></span><div>Il brand viene prima di tutto: le novità le vuole capire, non subire.</div></div>
-          <div class="fact"><span class="icon" data-lucide="target"></span><div><b>Obiettivo 2026:</b> far crescere la spesa senza forzare il cliente e rispettare un DAA da <b>€1,3M</b> su EU4.</div></div>
+          <div class="fact"><span class="icon" data-lucide="heart"></span><div>Il brand viene prima di tutto: le novità le vuole capire.</div></div>
+          <div class="fact"><span class="icon" data-lucide="target"></span><div><b>Obiettivo 2026:</b> far crescere la spesa fino a <b>€1,3M</b>, rispettando il cliente e attivando nuovi strumenti.</div></div>
         </div>
         <div class="chart-card anim">
           <div class="chart-title">Spesa advertising Amazon di Legami</div>
           <div class="chart-sub">Anno solare. 2022 da aprile, solo Italia · 2025 dato Amazon · 2026 impegno DAA</div>
-          <div class="chart" id="legami-chart"></div>
           <div class="kline">
             <div class="k"><b>~10×</b>spesa in 3 anni, 2022 → 2025</div>
             <div class="k"><b>1 → 4</b>paesi in advertising, più la DSP</div>
             <div class="k"><b>+41%</b>il DAA 2026 sulla spesa 2025</div>
           </div>
+          <div class="chart" id="legami-chart"></div>
         </div>
       </div>
       <div class="amz anim"><span class="atag">Per Amazon</span><span>Un vendor <b>tier 1</b> che ha aumentato la spesa ogni anno, con spazio sui formati upper funnel.</span></div>
@@ -357,7 +367,7 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="rv">2 su 3</div>
         <div class="rl">dei nostri clienti marketplace di oggi sono con noi <b>da più di 3 anni</b>. Legami non è un'eccezione, e sono loro a generare <b>oltre il 70%</b> della spesa advertising che gestiamo nel 2026.</div>
       </div>
-      <div class="amz anim"><span class="atag">Per Amazon</span><span>Più paesi, la DSP, un DAA, il Regno Unito. <b>Nessun passo forzato: il cliente li ha fatti quando era pronto.</b></span></div>
+      <div class="amz anim"><span class="atag">Per Amazon</span><span>Più paesi, la DSP, un DAA, il Regno Unito. <b>Il cliente l'abbiamo sensibilizzato, formato e seguito per attivare nuove opportunità.</b></span></div>
     </div>
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">05</span></div>
   </section>
@@ -410,9 +420,9 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="panel">
           <div class="ptag"><img src="assets/cl-pegperego.png" alt="Peg Perego" /> La conferma</div>
           <div class="peg-acts">
-            <div class="pact"><div class="pl">Prima</div><div class="pv" style="color:var(--ink);">−34%</div><div class="pt">la prima infanzia su Amazon nel primo semestre 2025. E un'azienda <b>in piena ristrutturazione</b>.</div></div>
-            <div class="pact"><div class="pl">Cosa ci ha affidato</div><div class="pt"><b>Più budget e più libertà.</b> Un DAA da €115K, quasi il doppio della spesa 2025 in Italia. Ad aprile la prima DSP e l'advertising in Francia. E le interazioni con Amazon gestite da noi.</div></div>
-            <div class="pact"><div class="pl">Risultato</div><div class="pv">+56%</div><div class="pt">spesa advertising 2026 a oggi: <b>ha già superato tutto il 2025</b>. Nel Q2, +141%.</div></div>
+            <div class="pact"><div class="pl">Prima</div><div class="pv" style="color:var(--ink);">−34%</div><div class="pt">prima infanzia su Amazon nel primo semestre 2025. Azienda <b>in piena ristrutturazione</b>.</div></div>
+            <div class="pact"><div class="pl">Cosa ci ha affidato</div><div class="pt"><b>Più budget e più libertà.</b> Un DAA pari a ~2× la spesa 2025 in Italia. Ad aprile la prima DSP e ads in Francia. E sempre più controllo del progetto.</div></div>
+            <div class="pact"><div class="pl">Risultato</div><div class="pv">+56%</div><div class="pt">spesa advertising 2026 a oggi: <b>ha già superato tutto il 2025</b> (solo nel Q2, +141%).</div></div>
           </div>
         </div>
       </div>
@@ -424,20 +434,20 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
   <section class="paper" data-label="Quali brand mandarci">
     <div class="pad">
       <div class="head">
-        <span class="eyebrow anim">Quali brand mandarci</span>
-        <h2 class="anim">Mandateci i brand che vogliono essere seguiti, non solo gestiti<span class="o">.</span></h2>
+        <span class="eyebrow anim">Il nostro progetto tipo</span>
+        <h2 class="anim">Lavoriamo bene con brand che vogliono essere seguiti<span class="o">.</span></h2>
       </div>
       <div class="idk">
         <div class="signals anim">
           <div class="signal"><span class="sn">1</span><span class="sx">Deve <b>aumentare la spesa</b> o firmare il suo <b>primo DAA</b>, e da solo non ci arriva.</span></div>
-          <div class="signal"><span class="sn">2</span><span class="sx">È tutto su search e <b>diffida dei formati nuovi</b>: va accompagnato, non spinto.</span></div>
-          <div class="signal"><span class="sn">3</span><span class="sx">È <b>vendor</b> e ha catalogo, chargeback o buy box che frenano la pubblicità.</span></div>
+          <div class="signal"><span class="sn">2</span><span class="sx">È tutto su search e <b>diffida dei formati nuovi</b>: va sensibilizzato e accompagnato.</span></div>
+          <div class="signal"><span class="sn">3</span><span class="sx">Temi di <b>catalogo, chargeback o buy box</b> frenano la pubblicità.</span></div>
           <div class="signal"><span class="sn">4</span><span class="sx">Vuole <b>aprire nuovi paesi</b> in Europa.</span></div>
           <div class="signal"><span class="sn">5</span><span class="sx">Ha appena <b>cambiato referente o CMO</b> e rischia di ripartire da zero.</span></div>
         </div>
         <div class="portrait anim">
           <div class="ptag">L'identikit</div>
-          <h3>Un brand che vuole parlare con un senior, non con un ticket.</h3>
+          <h3>Un brand che vuole parlare con un senior.</h3>
           <p>Ha bisogno di essere <b>seguito da vicino</b>: qualcuno che conosca il suo business, ragioni con lui e lo porti un passo alla volta a investire di più.</p>
           <p>In una struttura molto grande rischierebbe di essere <b>uno dei tanti account</b>. Da noi è uno dei pochi.</p>
           <div class="notfor"><b>Non siamo la scelta giusta</b> per chi cerca solo la gestione Sponsored al prezzo più basso.</div>
@@ -447,45 +457,39 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">08</span></div>
   </section>
 
-  <!-- 9 · PROCESSO -->
-  <section data-label="Come mandarci un brand">
-    <div class="pad">
-      <div class="head">
-        <span class="eyebrow anim">Come funziona</span>
-        <h2 class="anim">Ci mandate un nome, vi riportiamo un piano con dentro il vostro obiettivo<span class="o">.</span></h2>
-      </div>
-      <div class="steps anim">
-        <div class="stepc"><div class="sn">01</div><h3>Ci scrivete</h3><p>Il nome del brand e due righe su cosa vi serve: più spesa, primo DAA, un formato nuovo.</p></div>
-        <div class="stepc"><div class="sn">02</div><h3>Call a tre</h3><p>Voi, noi e il brand. Capiamo il business prima di proporre qualsiasi cosa.</p></div>
-        <div class="stepc accent"><div class="sn">03</div><h3>Il piano</h3><p>Con dentro il <b>vostro obiettivo</b>: spesa, DAA, formato o paese.</p></div>
-        <div class="stepc"><div class="sn">04</div><h3>Voi sempre in copia</h3><p>Sugli step che contano, e ci sentiamo a tre per vedere a che punto siamo.</p></div>
-      </div>
-      <div class="promise anim"><span class="icon" data-lucide="message-circle"></span><span>E se il brand non fa per noi, <b>ve lo diciamo subito.</b></span></div>
-    </div>
-    <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">09</span></div>
-  </section>
-
-  <!-- 10 · CHIUSURA -->
-  <section class="dark" data-label="Chiusura">
+  <!-- 9 · CHIUSURA: 3 cose da ricordare -->
+  <section class="dark" data-label="Da ricordare">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
-      <div class="close-wrap">
-        <h2 class="anim">Clienti che restano. Budget che crescono<span class="o">.</span></h2>
-        <div class="cband anim">
-          <div class="cc"><div class="cv">2 su 3</div><div class="cl">clienti marketplace con noi da più di 3 anni</div></div>
-          <div class="cc"><div class="cv"><span class="ph">X%</span></div><div class="cl">clienti con uno strumento nuovo da Natale 2025</div></div>
-          <div class="cc key"><div class="cv">3 DAA</div><div class="cl">chiusi in 22 giorni</div></div>
-          <div class="cc"><div class="cv">6 mesi</div><div class="cl">dal «non ancora» al Preferred Partner</div></div>
-        </div>
-        <div class="people anim">
-          <div class="pp"><span class="pn">Eleonora Calvi Parisetti</span><span class="pr">Managing Partner</span><span class="pe">eleonora@marketplace-mentor.com</span></div>
-          <div class="pp"><span class="pn">Andrea Giavara</span><span class="pr">Founder</span><span class="pe">andrea@growers.agency</span></div>
-          <div class="pp"><span class="pn">Andrea Orfei</span><span class="pr">Amazon Ads Specialist</span><span class="pe">andreaorfei@marketplace-mentor.com</span></div>
-        </div>
-        <div class="invite anim"><span class="icon" data-lucide="calendar-heart"></span><span><b>6 novembre, Padova:</b> festeggiamo 10 anni di Mentor, con Riccardo sul palco. Siete invitati.</span></div>
+      <div class="head" style="margin-bottom:44px;">
+        <span class="eyebrow anim">Tre cose da portarvi a casa</span>
+        <h2 class="anim" style="font-size:76px;max-width:none;">Clienti che restano. Budget che crescono<span class="o">.</span></h2>
       </div>
+      <div class="takeaways anim">
+        <div class="tk">
+          <div class="tgoal"><span data-lucide="trending-up"></span>Il vostro obiettivo: più spesa</div>
+          <h3>La spesa cresce, e resta.</h3>
+          <p>Legami da <b>€83K a €919K</b> in 3 anni e un DAA da <b>€1,3M</b>. Peg Perego <b>+56%</b> nel 2026. E <b>2 clienti su 3</b> sono con noi da più di 3 anni.</p>
+        </div>
+        <div class="tk">
+          <div class="tgoal"><span data-lucide="sparkles"></span>Il vostro obiettivo: nuove attivazioni</div>
+          <h3>Strumenti nuovi, senza forzare.</h3>
+          <p>La DSP su <b>4 paesi</b> per Legami, la prima DSP e la Francia per Peg Perego. <span class="ph">X%</span> dei clienti con uno strumento nuovo da Natale 2025.</p>
+        </div>
+        <div class="tk key">
+          <div class="tgoal"><span data-lucide="handshake"></span>Il vostro obiettivo: DAA</div>
+          <h3>Mandateci chi deve crescere o firmare il primo DAA.</h3>
+          <p>Tutto su search, frenato da catalogo o buy box, vuole parlare con un senior. <b>3 DAA in 22 giorni</b>, Preferred Partner in 6 mesi.</p>
+        </div>
+      </div>
+      <div class="people anim">
+        <div class="pp"><span class="pn">Eleonora Calvi Parisetti</span><span class="pr">Managing Partner</span><span class="pe">eleonora@marketplace-mentor.com</span></div>
+        <div class="pp"><span class="pn">Andrea Giavara</span><span class="pr">Founder</span><span class="pe">andrea@growers.agency</span></div>
+        <div class="pp"><span class="pn">Andrea Orfei</span><span class="pr">Amazon Ads Specialist</span><span class="pe">andreaorfei@marketplace-mentor.com</span></div>
+      </div>
+      <div class="invite anim"><span class="icon" data-lucide="calendar-heart"></span><span><b>6 novembre, Padova:</b> festeggiamo 10 anni di Mentor, con Riccardo sul palco. Siete invitati.</span></div>
     </div>
-    <div class="foot"><span>mentor® · marketplace-mentor.com</span><span class="num-badge">10</span></div>
+    <div class="foot"><span>mentor® · marketplace-mentor.com</span><span class="num-badge">09</span></div>
   </section>
 
 </deck-stage>
