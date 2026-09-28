@@ -1,5 +1,6 @@
 <!doctype html>
-<!-- Mentor × Amazon Ads — Agency Roadshow · v1.5 — 2026-09-28
+<!-- Mentor × Amazon Ads — Agency Roadshow · v1.6 — 2026-09-28
+     v1.6: logo PromoPharma (slide 6) dal sito ufficiale; loghi Legami e Peg Perego nella tabella della slide 3
      v1.5: slide 6 sostituita: caso PromoPharma (al posto di Legami risultato)
      v1.4: dati Andrea: 80% clienti con formato nuovo da Natale 2025, 33% clienti con nuovi DAA 2026
      v1.3: slide 7, etichette PEG "Inizio 2025" e "2026"
@@ -92,7 +93,9 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .depth ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;}
 .depth li{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--g150);}
 .depth li:first-child{border-top:none;padding-top:0;}
-.depth .who{font-size:18px;font-weight:600;color:var(--g500);letter-spacing:.02em;}
+.depth .who{align-self:start;padding-top:2px;}
+.depth .who img{height:34px;max-width:140px;object-fit:contain;display:block;}
+.depth li.cont{border-top-style:dashed;}
 .depth .what{font-size:20.5px;line-height:1.42;color:var(--g600);}
 .depth .what b{color:#000;font-weight:600;}
 
@@ -161,6 +164,8 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .book .bl b{color:#fff;font-weight:600;}
 
 /* 6 · PromoPharma — dark timeline + 4 boxes */
+.brand-pill{position:absolute;top:84px;right:110px;z-index:2;background:#fff;border-radius:16px;padding:16px 24px;}
+.brand-pill img{height:40px;display:block;}
 .tl.dk::before{background:rgba(255,255,255,.16);}
 .tl.dk .dot{background:#000;border-color:rgba(255,255,255,.35);}
 .tl.dk .tstep.key .dot{background:var(--orange);border-color:var(--orange);}
@@ -321,11 +326,11 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="depth anim">
           <div class="dtag">Quanto andiamo a fondo · qualche esempio</div>
           <ul>
-            <li><span class="who">Legami</span><span class="what"><b>106 riunioni</b> documentate dal 2022. Solo nel 2026 sono 30, e <b>10 insieme ad Amazon</b> su ordini, buy box e compliance.</span></li>
-            <li><span class="who">Legami</span><span class="what">Media plan su <b>34 portafogli e 316 campagne</b> in 4 paesi, ribilanciato stagione per stagione.</span></li>
-            <li><span class="who">Legami</span><span class="what">2023, esce la loro responsabile Amazon: ci chiedono di farci carico di <b>158 nuovi prodotti</b> e della Francia.</span></li>
-            <li><span class="who">Peg Perego</span><span class="what"><b>4 riunioni al mese</b>, una di strategia e tre di controllo, più una di visione ogni trimestre.</span></li>
-            <li><span class="who">Peg Perego</span><span class="what">Un monitor <b>buy box su 217 ASIN</b>, costruito in Marketforce sulle loro esigenze.</span></li>
+            <li><span class="who"><img src="assets/cl-legami.png" alt="Legami" style="height:58px;" /></span><span class="what"><b>106 riunioni</b> documentate dal 2022. Solo nel 2026 sono 30, e <b>10 insieme ad Amazon</b> su ordini, buy box e compliance.</span></li>
+            <li class="cont"><span class="who"></span><span class="what">Media plan su <b>34 portafogli e 316 campagne</b> in 4 paesi, ribilanciato stagione per stagione.</span></li>
+            <li class="cont"><span class="who"></span><span class="what">2023, esce la loro responsabile Amazon: ci chiedono di farci carico di <b>158 nuovi prodotti</b> e della Francia.</span></li>
+            <li><span class="who"><img src="assets/cl-pegperego.png" alt="Peg Perego" /></span><span class="what"><b>4 riunioni al mese</b>, una di strategia e tre di controllo, più una di visione ogni trimestre.</span></li>
+            <li class="cont"><span class="who"></span><span class="what">Un monitor <b>buy box su 217 ASIN</b>, costruito in Marketforce sulle loro esigenze.</span></li>
           </ul>
         </div>
       </div>
@@ -391,6 +396,7 @@ h3{font-size:30px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 
   <!-- 6 · PROMOPHARMA -->
   <section class="dark" data-label="PromoPharma">
+    <div class="brand-pill anim"><img src="assets/logo-promopharma.png" alt="PromoPharma" /></div>
     <div class="pad">
       <div class="head" style="margin-bottom:18px;">
         <span class="eyebrow anim">Caso · PromoPharma</span>
