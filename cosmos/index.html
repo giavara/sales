@@ -1,5 +1,6 @@
 <!doctype html>
 <!-- Ewent × mentor — Proposta advertising + Kaufland
+     v1.1 — 2026-10-14 — slide advertising riscritta (search + Amazon DSP, la gestione Ads più completa), nuova slide Preferred Partner Amazon Ads, box prezzo aggiornato; 11 slide
      v1.0 — 2026-10-14 — prima versione: advertising Amazon su 5 mercati (2.500 €/mese) + quadro Kaufland
      (slide Kaufland riprese dal deck Extrema Ratio e dalla landing /vendi-su-kaufland/ v1.4.1, promo di Natale, ricerca "ewent" del 13/10, call con Kaufland) -->
 <html lang="it">
@@ -204,6 +205,17 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
 .gift li b{color:#fff;font-weight:600;}
 .xnote{margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);font-size:19px;line-height:1.5;color:rgba(255,255,255,.6);}
 .xnote b{color:#fff;font-weight:600;}
+
+/* livelli advertising (search / DSP) */
+.tier{margin-top:42px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.16);font-size:18px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);}
+
+/* preferred partner */
+.pp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px;}
+.pp{background:#fff;border:1px solid var(--g200);border-radius:16px;padding:34px 34px 36px;box-shadow:0 4px 14px rgba(20,20,20,.05);}
+.pp .pic{color:var(--orange);display:block;margin-bottom:18px;}
+.pp .pic svg{width:34px;height:34px;}
+.pp h3{font-size:30px;}
+.pp p{font-size:20px;line-height:1.45;color:var(--g600);margin:12px 0 0;}
 </style>
 </head>
 <body>
@@ -234,7 +246,7 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="ask">
           <span class="anum">01 · Amazon</span>
           <h3>Advertising su cinque mercati</h3>
-          <p>Solo campagne: catalogo e contenuti restano fuori, come richiesto.</p>
+          <p>Tutta la gestione Amazon Ads, dalla search alla DSP. Catalogo e contenuti restano fuori, come richiesto.</p>
           <div class="flags">
             <span class="flag live">IT 34K</span>
             <span class="flag live">ES 9K</span>
@@ -259,28 +271,52 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
     <div class="foot"><img src="assets/mentor-logo-black-dot.svg" alt="mentor" /><span class="num-badge">02</span></div>
   </section>
 
-  <!-- 3 · ADVERTISING: COSA FACCIAMO -->
-  <section class="dark" data-label="Advertising — cosa facciamo">
+  <!-- 3 · ADVERTISING: DALLA SEARCH ALLA DSP -->
+  <section class="dark" data-label="Advertising — dalla search alla DSP">
     <div class="pad">
-      <div class="head">
+      <div class="head" style="margin-bottom:22px;">
         <span class="eyebrow anim">01 · Advertising Amazon</span>
-        <h2 class="anim">Cinque mercati,<br>una sola regia<span class="o">.</span></h2>
+        <h2 class="anim">Dalla search alla DSP<span class="o">.</span></h2>
       </div>
-      <div class="rule-row anim" style="margin-top:20px;">
+      <p class="lead anim" style="max-width:58ch;font-size:26px;">È la nostra gestione Amazon Ads più completa: tutti i formati, su tutti e cinque i mercati, con una sola regia.</p>
+      <div class="tier anim">Search · Sponsored Ads</div>
+      <div class="rule-row anim" style="margin-top:22px;">
         <div class="rule"><span class="icon" data-lucide="megaphone"></span><div><b>Sponsored Products, Brands e Display</b><br><span style="font-size:19px;">Campagne costruite mercato per mercato, con le keyword nella lingua di ogni paese.</span></div></div>
         <div class="rule"><span class="icon" data-lucide="shuffle"></span><div><b>Il budget va dove rende</b><br><span style="font-size:19px;">Spostiamo la spesa tra paesi e prodotti in base ai risultati, non a quote fisse.</span></div></div>
         <div class="rule"><span class="icon" data-lucide="search-x"></span><div><b>Search term e negative</b><br><span style="font-size:19px;">Tagliamo con costanza le ricerche che spendono senza vendere.</span></div></div>
       </div>
-      <div class="rule-row anim" style="margin-top:44px;">
-        <div class="rule"><span class="icon" data-lucide="calendar-days"></span><div><b>Eventi e stagionalità</b><br><span style="font-size:19px;">Prime Day, Black Friday e Natale: budget e offerte pianificati prima, non durante.</span></div></div>
-        <div class="rule"><span class="icon" data-lucide="star"></span><div><b>Spinta sui prodotti giusti</b><br><span style="font-size:19px;">Più budget a multiprese, tastiere e mouse, supporti e rack: dove la domanda c'è già.</span></div></div>
-        <div class="rule"><span class="icon" data-lucide="chart-column"></span><div><b>Report mensile per mercato</b><br><span style="font-size:19px;">Vendite, spesa, ACoS e TACoS paese per paese, per decidere con i numeri.</span></div></div>
+      <div class="tier anim">Amazon DSP · display e video</div>
+      <div class="rule-row anim" style="margin-top:22px;">
+        <div class="rule"><span class="icon" data-lucide="monitor-play"></span><div><b>Display e video programmatico</b><br><span style="font-size:19px;">Dentro e fuori Amazon, fino a Prime Video, dove la search non arriva.</span></div></div>
+        <div class="rule"><span class="icon" data-lucide="users"></span><div><b>Le audience di acquisto Amazon</b><br><span style="font-size:19px;">Raggiungiamo chi compra nella vostra categoria, anche se Ewent non lo conosce ancora.</span></div></div>
+        <div class="rule"><span class="icon" data-lucide="repeat"></span><div><b>Retargeting</b><br><span style="font-size:19px;">Riportiamo all'acquisto chi ha visto i vostri prodotti e non ha comprato.</span></div></div>
       </div>
     </div>
     <div class="foot"><span>Il catalogo resta a voi: lavoriamo solo sulle campagne</span><span class="num-badge">03</span></div>
   </section>
 
-  <!-- 4 · INVESTIMENTO -->
+  <!-- 4 · PREFERRED PARTNER AMAZON ADS -->
+  <section class="paper" data-label="Preferred Partner Amazon Ads">
+    <div class="pad">
+      <div class="head" style="margin-bottom:22px;">
+        <span class="eyebrow anim">01 · Preferred Partner di Amazon Ads</span>
+        <h2 class="anim">Con noi, Amazon<br>mette qualcosa in più<span class="o">.</span></h2>
+      </div>
+      <p class="lead anim" style="max-width:60ch;font-size:26px;">Da giugno 2026 siamo nel Preferred Partner Program di Amazon Ads. In base alla strategia, possiamo sbloccare bonus e strumenti che normalmente non sono disponibili.</p>
+      <div class="pp-grid anim">
+        <div class="pp"><span class="pic" data-lucide="gift"></span><h3>Bonus in media</h3><p>Con un accordo annuale e un piano di crescita concordato, Amazon aggiunge budget pubblicitario gratuito.</p></div>
+        <div class="pp"><span class="pic" data-lucide="sparkles"></span><h3>Strumenti in più</h3><p>Formati e programmi fuori dal self-service o in anteprima, dalla DSP a Prime Video.</p></div>
+        <div class="pp"><span class="pic" data-lucide="headset"></span><h3>Canale diretto</h3><p>Priorità dal team Amazon Ads, insight dedicati e supporto sulle questioni retail del vostro account Vendor.</p></div>
+      </div>
+      <div class="callout good anim" style="margin-top:34px;padding:24px 34px;">
+        <span class="cic"><span data-lucide="circle-check"></span></span>
+        <div class="ctext" style="font-size:22px;">Un nostro cliente nel 2026: <b>oltre 16.000 € di media aggiuntivi da Amazon</b> tra gennaio e agosto.</div>
+      </div>
+    </div>
+    <div class="foot"><span>Bonus e strumenti dipendono dalla strategia e dagli obiettivi concordati con Amazon: li definiamo insieme</span><span class="num-badge">04</span></div>
+  </section>
+
+  <!-- 5 · INVESTIMENTO -->
   <section class="paper" data-label="Investimento">
     <div class="pad">
       <div class="head" style="margin-bottom:34px;">
@@ -289,13 +325,14 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
       </div>
       <div class="split" style="grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;">
         <div class="pcard hot anim">
-          <div class="ptag">Amazon Growth · Advertising</div>
+          <div class="ptag">Amazon Growth · gestione Ads completa</div>
           <div class="pname">IT · ES · DE · FR · NL</div>
           <div class="pprice">2.500 €<span> / mese</span></div>
           <ul class="plist">
-            <li><span class="icon" data-lucide="check"></span><div>Gestione campagne Sponsored Products, Brands e Display su <b>5 mercati</b></div></li>
-            <li><span class="icon" data-lucide="check"></span><div>Strategia e <b>allocazione del budget</b> tra paesi e prodotti</div></li>
-            <li><span class="icon" data-lucide="check"></span>Piano eventi: Prime Day, Black Friday, Natale</li>
+            <li><span class="icon" data-lucide="check"></span><div><b>Search</b>: Sponsored Products, Brands e Display su 5 mercati</div></li>
+            <li><span class="icon" data-lucide="check"></span><div><b>Amazon DSP</b>: display e video, dentro e fuori Amazon</div></li>
+            <li><span class="icon" data-lucide="check"></span><div>Strategia, allocazione del budget e piano eventi</div></li>
+            <li><span class="icon" data-lucide="check"></span><div><b>Bonus e strumenti Amazon</b> da Preferred Partner</div></li>
             <li><span class="icon" data-lucide="check"></span><div><b>Report mensile</b> per mercato</div></li>
           </ul>
           <div class="pnote">Dimensionato su un <b>budget pubblicitario di riferimento di circa 60K € al mese</b> sui 5 mercati, a vostro carico e pagato direttamente ad Amazon. Importo + IVA, abbonamento mensile a rinnovo automatico.</div>
@@ -311,10 +348,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><span>Il budget pubblicitario è vostro: il nostro canone è separato</span><span class="num-badge">04</span></div>
+    <div class="foot"><span>Il budget pubblicitario è vostro: il nostro canone è separato</span><span class="num-badge">05</span></div>
   </section>
 
-  <!-- 5 · KAUFLAND: L'OPPORTUNITÀ -->
+  <!-- 6 · KAUFLAND: L'OPPORTUNITÀ -->
   <section class="dark" data-label="Kaufland — l'opportunità">
     <div class="pad">
       <div class="kf-badge anim"><img src="assets/kaufland-logo.svg" alt="Kaufland" /><span class="kf-txt"><b>Kaufland</b>mentor è partner</span></div>
@@ -333,10 +370,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="rule"><span class="icon" data-lucide="trending-down"></span><div>Un nostro cliente su Kaufland: la pubblicità pesa <b>l'1,3% del fatturato</b>, contro il 7,6% su Amazon. Ogni euro di ads ha portato <b>22 € di vendite</b>.</div></div>
       </div>
     </div>
-    <div class="foot"><span>Dati Kaufland: visitatori gennaio 2026, venditori e clienti 8/09/2026. Caso cliente: gennaio-agosto 2026</span><span class="num-badge">05</span></div>
+    <div class="foot"><span>Dati Kaufland: visitatori gennaio 2026, venditori e clienti 8/09/2026. Caso cliente: gennaio-agosto 2026</span><span class="num-badge">06</span></div>
   </section>
 
-  <!-- 6 · KAUFLAND: COME FUNZIONA -->
+  <!-- 7 · KAUFLAND: COME FUNZIONA -->
   <section data-label="Kaufland — come funziona">
     <div class="pad">
       <div class="kf-badge anim"><img src="assets/kaufland-logo.svg" alt="Kaufland" /><span class="kf-txt"><b>Kaufland</b>mentor è partner</span></div>
@@ -362,10 +399,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="rule"><span class="icon" data-lucide="file-check"></span><div><b>Registrazioni in Germania</b> per imballaggi (LUCID) ed elettronica (WEEE). Vi guidiamo noi.</div></div>
       </div>
     </div>
-    <div class="foot"><span>In arancione i mercati aperti nel 2026: Paesi Bassi a settembre, Spagna a ottobre</span><span class="num-badge">06</span></div>
+    <div class="foot"><span>In arancione i mercati aperti nel 2026: Paesi Bassi a settembre, Spagna a ottobre</span><span class="num-badge">07</span></div>
   </section>
 
-  <!-- 7 · EWENT È GIÀ SU KAUFLAND -->
+  <!-- 8 · EWENT È GIÀ SU KAUFLAND -->
   <section class="paper" data-label="Ewent è già su Kaufland">
     <div class="pad" style="padding-top:84px;">
       <div class="head" style="margin-bottom:34px;">
@@ -383,10 +420,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><span>Prezzi, schede e pubblicità del vostro brand oggi li decidono altri · ricerca "ewent", 13 ottobre 2026</span><span class="num-badge">07</span></div>
+    <div class="foot"><span>Prezzi, schede e pubblicità del vostro brand oggi li decidono altri · ricerca "ewent", 13 ottobre 2026</span><span class="num-badge">08</span></div>
   </section>
 
-  <!-- 8 · OFFERTA DI NATALE -->
+  <!-- 9 · OFFERTA DI NATALE -->
   <section class="dark" data-label="Offerta di Natale">
     <div class="pad">
       <div class="head" style="margin-bottom:40px;">
@@ -405,10 +442,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><span>Il credito è uno sconto sulla fattura Sponsored Product Ads di dicembre e scade il 31/12/2026. Fanno fede i termini di Kaufland</span><span class="num-badge">08</span></div>
+    <div class="foot"><span>Il credito è uno sconto sulla fattura Sponsored Product Ads di dicembre e scade il 31/12/2026. Fanno fede i termini di Kaufland</span><span class="num-badge">09</span></div>
   </section>
 
-  <!-- 9 · IL PRIMO PASSO: CALL CON KAUFLAND -->
+  <!-- 10 · IL PRIMO PASSO: CALL CON KAUFLAND -->
   <section data-label="Il primo passo">
     <div class="pad">
       <div class="kf-badge anim"><img src="assets/kaufland-logo.svg" alt="Kaufland" /><span class="kf-txt"><b>Kaufland</b>mentor è partner</span></div>
@@ -444,10 +481,10 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         </div>
       </div>
     </div>
-    <div class="foot"><span>Il preventivo Kaufland lo facciamo dopo la call, sul perimetro reale</span><span class="num-badge">09</span></div>
+    <div class="foot"><span>Il preventivo Kaufland lo facciamo dopo la call, sul perimetro reale</span><span class="num-badge">10</span></div>
   </section>
 
-  <!-- 10 · PROSSIMI PASSI -->
+  <!-- 11 · PROSSIMI PASSI -->
   <section class="dark" data-label="Prossimi passi">
     <img class="cover-mark" src="assets/mentor-mark-white.svg" alt="" />
     <div class="pad">
@@ -466,7 +503,7 @@ h3{font-size:32px;line-height:1.15;letter-spacing:-0.01em;font-weight:600;margin
         <div class="cta-sub anim">Un click apre un'email già scritta: basta inviarla.</div>
       </div>
     </div>
-    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">10</span></div>
+    <div class="foot"><span>marketplace-mentor.com</span><span class="num-badge">11</span></div>
   </section>
 
 </deck-stage>
