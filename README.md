@@ -23,4 +23,4 @@ Each folder is independent.
 
 ← / → arrows, PgUp/PgDn, Space, number keys, or tap left/right on touch. Press `R` to reset. Print → Save as PDF = one page per slide.
 
-> ⚠️ Public repo — decks contain pricing. Keep private or remove folders once deals close.
+> ⚠️ Public repo — decks contain pricing. Only decks for **open** deals live here. When a deal closes (won or lost), the folder moves to the private archive and is purged from this repo's history.
